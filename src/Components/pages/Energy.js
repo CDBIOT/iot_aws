@@ -10,8 +10,8 @@ function Energy(dia,mes,ano){
 const [data, setData] = useState('')
 
     useEffect(() => {
-        //Axios.get("http://localhost:3001/equiplist")
-       Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
+        Axios.get("http://localhost:3001/equiplist")
+       //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
         .then((response) =>{
         setData(response.data);
 		const dataArray2=[];
@@ -32,7 +32,8 @@ function Dia(result)
 	  mode: 'cors',
 	  cache: 'default'
 					 }
-	const response =fetch('https://polar-beyond-82520.herokuapp.com/temps')
+	//const response =fetch('https://polar-beyond-82520.herokuapp.com/temps')
+	const response =fetch("http://localhost:3001/equiplist")
 	.then(function (response){
 	  return response.text()})
 	  .then(data=>{

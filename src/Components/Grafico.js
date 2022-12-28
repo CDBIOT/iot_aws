@@ -1,3 +1,4 @@
+import styles from "../styles/Graphics.module.css"
 import { Chart } from "react-google-charts"
 import Axios from "axios";
 import React from "react";
@@ -24,30 +25,30 @@ useEffect(() => {
     setTemperaturas(response.data.temps);
     const values = _.groupBy(temps, () => { return values.temps });
     {   
-   
     console.log(temps.ano)
     console.log(values)
     }
 });
 }, []);
-}
+
+
 return(
 <>
 
 <section className={styles.chart}>
       
-      <form class="search" action="/grafico" method="post">
-              <div class="row">            
-                  <div class="col-md-4">
-                      <label for="startDate" class="form-label">Data Inicial</label>
-                      <input id="startDate" value="{{startDate}}" class="form-control" type="date" name="startDate" />
+      <form className="search" action="/grafico" method="post">
+              <div className="row">            
+                  <div className="col-md-4">
+                      <label for="startDate" className={styles.label}>Data Inicial</label>
+                      <input id="startDate" value="{{startDate}}" className="form-control" type="date" name="startDate" />
                   </div>
-                  <div class="col-md-4">
-                      <label for="finalDate" class="form-label">Data final</label>
-                      <input id="finalDate" value="{{finalDate}}" class="form-control" type="date" name="finalDate" />
+                  <div className="col-md-4">
+                      <label for="finalDate" className={styles.label}>Data final</label>
+                      <input id="finalDate" value="{{finalDate}}" className="form-control" type="date" name="finalDate" />
                       </div>
-                  <div class="col-md-4">
-                      <button class="bnt-exit" type="submit">Pesquisar</button>
+                  <div className="col-md-4">
+                      <button className="bnt-exit" type="submit">Pesquisar</button>
                       
                   </div>
               </div>
@@ -65,5 +66,5 @@ return(
 </>
 
 )
-
+}
 export default Grafico

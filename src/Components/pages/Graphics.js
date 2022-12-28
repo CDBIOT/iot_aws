@@ -1,17 +1,18 @@
 import styles from "../../styles/Graphics.module.css"
 import React from "react";
 import Axios from "axios";
+import Grafico from "../Grafico";
 import {useEffect, useState} from 'react';
 
 function Graphics(){
     
-    const [temps, setTemperaturas] = useState()
+    const [temps, setTemperaturas] = useState('')
 
 useEffect(() => {
-        //Axios.get("http://localhost:8081/temps")
-        Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
+        Axios.get("http://localhost:8081/temps")
+        //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
         .then((response) =>{
-        setTemperaturas(response.data);
+        setTemperaturas(response.data.temps);
        
         {   
         console.log(temps)
@@ -22,7 +23,7 @@ useEffect(() => {
 return (
     <>
     <h1>Graphics</h1>
-    
+    <Grafico />
     <div>
     <table className={styles.table}>
         <tr><th className={styles.th} colSpan={4}>
@@ -36,7 +37,8 @@ return (
   
         <tbody className={styles.tbody}>
     
-        {temps.map((temps, index) => (
+        {temps.length >0 ? (
+        temps.map((temps, index) => (
         <tr key = {index}>
         <td width="20%"className={styles.td}>{temps.temperatura}</td>
         <td width="20%"className={styles.td}>{temps.local}</td>
@@ -44,7 +46,9 @@ return (
         <td width="20%"className={styles.td}>{temps.mes}</td>
         <td width="20%"className={styles.td}>{temps.ano}</td></tr>
         )
-        )} 
+        )) :(
+            <p1>Não há itens na lista</p1>
+        )}
        
         </tbody>
        
