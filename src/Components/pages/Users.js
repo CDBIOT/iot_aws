@@ -7,7 +7,7 @@ function Users(){
     const [people, setPeople] = useState()
 
     useEffect(() => {
-        Axios.get('https://polar-beyond-82520.herokuapp.com/users')
+        Axios.get('https://server-k2hwpi9qd-cdbiot.vercel.app/users')
         .then((response) =>{
         setPeople(response.data);
         });

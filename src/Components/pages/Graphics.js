@@ -11,7 +11,7 @@ function Graphics(){
 useEffect(() => {
         //Axios.get("http://localhost:8081/temps")
         //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
-        Axios.get('https://iot-seven.vercel.app/temps')
+        Axios.get('https://server-k2hwpi9qd-cdbiot.vercel.app/temps')
         .then((response) =>{
         setTemperaturas(response.data.temps);
        
