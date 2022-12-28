@@ -5,7 +5,8 @@ function Schedule(){
     
 async function mqtt_show() {
 	const options = {method: 'GET',	mode: 'cors',cache: 'default'}
-	const response =fetch('https://polar-beyond-82520.herokuapp.com/mqtt')
+	//const response =fetch('https://polar-beyond-82520.herokuapp.com/mqtt')
+    const response =fetch('https://iot-seven.vercel.app/server/mqtt')
 	.then(function (response){
 	return response.text()})
 	.then(data=>{

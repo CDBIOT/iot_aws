@@ -10,8 +10,9 @@ function Energy(dia,mes,ano){
 const [data, setData] = useState('')
 
     useEffect(() => {
-        Axios.get("http://localhost:3001/equiplist")
+        //Axios.get("http://localhost:3001/equiplist")
        //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
+	   Axios.get('https://iot-seven.vercel.app/temps')
         .then((response) =>{
         setData(response.data);
 		const dataArray2=[];
@@ -33,7 +34,8 @@ function Dia(result)
 	  cache: 'default'
 					 }
 	//const response =fetch('https://polar-beyond-82520.herokuapp.com/temps')
-	const response =fetch("http://localhost:3001/equiplist")
+	//const response =fetch("http://localhost:3001/equiplist")
+	const response =fetch('https://iot-seven.vercel.app/temps')
 	.then(function (response){
 	  return response.text()})
 	  .then(data=>{

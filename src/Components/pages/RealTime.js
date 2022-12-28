@@ -5,7 +5,8 @@ function RealTime(){
     function draw_table(){
         //Obtem dados do banco de dados
             const options = {method: 'GET',	mode: 'cors',cache: 'default'}
-            fetch('https://polar-beyond-82520.herokuapp.com/temps')
+            //fetch('https://polar-beyond-82520.herokuapp.com/temps')
+            fetch('https://iot-seven.vercel.app/server//temps')
             .then(function (response){
                 return response.text()})
             .then(data=>{
