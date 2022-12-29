@@ -28,7 +28,7 @@ useEffect(() => {
 return (
     <>
     <h1>Graphics</h1>
-    <Grafico />
+  
     <div>
     <table className={styles.table}>
         <tr><th className={styles.th} colSpan={4}>

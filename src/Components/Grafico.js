@@ -30,7 +30,7 @@ useEffect(() => {
     setTemperaturas(response.data.temps);
     const values = _.groupBy(temps, () => { return values.temps });
     {   
-    console.log(temps.ano)
+   
     console.log(values)
     }
 });
