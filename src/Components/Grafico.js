@@ -21,7 +21,11 @@ const loadData = (data) =>{
 useEffect(() => {
     //Axios.get("http://localhost:8081/temps")
     //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
-    Axios.get('https://iot-seven.vercel.app/temps')
+    Axios.get({
+		method:'get',
+		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+	  	url: 'https://server-k2hwpi9qd-cdbiot.vercel.app/temps'
+		})
     .then((response) =>{
     setTemperaturas(response.data.temps);
     const values = _.groupBy(temps, () => { return values.temps });

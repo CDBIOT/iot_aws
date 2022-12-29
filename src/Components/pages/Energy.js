@@ -12,7 +12,11 @@ const [data, setData] = useState('')
     useEffect(() => {
         //Axios.get("http://localhost:3001/equiplist")
        //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
-	   Axios.get('https://server-k2hwpi9qd-cdbiot.vercel.app/temps')
+	   Axios.get({
+		method:'get',
+		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+	  	url: 'https://server-k2hwpi9qd-cdbiot.vercel.app/temps'
+		})
         .then((response) =>{
         setData(response.data);
 		const dataArray2=[];
