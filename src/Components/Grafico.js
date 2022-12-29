@@ -24,11 +24,11 @@ useEffect(() => {
     Axios.get({
 		method:'get',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-	  	url: 'https://server-k2hwpi9qd-cdbiot.vercel.app/temps'
+	  	url: 'https://server-cdbiot.vercel.ap/temps'
 		})
     .then((response) =>{
     setTemperaturas(response.data.temps);
-    const values = _.groupBy(temps, () => { return values.temps });
+    //const values = _.groupBy(temps, () => { return values.temps });
     {   
    
     console.log(values)
