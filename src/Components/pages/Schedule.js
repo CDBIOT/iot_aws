@@ -10,7 +10,7 @@ async function mqtt_show() {
 	.then(function (response){
 	return response.text()})
 	.then(data=>{
-	console.log(data)
+	console.log(response.data)
 	const myObj = JSON.parse(data)
 	var local 	= document.getElementById('local').innerText = myObj.vm.local;
 	var temp 	= document.getElementById('temp').innerText = parseInt(myObj.vm.temp);
