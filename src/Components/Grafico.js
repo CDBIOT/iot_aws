@@ -24,7 +24,7 @@ useEffect(() => {
     Axios.get({
 		method:'get',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-	  	url: 'https://server-cdbiot.vercel.ap/temps'
+	  	url: 'https://test-no-vercel.vercel.app/temps'
 		})
     .then((response) =>{
     setTemperaturas(response.data.temps);
