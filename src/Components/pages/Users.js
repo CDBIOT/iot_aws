@@ -10,7 +10,7 @@ function Users(){
         Axios.get({
             method:'get',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            url: 'https://test-no-vercel.vercel.app/users'
+            url: 'https://server-orpin-zeta.vercel.app/users'
             })
         .then((response) =>{
         setPeople(response.data);

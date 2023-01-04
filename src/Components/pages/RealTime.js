@@ -6,7 +6,7 @@ function RealTime(){
         //Obtem dados do banco de dados
             const options = {method: 'GET',	mode: 'cors',cache: 'default'}
             //fetch('https://polar-beyond-82520.herokuapp.com/temps')
-            fetch('https://test-no-vercel.vercel.app/temps')
+            fetch('https://server-orpin-zeta.vercel.app/temps')
             .then(function (response){
                 return response.text()})
             .then(data=>{

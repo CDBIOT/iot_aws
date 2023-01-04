@@ -15,7 +15,7 @@ const [data, setData] = useState('')
 	   Axios.get({
 		method:'get',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-	  	url: 'https://server-k2hwpi9qd-cdbiot.vercel.app/temps'
+	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		})
         .then((response) =>{
         setData(response.data);
