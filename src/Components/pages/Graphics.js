@@ -12,7 +12,7 @@ function Graphics(){
     try {
         const res = await axios.get("'https://server-orpin-zeta.vercel.app/temps'");
         setTemperaturas(res.data.temps);
-       
+        const temps = JSON.parse(data)
         console.log(temps)
         console.log(res.data.temps)
         console.log(temps.ano)
