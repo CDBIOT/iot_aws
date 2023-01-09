@@ -11,10 +11,10 @@ function Graphics(){
     const getTemps = async()=> {
     try {
         const res = await axios.get("'https://server-orpin-zeta.vercel.app/temps'");
-        setTemperaturas(res.data.temps);
+        setTemperaturas(res.data);
         const temps = JSON.parse(data)
         console.log(temps)
-        console.log(res.data.temps)
+        console.log(temps.dia)
         console.log(temps.ano)
 
     }catch(error){
@@ -45,13 +45,13 @@ return (
         <tbody className={styles.tbody}>
     
         {temps.length >0 ? (
-        temps.map((temps, index) => (
+        temps.map((t, index) => (
         <tr key = {index}>
-        <td width="20%"className={styles.td}>{temps.temperatura}</td>
-        <td width="20%"className={styles.td}>{temps.local}</td>
-        <td width="20%"className={styles.td}>{temps.dia}</td>
-        <td width="20%"className={styles.td}>{temps.mes}</td>
-        <td width="20%"className={styles.td}>{temps.ano}</td></tr>
+        <td width="20%"className={styles.td}>{t.temperatura}</td>
+        <td width="20%"className={styles.td}>{t.local}</td>
+        <td width="20%"className={styles.td}>{t.dia}</td>
+        <td width="20%"className={styles.td}>{t.mes}</td>
+        <td width="20%"className={styles.td}>{t.ano}</td></tr>
         )
         )) :(
             <h3>Não há itens na lista</h3>
