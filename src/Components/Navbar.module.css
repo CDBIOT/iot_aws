@@ -13,12 +13,13 @@
     }
     .item{
         margin-right: 2em;
-     
+        list-style: none;
     
     }
     .item a{
         color: #fff;
         text-decoration: none;
+        list-style: none;
     }
     
     .item a:hover{

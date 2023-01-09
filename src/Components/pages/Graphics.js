@@ -8,20 +8,18 @@ function Graphics(){
     
     const [temps, setTemperaturas] = useState('')
 
+    const getTemps = async()=> {
+    try {
+        const res = await axios.get("'https://server-orpin-zeta.vercel.app/temps'");
+        setTemperaturas(res.data.ano);
+    }catch(error){
+        console.log(error)
+    }
+    }
+
 useEffect(() => {
-      
-        Axios.get({
-            method:'get',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            url: 'https://server-orpin-zeta.vercel.app/temps'
-            })
-        .then((response) =>{
-        setTemperaturas(response.data.temps);
-        {   
-        console.log(temps)
-        }
-    });
-    }, []);
+    getTemps();
+    }, [setTemperaturas]);
 
 return (
     <>
