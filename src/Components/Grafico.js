@@ -31,7 +31,7 @@ useEffect(() => {
     //const values = _.groupBy(temps, () => { return values.temps });
     {   
    
-    console.log(values)
+   // console.log()
     }
 });
 }, []);

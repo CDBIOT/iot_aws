@@ -37,8 +37,7 @@ function Dia(result)
 	  mode: 'cors',
 	  cache: 'default'
 					 }
-	//const response =fetch('https://polar-beyond-82520.herokuapp.com/temps')
-	//const response =fetch("http://localhost:3001/equiplist")
+	
 	const response =fetch('https://server-k2hwpi9qd-cdbiot.vercel.app/temps')
 	.then(function (response){
 	  return response.text()})
