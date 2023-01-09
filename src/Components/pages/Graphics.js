@@ -1,6 +1,6 @@
 import styles from "../../styles/Graphics.module.css"
 import React from "react";
-import Axios from "axios";
+import axios from "axios";
 import Grafico from "../Grafico";
 import {useEffect, useState} from 'react';
 
