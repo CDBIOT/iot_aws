@@ -16,7 +16,7 @@ useEffect(() => {
             url: 'https://server-orpin-zeta.vercel.app/temps'
             })
         .then((response) =>{
-        setTemperaturas(response);
+        setTemperaturas(response.data.temps);
         {   
         console.log(temps)
         }
