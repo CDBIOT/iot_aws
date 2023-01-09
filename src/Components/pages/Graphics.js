@@ -11,7 +11,7 @@ function Graphics(){
     const getTemps = async()=> {
     try {
         const res = await axios.get("'https://server-orpin-zeta.vercel.app/temps'");
-        setTemperaturas(res.data.ano);
+        setTemperaturas(res.data.temps);
     }catch(error){
         console.log(error)
     }
