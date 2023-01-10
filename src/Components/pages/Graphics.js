@@ -14,7 +14,7 @@ function Graphics(){
         setTemperaturas(res.data);
        // const temps = JSON.parse(data)
         console.log(temps)
-        console.log(temps.dia)
+        console.log(temps.temps)
         console.log(temps.ano)
 
     }catch(error){
