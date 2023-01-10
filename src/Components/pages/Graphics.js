@@ -7,8 +7,19 @@ import {useEffect, useState} from 'react';
 function Graphics(){
     
     const [temps, setTemperaturas] = useState('')
+    const options = {method: 'GET',	mode: 'cors',cache: 'default'}
 
-    const getTemps = async()=> {
+const response = fetch(('https://server-orpin-zeta.vercel.app/temps'),options)
+	.then(function (response){
+	return response.text()})
+	.then(data=>{
+	console.log(data)
+	const resultados = JSON.parse(data)
+    var local = resultados.temps.local;
+    console.log(local)
+    })
+
+const getTemps = async()=> {
     try {
         const res = await axios.get("'https://server-orpin-zeta.vercel.app/temps'");
         setTemperaturas(res.data);
@@ -23,7 +34,8 @@ function Graphics(){
     }
 
 useEffect(() => {
-    getTemps();
+    //getTemps();
+    response();
     }, []);
 
 return (
