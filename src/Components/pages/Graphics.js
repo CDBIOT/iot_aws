@@ -24,7 +24,7 @@ function Graphics(){
 
 useEffect(() => {
     getTemps();
-    }, [setTemperaturas]);
+    }, []);
 
 return (
     <>
