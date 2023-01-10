@@ -12,7 +12,7 @@ function Graphics(){
     try {
         const res = await axios.get("'https://server-orpin-zeta.vercel.app/temps'");
         setTemperaturas(res.data);
-        const temps = JSON.parse(data)
+       // const temps = JSON.parse(data)
         console.log(temps)
         console.log(temps.dia)
         console.log(temps.ano)
@@ -45,8 +45,8 @@ return (
         <tbody className={styles.tbody}>
     
         {temps.length >0 ? (
-        temps.map((t, index) => (
-        <tr key = {index}>
+        temps.map((t, i) => (
+        <tr key = {i}>
         <td width="20%"className={styles.td}>{t.temperatura}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
         <td width="20%"className={styles.td}>{t.dia}</td>
