@@ -7,7 +7,9 @@ import {useEffect, useState} from 'react';
 function Graphics(){
     
     const [temps, setTemperaturas] = useState('')
-    const options = {method: 'GET',	mode: 'cors',cache: 'default'}
+    const options = {method: 'GET',	mode: 'no-cors',
+     header: {'Access-Control-Allow-Origin':'*',
+      },cache: 'default'}
 
 const response = fetch(('https://server-orpin-zeta.vercel.app/temps',options))
 	.then(response=>response.json())
