@@ -9,14 +9,11 @@ function Graphics(){
     const [temps, setTemperaturas] = useState('')
     const options = {method: 'GET',	mode: 'cors',cache: 'default'}
 
-const response = fetch(('https://server-orpin-zeta.vercel.app/temps'))
-	.then(function (response){
-	return response.text()})
+const response = fetch(('https://server-orpin-zeta.vercel.app/temps',options))
+	.then(response=>response.json())
 	.then(data=>{
-	console.log(data)
-	const resultados = JSON.parse(data)
-    var local = resultados.temps.local;
-    console.log(local)
+	setTemperaturas(res.data)
+    console.log(data)
     })
 
 const getTemps = async()=> {
