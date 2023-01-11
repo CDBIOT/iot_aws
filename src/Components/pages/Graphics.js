@@ -8,20 +8,34 @@ function Graphics(){
     
     const [temps, setTemperaturas] = useState('')
     
+// useEffect(() => {
+//     fetch(`https://server-orpin-zeta.vercel.app/temps`,{
+//      method: 'GET',
+//      header: {
+//         'Access-Control-Allow-Origin':'*',mode: 'cors',
+//         'Content-Type': 'application/json' },
+//     }).then(resp=>resp.json())
+// 	.then((data)=>{
+// 	setTemperaturas(data)
+//     console.log(data)
+//     }).catch(err=> console.log(err))
+
+//     }, []);
+
 useEffect(() => {
-    fetch(`https://server-orpin-zeta.vercel.app/temps`,{
-     method: 'GET',
-     header: {
-        'Access-Control-Allow-Origin':'*',mode: 'cors',
-        'Content-Type': 'application/json' },
-    }).then(resp=>resp.json())
-	.then((data)=>{
-	setTemperaturas(data)
-    console.log(data)
-    }).catch(err=> console.log(err))
-
-    }, []);
-
+        axios.get({
+            method:'get',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            url: 'https://server-orpin-zeta.vercel.app/temps'
+            })
+        .then((response) =>{
+        setTemperaturas(data);
+        });
+        {
+        console.log(data)
+        }
+    }, [])
+    
 return (
     <>
     <h1>Graphics</h1>
