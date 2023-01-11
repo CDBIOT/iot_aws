@@ -7,30 +7,17 @@ import {useEffect, useState} from 'react';
 function Graphics(){
     
     const [temps, setTemperaturas] = useState('')
-    const options = {method: 'GET',	mode: 'no-cors',
-     header: {'Access-Control-Allow-Origin':'*',
-      },cache: 'default'}
-
-const response = fetch(('https://server-orpin-zeta.vercel.app/temps',options))
-	.then(response=>response.json())
+    fetch(`https://server-orpin-zeta.vercel.app/temps`,{
+     method: 'GET',
+     header: {
+        //'Access-Control-Allow-Origin':'*',
+        'Content-Type': 'application/json' },
+    }).then(resp=>resp.json())
 	.then(data=>{
 	setTemperaturas(res.data)
     console.log(data)
-    })
+    }).catch(err=> console.log(err))
 
-const getTemps = async()=> {
-    try {
-        const res = await axios.get("'https://server-orpin-zeta.vercel.app/temps'");
-        setTemperaturas(res.data);
-       // const temps = JSON.parse(data)
-        console.log(temps)
-        console.log(temps.temps)
-        console.log(temps.ano)
-
-    }catch(error){
-        console.log(error)
-    }
-    }
 
 useEffect(() => {
     //getTemps();
