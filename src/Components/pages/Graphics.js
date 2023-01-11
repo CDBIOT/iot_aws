@@ -7,14 +7,14 @@ import {useEffect, useState} from 'react';
 function Graphics(){
     
     const [temps, setTemperaturas] = useState('')
-    fetch(`https://server-orpin-zeta.vercel.app/temps`,{
+    fetch(`https://server-cdbiot.vercel.app/temps`,{
      method: 'GET',
      header: {
-        //'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Origin':'*',mode: 'no-cors',
         'Content-Type': 'application/json' },
     }).then(resp=>resp.json())
-	.then(data=>{
-	setTemperaturas(res.data)
+	.then((data)=>{
+	setTemperaturas(data)
     console.log(data)
     }).catch(err=> console.log(err))
 
