@@ -7,6 +7,8 @@ import {useEffect, useState} from 'react';
 function Graphics(){
     
     const [temps, setTemperaturas] = useState('')
+    
+useEffect(() => {
     fetch(`https://server-orpin-zeta.vercel.app/temps`,{
      method: 'GET',
      header: {
@@ -18,10 +20,6 @@ function Graphics(){
     console.log(data)
     }).catch(err=> console.log(err))
 
-
-useEffect(() => {
-    //getTemps();
-    response();
     }, []);
 
 return (
