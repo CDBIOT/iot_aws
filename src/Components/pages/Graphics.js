@@ -23,9 +23,7 @@ function Graphics(){
 //     }, []);
 
 useEffect(() => {
-        axios.get({
-            method:'get',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        axios.get({        
             url: 'https://server-orpin-zeta.vercel.app/temps'
             })
         .then((response) =>{

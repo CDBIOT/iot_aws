@@ -22,8 +22,6 @@ useEffect(() => {
     //Axios.get("http://localhost:8081/temps")
     //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
     Axios.get({
-		method:'get',
-		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		})
     .then((response) =>{
