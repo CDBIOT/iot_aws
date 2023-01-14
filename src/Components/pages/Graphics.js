@@ -7,7 +7,7 @@ import {useEffect, useState} from 'react';
 function Graphics(){
     
     const [temps, setTemperaturas] = useState('')
-    const [repos, setRepos] = useState('')
+    const [repos, setRepos] = useState([])
     
 // useEffect(() => {
 //     fetch(`https://server-orpin-zeta.vercel.app/temps`,{
