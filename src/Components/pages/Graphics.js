@@ -7,6 +7,7 @@ import {useEffect, useState} from 'react';
 function Graphics(){
     
     const [temps, setTemperaturas] = useState('')
+    const [repos, setRepos] = useState('')
     
 // useEffect(() => {
 //     fetch(`https://server-orpin-zeta.vercel.app/temps`,{
@@ -24,10 +25,11 @@ function Graphics(){
 
 useEffect(() => {
         axios.get({        
-            url: 'https://server-orpin-zeta.vercel.app/temps'
+            //url: 'https://server-orpin-zeta.vercel.app/temps'
+            url: 'https://api.github.com/users/cdbiot/repos'
             })
         .then((response) =>{
-        setTemperaturas(data);
+        setTemperaturas(response.data);
         });
         {
         console.log(data)
