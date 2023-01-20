@@ -25,14 +25,14 @@ function Graphics(){
 
 useEffect(() => {
         axios.get({        
-            //url: 'https://server-orpin-zeta.vercel.app/temps'
-            url: 'https://api.github.com/users/cdbiot/repos'
+            url: 'https://server-orpin-zeta.vercel.app/temps'
+            //url: 'https://api.github.com/users/cdbiot/repos'
             })
         .then((response) =>{
-        setRepos(response.data);
+        setTemperaturas(response);
         });
         {
-        console.log(repos)
+        console.log(temps)
         }
     }, [])
     
