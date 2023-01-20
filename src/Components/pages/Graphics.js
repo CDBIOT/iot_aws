@@ -6,7 +6,7 @@ import {useEffect, useState} from 'react';
 
 function Graphics(){
     
-    const [temps, setTemperaturas] = useState('')
+    const [temps, setTemperaturas] = useState([])
     const [repos, setRepos] = useState([])
     
 // useEffect(() => {
@@ -54,8 +54,8 @@ return (
     </div>
         <tbody className={styles.tbody}>
     
-        {repos.length >0 ? (
-        repos.map((t, i) => (
+        {temps.length >0 ? (
+        temps.map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.name}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
