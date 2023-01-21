@@ -21,7 +21,7 @@ async function getData(){
      console.log(data)
      }).catch(err=> console.log(err))
 
-
+    }
 // async function getData(){
 //    await axios.get('https://server-orpin-zeta.vercel.app/temps')
 //         .then(response => setTemperaturas(response.data))
