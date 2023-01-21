@@ -6,7 +6,7 @@ import {useEffect, useState} from 'react';
 
 function Graphics(){
     
-    const [temps, setTemperaturas] = useState([])
+    const [data, setTemperaturas] = useState([])
     const [repos, setRepos] = useState([])
     
 // useEffect(() => {
@@ -24,7 +24,7 @@ function Graphics(){
 //     }, []);
 async function getData(){
    await axios.ge('https://server-orpin-zeta.vercel.app/temps')
-        .then(response => setTemperaturas(data))
+        .then(response => setTemperaturas(response.data))
         .catch(err=> console.log(err))
         console.log(data)
         }
@@ -51,8 +51,8 @@ return (
     </div>
         <tbody className={styles.tbody}>
     
-        {temps.length >0 ? (
-        temps.map((t, i) => (
+        {data.length >0 ? (
+        data.map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.name}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
