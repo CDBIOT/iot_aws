@@ -22,18 +22,20 @@ function Graphics(){
 //     }).catch(err=> console.log(err))
 
 //     }, []);
+async function getData(){
+   await axios.get({        
+        url: 'https://server-orpin-zeta.vercel.app/temps'
+        //url: 'https://api.github.com/users/cdbiot/repos'
+        }).then(resp=>resp.json())
+        .then((data)=>{
+        setTemperaturas(data)
+        console.log(data)
+        }).catch(err=> console.log(err))
+        
 
+}
 useEffect(() => {
-        axios.get({        
-            url: 'https://server-orpin-zeta.vercel.app/temps'
-            //url: 'https://api.github.com/users/cdbiot/repos'
-            })
-        .then((response) =>{
-        setTemperaturas(response.data);
-        });
-        {
-        console.log(temps)
-        }
+      getData();
     }, [])
     
 return (
