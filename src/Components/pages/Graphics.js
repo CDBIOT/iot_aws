@@ -23,17 +23,12 @@ function Graphics(){
 
 //     }, []);
 async function getData(){
-   await axios.get({        
-        url: 'https://server-orpin-zeta.vercel.app/temps'
-        //url: 'https://api.github.com/users/cdbiot/repos'
-        }).then(resp=>resp.json())
-        .then((data)=>{
-        setTemperaturas(data)
+   await axios.ge('https://server-orpin-zeta.vercel.app/temps')
+        .then(response => setTemperaturas(data))
+        .catch(err=> console.log(err))
         console.log(data)
-        }).catch(err=> console.log(err))
-        
+        }
 
-}
 useEffect(() => {
       getData();
     }, [])
