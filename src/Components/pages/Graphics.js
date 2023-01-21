@@ -23,7 +23,7 @@ function Graphics(){
 
 //     }, []);
 async function getData(){
-   await axios.ge('https://server-orpin-zeta.vercel.app/temps')
+   await axios.get('https://server-orpin-zeta.vercel.app/temps')
         .then(response => setTemperaturas(response.data))
         .catch(err=> console.log(err))
         console.log(data)
