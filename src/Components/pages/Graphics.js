@@ -29,7 +29,7 @@ useEffect(() => {
             //url: 'https://api.github.com/users/cdbiot/repos'
             })
         .then((response) =>{
-        setTemperaturas(data.temps);
+        setTemperaturas(response.data);
         });
         {
         console.log(temps)
