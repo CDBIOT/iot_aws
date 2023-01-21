@@ -8,26 +8,26 @@ function Graphics(){
     
     const [data, setTemperaturas] = useState([])
     const [repos, setRepos] = useState([])
-    
-// useEffect(() => {
-//     fetch(`https://server-orpin-zeta.vercel.app/temps`,{
-//      method: 'GET',
-//      header: {
-//         'Access-Control-Allow-Origin':'*',mode: 'cors',
-//         'Content-Type': 'application/json' },
-//     }).then(resp=>resp.json())
-// 	.then((data)=>{
-// 	setTemperaturas(data)
-//     console.log(data)
-//     }).catch(err=> console.log(err))
 
-//     }, []);
 async function getData(){
-   await axios.get('https://server-orpin-zeta.vercel.app/temps')
-        .then(response => setTemperaturas(response.data))
-        .catch(err=> console.log(err))
-        console.log(data)
-        }
+
+     fetch(`https://server-orpin-zeta.vercel.app/temps`,{
+      method: 'GET',
+      header: {         'Access-Control-Allow-Origin':'*',mode: 'cors',
+        'Content-Type': 'application/json' },
+     }).then(resp=>resp.json())
+ 	.then((data)=>{
+ 	setTemperaturas(data)
+     console.log(data)
+     }).catch(err=> console.log(err))
+
+
+// async function getData(){
+//    await axios.get('https://server-orpin-zeta.vercel.app/temps')
+//         .then(response => setTemperaturas(response.data))
+//         .catch(err=> console.log(err))
+//         console.log(data)
+//         }
 
 useEffect(() => {
       getData();
