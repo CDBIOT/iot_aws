@@ -9,7 +9,7 @@ function Energy(dia,mes,ano){
 //const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [data, setData] = useState([])
 
-async function Dados()
+async function Dados(){
    
        //Axios.get(`https://server-orpin-zeta.vercel.app/temps`)
 	   Axios.get({
