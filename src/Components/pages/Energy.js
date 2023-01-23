@@ -17,7 +17,7 @@ const [data, setData] = useState('')
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		})
         .then((response) =>{
-        setData(response.data);
+        setData(response.temps);
 		const dataArray2=[];
   
 		dataArray2.push(['Dia','Temp']);
@@ -37,15 +37,13 @@ function Dia(result)
 	  cache: 'default'
 					 }
 	
-	const response =fetch('https://server-k2hwpi9qd-cdbiot.vercel.app/temps')
+	const response =fetch('https://server-k2hwpi9qd-cdbiot.vercel.app/temps',options)
 	.then(function (response){
 	  return response.text()})
 	  .then(data=>{
-	  const myObj = JSON.parse(data);
+	 setData(data.temps)
 	  var dataArray = Array.from(myObj.temps);
 	  console.log("dataArray: ", dataArray)
-	  
-	 
 	}
 	 
 	)
