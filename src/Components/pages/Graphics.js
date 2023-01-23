@@ -6,7 +6,7 @@ import {useEffect, useState} from 'react';
 
 function Graphics(){
     
-    const [data, setTemperaturas] = useState([])
+    const [temps, setTemperaturas] = useState([])
     const [repos, setRepos] = useState([])
 
 async function getData(){
@@ -17,8 +17,8 @@ async function getData(){
         'Content-Type': 'application/json' },
      }).then(resp=>resp.json())
  	.then((data)=>{
- 	setTemperaturas(data)
-     console.log(data)
+ 	setTemperaturas(data.temps)
+     console.log(temps)
      }).catch(err=> console.log(err))
 
     }
@@ -51,8 +51,8 @@ return (
     </div>
         <tbody className={styles.tbody}>
     
-        {data.length >0 ? (
-        data.map((t, i) => (
+        {temps.length >0 ? (
+        temps.map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.name}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
