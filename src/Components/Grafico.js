@@ -12,13 +12,14 @@ function Grafico(){
 
 const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [data, setData] = useState('')
+
+useEffect(() => {
+    
 const loadData = (data) =>{
     const values = _.groupBy(data, () => {
         return values.temps
     })
 }
-
-useEffect(() => {
     //Axios.get("http://localhost:8081/temps")
     //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
     Axios.get({
