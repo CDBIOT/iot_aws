@@ -9,45 +9,33 @@ function Energy(dia,mes,ano){
 //const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [data, setData] = useState([])
 
-    useEffect(() => {
+async function Dados()
+   
        //Axios.get(`https://server-orpin-zeta.vercel.app/temps`)
 	   Axios.get({
 		method:'get',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		})
-        .then((response) =>{
-        setData(response.temps);
-		const dataArray2=[];
+        .then(response=>response.json()) 
+		.then((data)=>{
+        setData(data.temps);
+		console.log(data)
+		//const dataArray2=[];
   
-		dataArray2.push(['Dia','Temp']);
+		// dataArray2.push(['Dia','Temp']);
 	
-		for (var i in data)
-		{
-			dataArray2.push([data[i].dia, (data[i].temperatura)]);
-		}
-        });
+		// for (var i in data)
+		// {
+		// 	dataArray2.push([data[i].dia, (data[i].temperatura)]);
+		// }
+	}).catch(err=> console.log(err))
+}
+
+useEffect(() => {
+	Dados();
     }, [])
 	
-function Dia(result)
-{
-	const options = {
-	  method: 'GET',
-	  mode: 'cors',
-	  cache: 'default'
-					 }
-	
-	const response =fetch('https://server-k2hwpi9qd-cdbiot.vercel.app/temps',options)
-	.then(function (response){
-	  return response.text()})
-	  .then(data=>{
-	 setData(data.temps)
-	  var dataArray = Array.from(myObj.temps);
-	  console.log("dataArray: ", dataArray)
-	}
-	 
-	)
-}
 // final do query 
 
 return (

@@ -7,7 +7,6 @@ import {useEffect, useState} from 'react';
 function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
-    const [repos, setRepos] = useState([])
 
 async function getData(){
 
@@ -18,7 +17,7 @@ async function getData(){
      }).then(resp=>resp.json())
  	.then((data)=>{
  	setTemperaturas(data.temps)
-     console.log(temps)
+     console.log(data.temps)
      }).catch(err=> console.log(err))
 
     }
