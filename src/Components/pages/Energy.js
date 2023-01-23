@@ -14,7 +14,7 @@ async function Dados(){
        //Axios.get(`https://server-orpin-zeta.vercel.app/temps`)
 	   Axios.get({
 		method:'get',
-		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+		headers: { 'Content-Type': 'application/json' },
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		})
         .then(response=>response.json()) 
