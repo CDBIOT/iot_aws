@@ -39,7 +39,6 @@ return (
   
     <div>  
         <table className={styles.table}>
-   
         <tr><th className={styles.th} colSpan={4}>
         <td width="20%"className={styles.th}>Temp</td>
         <td width="20%" className={styles.th}>Local</td>

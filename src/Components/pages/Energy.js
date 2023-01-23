@@ -10,8 +10,7 @@ function Energy(dia,mes,ano){
 const [data, setData] = useState('')
 
     useEffect(() => {
-        //Axios.get("http://localhost:3001/equiplist")
-       //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
+       //Axios.get(`https://server-orpin-zeta.vercel.app/temps`)
 	   Axios.get({
 		method:'get',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -97,6 +96,7 @@ return (
 				<tr>
 					<td id = {dia}></td> <td id = {mes}/> <td id= {ano}></td>
 				</tr>
+				
 				</table>
 
 <form action="/temps" method = "get">
@@ -113,23 +113,36 @@ return (
 </form>
 
 <section >
-        <div className={styles.dados}>
-	         	<table className={styles.table}>
-					<div className = {styles.thead}> 
-					<thead>
-					<th> Id </th><th> Local </th><th> Temperaturas </th><th> Dia </th><th> Mes </th><th> Ano </th>
-                	</thead>
-					</div>
-                    	<tbody id = "mytable">
+    <div className={styles.dados}>
+	<table className={styles.table}>
+        <tr><th className={styles.th} colSpan={4}>
+        <td width="20%"className={styles.th}>Temp</td>
+        <td width="20%" className={styles.th}>Local</td>
+        <td width="20%" className={styles.th}>Dia</td>
+        <td width="20%" className={styles.th}>Mes</td>
+        <td width="20%" className={styles.th}>Ano</td>
+        </th></tr>
+    </table>
+	</div>
+	<div>
+	<tbody className={styles.tbody}>
+	{data.length >0 ? (
+        data.map((t, i) => (
+        <tr key = {i}>
+        <td width="20%"className={styles.td}>{t.name}</td>
+        <td width="20%"className={styles.td}>{t.local}</td>
+        <td width="20%"className={styles.td}>{t.dia}</td>
+        <td width="20%"className={styles.td}>{t.mes}</td>
+        <td width="20%"className={styles.td}>{t.ano}</td></tr>
+        )
+        )) :(
+            <h3>Não há itens na lista</h3>
+        )}
+		</tbody>
+	</div>
 
-                    	</tbody>
-                    	<tfoot> </tfoot>
-	        	</table>
-		</div>
 </section>
-<div>
-	
-</div>
+
 
 </div>
 
