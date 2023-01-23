@@ -1,12 +1,13 @@
 import styles from "../../styles/Graphics.module.css"
 import React from "react";
 import {useEffect, useState} from 'react';
+
 function RealTime(){
 
-
-function DrawTable(){
-        //Obtem dados do banco de dados
   const [temps, setTemperaturas] = useState([])
+  
+async function DrawTable(){
+        //Obtem dados do banco de dados
 
      fetch(`https://server-orpin-zeta.vercel.app/temps`,{
       method: 'GET',
@@ -23,9 +24,7 @@ useEffect(() => {
   DrawTable();
 }, [])
 
-    
-    
-    return (
+return (
     <>
     <h1>RealTime</h1>
     <div>      
@@ -54,10 +53,7 @@ useEffect(() => {
           )}
          
           </tbody>
-        
-    
     </>
-    
     )
     
     }
