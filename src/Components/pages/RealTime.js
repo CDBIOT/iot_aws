@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 function RealTime(){
 
 
-function draw_table(){
+function DrawTable(){
         //Obtem dados do banco de dados
   const [temps, setTemperaturas] = useState([])
 
@@ -20,7 +20,7 @@ function draw_table(){
     }
          
 useEffect(() => {
-  draw_table();
+  DrawTable();
 }, [])
 
     
