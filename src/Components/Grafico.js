@@ -15,13 +15,11 @@ const [data, setData] = useState('')
 
 useEffect(() => {
     
-const loadData = (data) =>{
-    const values = _.groupBy(data, () => {
-        return values.temps
-    })
-}
-    //Axios.get("http://localhost:8081/temps")
-    //Axios.get('https://polar-beyond-82520.herokuapp.com/temps')
+// const loadData = (data) =>{
+//     const values = _.groupBy(data, () => {
+//         return values.temps
+//     })}
+   
     Axios.get({
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		})
