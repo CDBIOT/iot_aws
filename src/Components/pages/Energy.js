@@ -7,7 +7,7 @@ import { Chart } from "react-google-charts";
 function Energy(dia,mes,ano){
 
 //const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
-const [data, setData] = useState('')
+const [data, setData] = useState([])
 
     useEffect(() => {
        //Axios.get(`https://server-orpin-zeta.vercel.app/temps`)

@@ -1,52 +1,61 @@
-
+import styles from "../../styles/Graphics.module.css"
+import React from "react";
+import {useEffect, useState} from 'react';
 function RealTime(){
 
 
-    function draw_table(){
+function draw_table(){
         //Obtem dados do banco de dados
-            const options = {method: 'GET',	mode: 'cors',cache: 'default'}
-            //fetch('https://polar-beyond-82520.herokuapp.com/temps')
-            fetch('https://server-orpin-zeta.vercel.app/temps')
-            .then(function (response){
-                return response.text()})
-            .then(data=>{
-            const myObj = JSON.parse(data)
-    
-          let table = document.getElementById('mytable');
-        
-          for (var k in myObj.temps)
-      {
-        //	  for (const [key, value] of Object.entries (myObj.temps[k])) 
-          {
-    
-                var tr = table.insertRow();
-                var td_local = tr.insertCell();
-                var td_temperatura = tr.insertCell();
-                var td_dia = tr.insertCell();
-                var td_mes = tr.insertCell();
-                var td_ano = tr.insertCell();
-    
-                td_local.innerHTML = myObj.temps[k].local
-                td_temperatura.innerHTML = myObj.temps[k].temperatura
-                td_dia.innerHTML = myObj.temps[k].dia
-                td_mes.innerHTML = myObj.temps[k].mes
-                td_ano.innerHTML = myObj.temps[k].ano
-                
-            //  console.log(`${key}: ${value}`);
-          
-       // `<tr> <td> ${myObj.temps[k].local}</td> <td>${myObj.temps[k].temperatura}</td> <td>${myObj.temps[k].dia}</td> <td>${myObj.temps[k].mes}</td> <td>${myObj.temps[k].ano}</td> <tr>`
-    
-            //console.log(i + " - " + myObj.temps[i].temperatura)
-            //table.innerHTML += row;  
-        }
-      }
-      
-    })
-    
+  const [temps, setTemperaturas] = useState([])
+
+     fetch(`https://server-orpin-zeta.vercel.app/temps`,{
+      method: 'GET',
+      header: {         'Access-Control-Allow-Origin':'*',mode: 'cors',
+        'Content-Type': 'application/json' },
+     }).then(resp=>resp.json())
+ 	    .then((data)=>{
+ 	    setTemperaturas(data.temps)
+      console.log(temps)
+      }).catch(err=> console.log(err))
     }
+         
+useEffect(() => {
+  draw_table();
+}, [])
+
+    
+    
     return (
     <>
     <h1>RealTime</h1>
+    <div>      
+         <table className={styles.table}>
+          <tr><th className={styles.th} colSpan={4}>
+          <td width="20%"className={styles.th}>Temp</td>
+          <td width="20%" className={styles.th}>Local</td>
+          <td width="20%" className={styles.th}>Dia</td>
+          <td width="20%" className={styles.th}>Mes</td>
+          <td width="20%" className={styles.th}>Ano</td>
+          </th></tr>
+      </table>
+      </div>
+          <tbody className={styles.tbody}>
+          {temps.length >0 ? (
+          temps.map((t, i) => (
+          <tr key = {i}>
+          <td width="20%"className={styles.td}>{t.name}</td>
+          <td width="20%"className={styles.td}>{t.local}</td>
+          <td width="20%"className={styles.td}>{t.dia}</td>
+          <td width="20%"className={styles.td}>{t.mes}</td>
+          <td width="20%"className={styles.td}>{t.ano}</td></tr>
+          )
+          )) :(
+              <h3>Não há itens na lista</h3>
+          )}
+         
+          </tbody>
+        
+    
     </>
     
     )
