@@ -14,7 +14,7 @@ async function Dados(){
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		}).then((response)=>{
         setData(response.data);
-		console.log(data.temps)
+		console.log(temps)
 		//const dataArray2=[];
   
 		// dataArray2.push(['Dia','Temp']);
