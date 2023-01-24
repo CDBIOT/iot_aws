@@ -10,11 +10,11 @@ function Energy(dia,mes,ano){
 const [temps, setData] = useState([])
 
 async function Dados(){
-	   Axios.get({
+	   await Axios.get({
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		}).then((response)=>{
-        setData(response.data.temps);
-		console.log(data.temps)
+        setData(response.temps);
+		console.log(temps)
 		//const dataArray2=[];
   
 		// dataArray2.push(['Dia','Temp']);
@@ -107,7 +107,8 @@ return (
 	</div>
 	<div>
 	<tbody className={styles.tbody}>
-	{temps.length >0 ? (
+
+		{temps.length >0 ? (
         temps.map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.name}</td>
