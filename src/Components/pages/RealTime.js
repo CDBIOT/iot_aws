@@ -51,7 +51,7 @@ return (
           )) :(
               <h3>Não há itens na lista</h3>
           )}
-          {novaTemps = temps.filter((valorAtual)=> {
+          {temps = temps.filter((valorAtual)=> {
             return valorAtual.dia.includes(10)
           })}
          {temps.filter(temps=>dia.includes(10)).map(filteredTemps=>(
