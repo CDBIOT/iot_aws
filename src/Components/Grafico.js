@@ -15,17 +15,13 @@ const [data, setData] = useState('')
 
 useEffect(() => {
     
-// const loadData = (data) =>{
-//     const values = _.groupBy(data, () => {
-//         return values.temps
-//     })}
    
     Axios.get({
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		})
     .then((response) =>{
     setTemperaturas(response.data.temps);
-    //const values = _.groupBy(temps, () => { return values.temps });
+  
     {   
    
    // console.log()

@@ -9,6 +9,11 @@ function Graphics(){
     const [temps, setTemperaturas] = useState([])
 
 async function getData(){
+    
+// const loadData = (data) =>{
+//     const values = _.groupBy(data, () => {
+//         return values.temps
+//     })}
 
      fetch(`https://server-orpin-zeta.vercel.app/temps`,{
       method: 'GET',
@@ -19,7 +24,7 @@ async function getData(){
  	setTemperaturas(data.temps)
      console.log(data.temps)
      }).catch(err=> console.log(err))
-
+  //const values = _.groupBy(temps, () => { return values.temps });
     }
 // async function getData(){
 //    await axios.get('https://server-orpin-zeta.vercel.app/temps')
