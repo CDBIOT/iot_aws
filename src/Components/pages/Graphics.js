@@ -12,7 +12,7 @@ async function getData(){
 
      fetch(`https://server-orpin-zeta.vercel.app/temps`,{
       method: 'GET',
-      header: {         'Access-Control-Allow-Origin':'*',mode: 'cors',
+      header: { 'Access-Control-Allow-Origin':'*',mode: 'cors',
         'Content-Type': 'application/json' },
      }).then(resp=>resp.json())
  	.then((data)=>{
