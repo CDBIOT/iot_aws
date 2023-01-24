@@ -22,6 +22,7 @@ async function Dados(){
 		// for (var i in data)
 		// {
 		// 	dataArray2.push([data[i].dia, (data[i].temperatura)]);
+		
 		// }
 	}).catch(err=> console.log(err))
 }
