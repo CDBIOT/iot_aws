@@ -13,7 +13,7 @@ async function Dados(){
 	   await Axios.get({
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		}).then((response)=>{
-        setData(response.temps);
+        setData(response);
 		console.log(temps)
 		//const dataArray2=[];
   
