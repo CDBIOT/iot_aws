@@ -58,10 +58,9 @@ return (
     </table>
     </div>
         <tbody className={styles.tbody}>
-     {temps.filter(temp=>temp.includes(10)).map(filteredTemps=>(
+     {temps[0].filter(temp=>temp.includes(10)).map(filteredTemps=>(
           <li>
             {filteredTemps}
-            {temps}
           </li>
          ))}  
         {temps.length >0 ? (
