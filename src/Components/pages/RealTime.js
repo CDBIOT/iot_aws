@@ -16,6 +16,7 @@ async function DrawTable(){
      }).then(resp=>resp.json())
  	    .then((data)=>{
  	    setTemperaturas(data.temps)
+       console.log(tempes)
      
       }).catch(err=> console.log(err))
      
@@ -23,7 +24,7 @@ async function DrawTable(){
          
 useEffect(() => {
   DrawTable();
-  console.log(temps)
+  console.log(tempes)
 }, [])
 
 return (
