@@ -68,13 +68,7 @@ const [finalDate, setFinalDate] = useState()
    
 <div>
 <form action="Relogio" method="post">
-
-<table>
-<tr><th colspan = {6}><h1>RELOGIO IOT</h1></th></tr>
-<tr><td><h1>Hora </h1></td> <td><h1 id = "txt"> </h1></td></tr>
-
-<tr><td><h1 colspan = {6}>Disparo </h1></td>
-
+    
 <label for="initDate" className="form-label">Data Inicial</label>
     <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
     
@@ -84,6 +78,13 @@ const [finalDate, setFinalDate] = useState()
 <td><label>Data início</label><label value = {initDate}  size="6" />
     <label>Data Final</label><label value = {finalDate}  size="6" />
      </td> 
+
+<table>
+<tr><th colspan = {6}><h1>RELOGIO IOT</h1></th></tr>
+<tr><td><h1>Hora </h1></td> <td><h1 id = "txt"> </h1></td></tr>
+
+<tr><td><h1 colspan = {6}>Disparo </h1></td>
+
      <td>
     <select onChange={e =>setHora(e.target.value)}>
             <option value="" disabled default selected>
