@@ -11,6 +11,7 @@ function RealTime(){
   const dias =tempes.map((t, i) =>(t.dia))
   console.log(query)
   console.log(temp)
+  console.log(dias)
 
   const lista = (
     // <ul>{temp = tempes.filter((valorAtual)=> {
