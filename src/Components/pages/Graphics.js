@@ -88,7 +88,7 @@ return (
         )) :(
             <h3>Não há itens na lista</h3>
         )}
-       {filter(temp=>temp.includes(6))}
+       {temps.filter(temp=>temp.includes(6))}
         </tbody>
        
    
