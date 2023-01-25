@@ -84,13 +84,20 @@ const [finalDate, setFinalDate] = useState()
 <td><label>Data início</label><label value = {initDate}  size="6" />
     <label>Data Final</label><label value = {finalDate}  size="6" />
      </td> 
-<td><input type="text" 	name = "horad"id= "hd" value = {initDate}  size="6" />
+     <td>
+    <select onChange={e =>setHora(e.target.value)}>
+            <option value="" disabled default selected>
+            Select day  </option>
+   
+        {horas.map(hora=>{
+            return<option key={hora}> {hora}</option>
+        })}
+        </select>
+<input type="text" 	name = "horad"id= "hd" value = {hora}  size="6" />
 	<input type="text"  name = "mind" id= "md" value = "10"  size="6" /> 
 	<input type="text" 	name = "secd" id= "sd" value = "10"  size="6" />
      </td> 
 </tr>
-
-	
     <tr><td><h1 colspan = {6}>Tempo ligado </h1></td>
 	    <td><h1 id = "disp"> </h1></td>
     </tr>
