@@ -8,6 +8,10 @@ function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
 
+const search = (data)=>{
+    return data.filter(item=>item.dia.includes(10));
+}
+
 async function getData(){
     
 // const loadData = (data) =>{
@@ -35,6 +39,7 @@ async function getData(){
 
 useEffect(() => {
       getData();
+      search();
     }, [])
     
 return (
@@ -69,6 +74,7 @@ return (
          {temps.filter(temp=>temp.dia.includes(10)).map(filteredTemps=>(
           <li>
             {filteredTemps}
+            {data}
           </li>
          ))}  
         </tbody>

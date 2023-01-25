@@ -54,12 +54,13 @@ return (
           )) :(
               <h3>Não há itens na lista</h3>
           )}
+                    
           {/* {temps = temps.filter((valorAtual)=> {
             return valorAtual.dia.includes(10)
           })} */}
          {tempes.filter(temp=>temp.dia.includes('10')).map(filteredTemps=>(
           <li>
-            {filteredTemps}
+            <td width="20%"className={styles.td}> {filteredTemps}</td>
           </li>
          ))}  
           </tbody>
