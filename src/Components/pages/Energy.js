@@ -78,6 +78,10 @@ return (
 <form action="/temps" method = "get">
 </form>	
 
+<form action="/mqtt" method = "get">
+	<button type="submit">aquisição</button>
+</form>
+
 <form action="/temps" method = "delete">
 	<table className = {styles.table}>
 	<tr><th colSpan = {2}>Deletar</th></tr>
