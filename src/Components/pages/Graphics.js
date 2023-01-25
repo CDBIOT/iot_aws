@@ -8,8 +8,8 @@ function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
 
-const search = (data)=>{
-    return data.filter(item=>item.dia.includes(10));
+const search = (temps)=>{
+    return temps.filter(item=>item.dia.includes(10));
 }
 
 async function getData(){
@@ -61,7 +61,7 @@ return (
      {temps.filter(temp=>temp.includes(10)).map(filteredTemps=>(
           <li>
             {filteredTemps}
-            {data}
+            {temps}
           </li>
          ))}  
         {temps.length >0 ? (
