@@ -8,6 +8,7 @@ function RealTime(){
   const [query,setQuery] = useState("")
 
   const temp =tempes.filter(temper=>(temper.dia < {query}))
+  const dias =tempes.map((t, i) => key ={t}(t.dia))
   console.log(query)
   console.log(temp)
 
@@ -17,7 +18,8 @@ function RealTime(){
     // })}</ul>
     <ul>{temp.map((t,i) => (<li key={t}></li> ))}</ul>
      )
- 
+  
+  
 
 async function DrawTable(){
         //Obtem dados do banco de dados
