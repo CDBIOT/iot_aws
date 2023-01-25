@@ -37,6 +37,9 @@ function checkTime(i){
 
 const [initDate, setInitDate] = useState()
 const [finalDate, setFinalDate] = useState()
+const [Hora, setHora] = useState()
+const [Minuto, setMinuto] = useState()
+const horas= [0,1,2,3,4,5,6,7,8,9,10,11,12]
 
 
     return (
@@ -81,7 +84,6 @@ const [finalDate, setFinalDate] = useState()
 
 <table>
 <tr><th colspan = {6}><h1>RELOGIO IOT</h1></th></tr>
-<tr><td><h1>Hora </h1></td> <td><h1 id = "txt"> </h1></td></tr>
 
 <tr><td><h1 colspan = {6}>Disparo </h1></td>
 
@@ -94,7 +96,7 @@ const [finalDate, setFinalDate] = useState()
             return<option key={hora}> {hora}</option>
         })}
         </select>
-<input type="text" 	name = "horad"id= "hd" value = {hora}  size="6" />
+<input type="text" 	name = "horad"id= "hd" value = {Hora}  size="6" />
 	<input type="text"  name = "mind" id= "md" value = "10"  size="6" /> 
 	<input type="text" 	name = "secd" id= "sd" value = "10"  size="6" />
      </td> 
