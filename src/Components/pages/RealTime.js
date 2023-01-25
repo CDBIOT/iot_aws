@@ -8,15 +8,16 @@ function RealTime(){
   const [query,setQuery] = useState("")
 
   const temp =tempes.filter(temper=>(temper.dia < {query}))
+  console.log(query)
   console.log(temp)
 
   const lista = (
-    <ul>{temp = tempes.filter((valorAtual)=> {
-      return valorAtual.dia.includes(10)
-    })}</ul>
-    //<ul>{temp.map((t,i) => (<li key={t}></li> ))}</ul>
+    // <ul>{temp = tempes.filter((valorAtual)=> {
+    //   return valorAtual.dia.includes(10)
+    // })}</ul>
+    <ul>{temp.map((t,i) => (<li key={t}></li> ))}</ul>
      )
-  console.log(query)
+ 
 
 async function DrawTable(){
         //Obtem dados do banco de dados
