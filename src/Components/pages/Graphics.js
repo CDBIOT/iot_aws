@@ -39,7 +39,7 @@ async function getData(){
 
 useEffect(() => {
       getData();
-      search();
+     // search();
     }, [])
     
 return (
