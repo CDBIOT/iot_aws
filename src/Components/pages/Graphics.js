@@ -15,9 +15,9 @@ function Graphics(){
     })
     )
 }
-// const dia = Array.from(
-//     new Set(temps.map(temp=>temps.dia))
-// )
+ const dias = Array.from(
+     new Set(temps.map(temp=>temps.dia))
+ )
 
 async function getData(){
     
@@ -78,7 +78,15 @@ return (
         )) :(
             <h3>Não há itens na lista</h3>
         )}
-        {dia}
+        <select onChange={e =>filterDia(e.target.value)}>
+            <option value="" disabled default selected>
+            Select day
+            </option>
+   
+        {dias.map(dia=>{
+            return<option key={dia}> {dia}</option>
+        })}
+        </select>
        
         </tbody>
        
