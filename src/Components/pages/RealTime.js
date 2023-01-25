@@ -23,7 +23,7 @@ async function DrawTable(){
          
 useEffect(() => {
   DrawTable();
-  console.log(tempes.temps)
+  console.log(data.tempes)
 }, [])
 
 return (
@@ -56,11 +56,11 @@ return (
           {/* {temps = temps.filter((valorAtual)=> {
             return valorAtual.dia.includes(10)
           })} */}
-         {/* {tempes.filter(temp=>temp.dia.includes('10')).map(filteredTemps=>(
+         {data.tempes.filter(temp=>temp.dia.includes('10')).map(filteredTemps=>(
           <li>
             {filteredTemps}
           </li>
-         ))}  */}
+         ))}  
           </tbody>
     </>
     )

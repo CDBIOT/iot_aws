@@ -66,7 +66,7 @@ return (
         )) :(
             <h3>Não há itens na lista</h3>
         )}
-         {temps.filter(temp=>temp.dia.includes('10')).map(filteredTemps=>(
+         {temps.filter(temp=>temp.dia.includes(10)).map(filteredTemps=>(
           <li>
             {filteredTemps}
           </li>
