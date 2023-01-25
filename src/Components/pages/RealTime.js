@@ -68,8 +68,8 @@ return (
       </table>
       </div>
           <tbody className={styles.tbody}>
-          {temp.length >0 ? (
-          temp.map((t, i) => (
+          {lista.length >0 ? (
+          lista.map((t, i) => (
           <tr key = {i}>
           <td width="20%"className={styles.td}>{t.temperatura}</td>
           <td width="20%"className={styles.td}>{t.local}</td>
