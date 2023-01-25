@@ -50,6 +50,8 @@ useEffect(() => {
 return (
     <>
     <h1>Graphics</h1>
+    <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
+    </input>
   
     <select onChange={e =>setQuery(e.target.value)}>
             <option value="" disabled default selected>
