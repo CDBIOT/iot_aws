@@ -36,6 +36,8 @@ function checkTime(i){
 
 
 const [initDate, setInitDate] = useState()
+const [finalDate, setFinalDate] = useState()
+
 
     return (
     <>
@@ -43,10 +45,6 @@ const [initDate, setInitDate] = useState()
     <label> Set Time Light </label>
 
 	<label> Temperatura Atual </label>
-
-    <input type="date"></input>
-    <label for="initDate" className="form-label">Data final</label>
-    <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="finalDate" />
     
 <div className = {styles.temp_show}>
     <form action="/mqtt" method = "get">
@@ -77,7 +75,14 @@ const [initDate, setInitDate] = useState()
 
 <tr><td><h1 colspan = {6}>Disparo </h1></td>
 
+<label for="initDate" className="form-label">Data Inicial</label>
+    <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
+    
+    <label for="finalDate" className="form-label">Data final</label>
+    <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" />
+  
 <td><label>Data início</label><label value = {initDate}  size="6" />
+    <label>Data Final</label><label value = {finalDate}  size="6" />
      </td> 
 <td><input type="text" 	name = "horad"id= "hd" value = {initDate}  size="6" />
 	<input type="text"  name = "mind" id= "md" value = "10"  size="6" /> 
