@@ -11,7 +11,7 @@ function Graphics(){
     const [query,setQuery] = useState("")
 
   const set = (dia) => {
-    return temps.filter(item=> item.dia.includes(query))
+   // return temps.filter(item=> item.dia.includes(query))
     }
     
 console.log(query)
