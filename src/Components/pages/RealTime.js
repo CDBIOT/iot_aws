@@ -37,9 +37,6 @@ return (
     <h1>RealTime</h1>
     
     <div>   
-    <li><td width="20%"className={styles.td}> {lista}</td>
-
-    </li>  
          <table className={styles.table}>
           <tr><th className={styles.th} colSpan={4}>
           <td width="20%"className={styles.th}>Temp</td>
