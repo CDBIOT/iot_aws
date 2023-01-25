@@ -14,7 +14,7 @@ const Dados = async () => {
 	    await Axios.get('https://server-orpin-zeta.vercel.app/temps')
 	 	.then((response)=> {setData(response.data);
 		console.log(response.data)
-		.catch(err=> console.log(err))
+		//.catch(err=> console.log(err))
 		});
 		
 		//const dataArray2=[];
