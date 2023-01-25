@@ -7,8 +7,9 @@ function RealTime(){
   const [tempes, setTemperaturas] = useState([])
   const [query,setQuery] = useState("")
 
-  const temp =tempes.filter(temper=>(temper.dia < {query}))
   const dias =tempes.map((t, i) =>(t.dia))
+  const temp =tempes.filter(temper=>(temper.dia < {query}))
+ 
   console.log(query)
   console.log(temp)
   console.log(dias)
@@ -17,7 +18,7 @@ function RealTime(){
     // <ul>{temp = tempes.filter((valorAtual)=> {
     //   return valorAtual.dia.includes(10)
     // })}</ul>
-    <ul>{temp.map((t,i) => (<li key={t}></li> ))}</ul>
+    <ul>{temp.map((t,i) => (<li key={t}> {t.dia}</li> ))}</ul>
      )
   
   
