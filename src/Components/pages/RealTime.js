@@ -5,9 +5,10 @@ import {useEffect, useState} from 'react';
 function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
-  {const temp =tempes.filter(temper=>(temper.dia > 10))}
-  console.log(temp)
+  const temp =tempes.filter(temper=>(temper.dia > 10))
   
+  console.log(temp)
+
 async function DrawTable(){
         //Obtem dados do banco de dados
 
