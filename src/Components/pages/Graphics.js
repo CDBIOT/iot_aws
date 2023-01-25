@@ -77,7 +77,7 @@ return (
         <tbody className={styles.tbody}>
      
         {temps.length >0 ? (
-        temps.temps[i].filter(temp=>temp.includes(6)).map((t, i) => (
+        temps.temps[dia].filter(temp=>temp.includes(6)).map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.name}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
