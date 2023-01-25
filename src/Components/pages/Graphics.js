@@ -8,6 +8,7 @@ function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
     const [dia,setFilDia] = useState(temps)
+    const [query,setQuery] = useState("")
 
   const filterDia = dia => {
     setFilDia(temps.filter(temp=>{
@@ -15,9 +16,7 @@ function Graphics(){
     })
     )
 }
- const dias = Array.from(
-     new Set(temps.map(temp=>temps.dia))
- )
+ const dias = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
 
 async function getData(){
     
@@ -53,6 +52,15 @@ return (
     <>
     <h1>Graphics</h1>
   
+    <select onChange={e =>setQuery(e.target.value)}>
+            <option value="" disabled default selected>
+            Select day
+            </option>
+   
+        {dias.map(dia=>{
+            return<option key={dia}> {dia}</option>
+        })}
+        </select>
     <div>  
         <table className={styles.table}>
         <tr><th className={styles.th} colSpan={4}>
@@ -78,15 +86,6 @@ return (
         )) :(
             <h3>Não há itens na lista</h3>
         )}
-        <select onChange={e =>filterDia(e.target.value)}>
-            <option value="" disabled default selected>
-            Select day
-            </option>
-   
-        {dias.map(dia=>{
-            return<option key={dia}> {dia}</option>
-        })}
-        </select>
        
         </tbody>
        
