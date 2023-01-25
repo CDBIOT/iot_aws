@@ -76,6 +76,9 @@ const [initDate, setInitDate] = useState()
 <tr><td><h1>Hora </h1></td> <td><h1 id = "txt"> </h1></td></tr>
 
 <tr><td><h1 colspan = {6}>Disparo </h1></td>
+
+<td><label>Data início</label><label value = {initDate}  size="6" />
+     </td> 
 <td><input type="text" 	name = "horad"id= "hd" value = {initDate}  size="6" />
 	<input type="text"  name = "mind" id= "md" value = "10"  size="6" /> 
 	<input type="text" 	name = "secd" id= "sd" value = "10"  size="6" />
