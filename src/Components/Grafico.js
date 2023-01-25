@@ -14,14 +14,11 @@ const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [data, setData] = useState('')
 
 useEffect(() => {
-    
-   
     Axios.get({
 	  	url: 'https://server-orpin-zeta.vercel.app/temps'
 		})
     .then((response) =>{
     setTemperaturas(response.data.temps);
-  
     {   
    
    // console.log()
