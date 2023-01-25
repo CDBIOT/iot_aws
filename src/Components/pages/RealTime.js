@@ -6,18 +6,18 @@ function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
 
+  const temp =tempes.filter(temper=>(temper.dia < 6))
+  console.log(temp)
+
   const lista = (
     <ul>
-    {tempes.map((t,i) => (
+    {temp.map((t,i) => (
     <li key={t}>
     </li>
     ))}
     </ul>
-  )
-  const temp =tempes.filter(temper=>(temper.dia < 6))
-
+     )
   
-  console.log(temp)
 
 async function DrawTable(){
         //Obtem dados do banco de dados
@@ -43,7 +43,7 @@ return (
     
     <div>   
     {lista} 
-    <li><td width="20%"className={styles.td}> {temp}</td>
+    <li><td width="20%"className={styles.td}> {lista}</td>
 
     </li>  
          <table className={styles.table}>
