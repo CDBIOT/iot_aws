@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 
 function RealTime(){
 
-  const [temps, setTemperaturas] = useState([])
+  const [tempes, setTemperaturas] = useState([])
   
 async function DrawTable(){
         //Obtem dados do banco de dados
@@ -41,8 +41,8 @@ return (
       </table>
       </div>
           <tbody className={styles.tbody}>
-          {temps.length >0 ? (
-          temps.map((t, i) => (
+          {tempes.length >0 ? (
+          tempes.map((t, i) => (
           <tr key = {i}>
           <td width="20%"className={styles.td}>{t.name}</td>
           <td width="20%"className={styles.td}>{t.local}</td>
