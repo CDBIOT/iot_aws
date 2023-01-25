@@ -46,7 +46,7 @@ const [initDate, setInitDate] = useState()
 
     <input type="date"></input>
     <label for="initDate" className="form-label">Data final</label>
-    <input id="initDate" value="{{initDate}}"  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="finalDate" />
+    <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="finalDate" />
     
 <div className = {styles.temp_show}>
     <form action="/mqtt" method = "get">
