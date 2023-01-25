@@ -76,7 +76,7 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
     <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
     
     <label for="finalDate" className="form-label">Data final</label>
-    <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" />
+    <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> <tr></tr>
     <td>
     <label>Data início</label><label value = {initDate}  size="6" /><label for="finalDate" className="form-label">{initDate}</label></td>
     <td>
