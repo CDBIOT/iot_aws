@@ -16,7 +16,7 @@ function RealTime(){
     })}</ul>
     //<ul>{temp.map((t,i) => (<li key={t}></li> ))}</ul>
      )
-  
+  console.log(query)
 
 async function DrawTable(){
         //Obtem dados do banco de dados
@@ -39,8 +39,18 @@ useEffect(() => {
 return (
     <>
     <h1>RealTime</h1>
+    {lista}
      <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
     </input>
+    
+    <select onChange={e =>setQuery(e.target.value)}>
+            <option value="" disabled default selected>
+            Select day  </option>
+   
+        {dias.map(dia=>{
+            return<option key={dia}> {dia}</option>
+        })}
+        </select>
     <div>   
          <table className={styles.table}>
           <tr><th className={styles.th} colSpan={4}>
