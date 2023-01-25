@@ -58,7 +58,12 @@ return (
     </table>
     </div>
         <tbody className={styles.tbody}>
-    
+     {temps.filter(temp=>temp.dia.includes(10)).map(filteredTemps=>(
+          <li>
+            {filteredTemps}
+            {data}
+          </li>
+         ))}  
         {temps.length >0 ? (
         temps.map((t, i) => (
         <tr key = {i}>
@@ -71,12 +76,7 @@ return (
         )) :(
             <h3>Não há itens na lista</h3>
         )}
-         {temps.filter(temp=>temp.dia.includes(10)).map(filteredTemps=>(
-          <li>
-            {filteredTemps}
-            {data}
-          </li>
-         ))}  
+        
         </tbody>
        
    
