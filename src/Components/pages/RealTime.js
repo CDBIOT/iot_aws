@@ -53,7 +53,7 @@ return (
           {temp.length >0 ? (
           temp.map((t, i) => (
           <tr key = {i}>
-          <td width="20%"className={styles.td}>{t.name}</td>
+          <td width="20%"className={styles.td}>{t.temperatura}</td>
           <td width="20%"className={styles.td}>{t.local}</td>
           <td width="20%"className={styles.td}>{t.dia}</td>
           <td width="20%"className={styles.td}>{t.mes}</td>
