@@ -40,7 +40,7 @@ const [finalDate, setFinalDate] = useState()
 const [Hora, setHora] = useState()
 const [Minuto, setMinuto] = useState()
 const horas= [0,1,2,3,4,5,6,7,8,9,10,11,12]
-
+const minutos=[0,1,2,3,4,5,6,7,8,9,10]
 
     return (
     <>
@@ -91,14 +91,21 @@ const horas= [0,1,2,3,4,5,6,7,8,9,10,11,12]
      <td>
     <select onChange={e =>setHora(e.target.value)}>
             <option value="" disabled default selected>
-            Select day  </option>
-   
+            Select Hora  </option>   
         {horas.map(hora=>{
             return<option key={hora}> {hora}</option>
         })}
         </select>
-    <input type="text" 	name = "horad"id= "hd" value = {Hora}  size="6" />
-	<input type="text"  name = "mind" id= "md" value = "10"  size="6" /> 
+
+    <input type="text" 	name = "horad"id= "hd" value = {Hora}  size="2" />
+
+    <select onChange={e =>setMinuto(e.target.value)}> <option value="" disabled default selected>
+            Select min </option>  
+        {minutos.map(min=>{
+            return<option key={min}> {min}</option>
+        })}
+        </select>
+	<input type="text"  name = "mind" id= "md" value = {Minuto}  size="6" /> 
 	<input type="text" 	name = "secd" id= "sd" value = "10"  size="6" />
      </td> 
 </tr>
