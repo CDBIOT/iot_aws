@@ -13,7 +13,7 @@ useEffect(() => {
 const Dados = async () => {
 	   const res = await Axios.get('https://server-orpin-zeta.vercel.app/temps')
 	   setData(res.data.temps);
-		console.log(temps)
+		console.log(data)
 		.catch(err=> console.log(err))
 		//const dataArray2=[];
 		// dataArray2.push(['Dia','Temp']);
