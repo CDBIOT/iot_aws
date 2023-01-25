@@ -56,8 +56,7 @@ return (
   
     <select onChange={e =>setQuery(e.target.value)}>
             <option value="" disabled default selected>
-            Select day
-            </option>
+            Select day  </option>
    
         {dias.map(dia=>{
             return<option key={dia}> {dia}</option>
@@ -88,7 +87,7 @@ return (
         )) :(
             <h3>Não há itens na lista</h3>
         )}
-       {temps.filter(temp=>temp.includes(6))}
+       
         </tbody>
        
    

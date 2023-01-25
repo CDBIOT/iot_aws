@@ -5,6 +5,8 @@ import {useEffect, useState} from 'react';
 function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
+  {const temp =tempes.filter(temper=>(temper.dia > 10))}
+  console.log(temp)
   
 async function DrawTable(){
         //Obtem dados do banco de dados
@@ -55,11 +57,11 @@ return (
           {/* {temps = temps.filter((valorAtual)=> {
             return valorAtual.dia.includes(10)
           })} */}
-         {tempes.filter(temp=>temp.includes('10')).map(filteredTemps=>(
+         
           <li>
             <td width="20%"className={styles.td}> {filteredTemps}</td>
           </li>
-         ))}  
+         
           </tbody>
     </>
     )
