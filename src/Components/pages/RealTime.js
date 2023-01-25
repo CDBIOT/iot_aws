@@ -60,7 +60,7 @@ return (
           })} */}
          
           <li>
-            <td width="20%"className={styles.td}> {filteredTemps}</td>
+            <td width="20%"className={styles.td}> {temp}</td>
           </li>
          
           </tbody>
