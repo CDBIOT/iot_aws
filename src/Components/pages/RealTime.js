@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react';
 function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
-  const temp =tempes.filter(temper=>(temper.dia > 10))
+  const temp ={tempes.filter(temper=>(temper.dia < 10))}
   
   console.log(temp)
 
