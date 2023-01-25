@@ -55,7 +55,7 @@ return (
           {/* {temps = temps.filter((valorAtual)=> {
             return valorAtual.dia.includes(10)
           })} */}
-         {tempes.filter(temp=>temp.dia.includes('10')).map(filteredTemps=>(
+         {tempes.filter(temp=>temp.includes('10')).map(filteredTemps=>(
           <li>
             <td width="20%"className={styles.td}> {filteredTemps}</td>
           </li>

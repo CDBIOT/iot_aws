@@ -58,7 +58,7 @@ return (
     </table>
     </div>
         <tbody className={styles.tbody}>
-     {temps.filter(temp=>temp.dia.includes(10)).map(filteredTemps=>(
+     {temps.filter(temp=>temp.includes(10)).map(filteredTemps=>(
           <li>
             {filteredTemps}
             {data}
