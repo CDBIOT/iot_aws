@@ -16,7 +16,7 @@ async function DrawTable(){
      }).then(resp=>resp.json())
  	    .then((data)=>{
  	    setTemperaturas(data.temps)
-       console.log(tempes)
+       console.log(data.tempes)
      
       }).catch(err=> console.log(err))
      
