@@ -10,8 +10,7 @@ function RealTime(){
   console.log(temp)
 
   const lista = (
-    <ul>
-    {temp.map((t,i) => (<li key={t}></li> ))}</ul>
+    <ul>{temp.map((t,i) => (<li key={t}></li> ))}</ul>
      )
   
 
@@ -52,8 +51,8 @@ return (
       </table>
       </div>
           <tbody className={styles.tbody}>
-          {tempes.length >0 ? (
-          tempes.map((t, i) => (
+          {temp.length >0 ? (
+          temp.map((t, i) => (
           <tr key = {i}>
           <td width="20%"className={styles.td}>{t.name}</td>
           <td width="20%"className={styles.td}>{t.local}</td>
