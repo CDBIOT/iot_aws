@@ -8,10 +8,10 @@ function RealTime(){
 
   const lista = (
     <ul>
-    {tempes.map((temper) => 
+    {tempes.map((t,i) => (
     <li key={t}>
     </li>
-    )}
+    ))}
     </ul>
   )
   const temp =tempes.filter(temper=>(temper.dia < 10))
