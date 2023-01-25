@@ -8,7 +8,7 @@ function RealTime(){
   const [query,setQuery] = useState("")
 
   const dias =tempes.map((t, i) =>(t.dia))
-  const temp =tempes.filter(temper=>(temper.dia < {query}))
+  const temp =tempes.filter(temper=>(temper.dia < query))
  
   console.log(query)
   console.log(temp)
