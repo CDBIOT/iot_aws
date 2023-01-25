@@ -7,14 +7,13 @@ import { Chart } from "react-google-charts";
 function Energy(dia,mes,ano){
 
 //const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
-const [data, setData] = useState([])
+const [temps, setData] = useState([])
 
 useEffect(() => {
 const Dados = async () => {
 	    await Axios.get('https://server-orpin-zeta.vercel.app/temps')
 	 	.then((response)=> {setData(response.data);
 		console.log(response.data)
-		//.catch(err=> console.log(err))
 		});
 		
 		//const dataArray2=[];
@@ -104,8 +103,8 @@ return (
 	<div>
 	<tbody className={styles.tbody}>
 
-		{data.length >0 ? (
-        data.map((t, i) => (
+		{temps.length >0 ? (
+        temps.map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.name}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
