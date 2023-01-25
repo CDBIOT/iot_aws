@@ -5,7 +5,8 @@ import {useEffect, useState} from 'react';
 function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
-  const temp ={tempes.filter(temper=>(temper.dia < 10))}
+  const tempJson = JSON.parse(tempes)
+  const temp =tempJson.filter(temper=>(temper.dia < 10))
   
   console.log(temp)
 
