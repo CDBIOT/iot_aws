@@ -79,7 +79,7 @@ return (
 </form>	
 
 <form action="/mqtt" method = "get">
-	<button type="submit">aquisição</button>
+	<button type="submit"></button>
 </form>
 
 <form action="/temps" method = "delete">

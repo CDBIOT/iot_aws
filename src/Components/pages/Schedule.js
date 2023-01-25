@@ -5,19 +5,13 @@ function Schedule(){
     
 async function mqtt_show() {
 	const options = {method: 'GET',	mode: 'cors',cache: 'default'}
-	//const response =fetch('https://polar-beyond-82520.herokuapp.com/mqtt')
     const response =fetch(('https://server-orpin-zeta.vercel.app/mqtt'),options)
 	.then(function (response){
 	return response.text()})
 	.then(data=>{
 	console.log(data)
 	const myObj = JSON.parse(data)
-	var local 	= document.getElementById('local').innerText = myObj.vm.local;
-	var temp 	= document.getElementById('temp').innerText = parseInt(myObj.vm.temp);
-	let dia	 	= document.getElementById('dia').innerText  = parseInt(myObj.vm.dia);
-	let mes 	= document.getElementById('mes').innerText  = parseInt(myObj.vm.mes);
-	let ano 	= document.getElementById('ano').innerText  = parseInt(myObj.vm.ano);
-
+	
 })
 }
 
@@ -47,10 +41,12 @@ const [initDate, setInitDate] = useState()
     <>
     <h1>Schedule</h1>
     <label> Set Time Light </label>
+
 	<label> Temperatura Atual </label>
+
     <input type="date"></input>
-    <label for="finalDate" className="form-label">Data final</label>
-    <input id="finalDate" value="{{finalDate}}" className="form-control" type="date" name="finalDate" />
+    <label for="initDate" className="form-label">Data final</label>
+    <input id="initDate" value="{{initDate}}"  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="finalDate" />
     
 <div className = {styles.temp_show}>
     <form action="/mqtt" method = "get">
@@ -80,9 +76,10 @@ const [initDate, setInitDate] = useState()
 <tr><td><h1>Hora </h1></td> <td><h1 id = "txt"> </h1></td></tr>
 
 <tr><td><h1 colspan = {6}>Disparo </h1></td>
-<td><input type="text" 	name = "horad"id= "hd" value = "10"  size="6" />
+<td><input type="text" 	name = "horad"id= "hd" value = {initDate}  size="6" />
 	<input type="text"  name = "mind" id= "md" value = "10"  size="6" /> 
-	<input type="text" 	name = "secd" id= "sd" value = "10"  size="6" /> </td> 
+	<input type="text" 	name = "secd" id= "sd" value = "10"  size="6" />
+     </td> 
 </tr>
 
 	
