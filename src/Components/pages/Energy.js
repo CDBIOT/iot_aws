@@ -9,27 +9,23 @@ function Energy(dia,mes,ano){
 //const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [temps, setData] = useState([])
 
-async function Dados(){
-	   await Axios.get({
-	  	url: 'https://server-orpin-zeta.vercel.app/temps'
-		}).then((response)=>{
-        setData(response);
+useEffect(() => {
+
+const Dados = async () => {
+	   const res = await Axios.get('https://server-orpin-zeta.vercel.app/temps')
+	   setData(res.data);
 		console.log(temps)
 		//const dataArray2=[];
-  
 		// dataArray2.push(['Dia','Temp']);
-	
 		// for (var i in data)
 		// {
 		// 	dataArray2.push([data[i].dia, (data[i].temperatura)]);
 
 		// }
-	}).catch(err=> console.log(err))
-}
-
-useEffect(() => {
-	Dados();
-    }, [])
+	
+};
+Dados()
+}, []);
 	
 // final do query 
 
