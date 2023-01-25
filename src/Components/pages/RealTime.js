@@ -11,11 +11,7 @@ function RealTime(){
 
   const lista = (
     <ul>
-    {temp.map((t,i) => (
-    <li key={t}>
-    </li>
-    ))}
-    </ul>
+    {temp.map((t,i) => (<li key={t}></li> ))}</ul>
      )
   
 
@@ -42,7 +38,6 @@ return (
     <h1>RealTime</h1>
     
     <div>   
-    {lista} 
     <li><td width="20%"className={styles.td}> {lista}</td>
 
     </li>  
