@@ -5,8 +5,17 @@ import {useEffect, useState} from 'react';
 function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
-  const tempJson = JSON.parse(tempes)
-  const temp =tempJson.filter(temper=>(temper.dia < 10))
+
+  const lista = (
+    <ul>
+    {tempes.map((temper) => 
+    <li key={t}>
+    </li>
+    )}
+    </ul>
+  )
+  const temp =tempes.filter(temper=>(temper.dia < 10))
+
   
   console.log(temp)
 
@@ -31,7 +40,12 @@ useEffect(() => {
 return (
     <>
     <h1>RealTime</h1>
-    <div>      
+    
+    <div>   
+    {lista} 
+    <li><td width="20%"className={styles.td}> {temp}</td>
+
+    </li>  
          <table className={styles.table}>
           <tr><th className={styles.th} colSpan={4}>
           <td width="20%"className={styles.th}>Temp</td>
@@ -59,10 +73,6 @@ return (
           {/* {temps = temps.filter((valorAtual)=> {
             return valorAtual.dia.includes(10)
           })} */}
-         
-          <li>
-            <td width="20%"className={styles.td}> {temp}</td>
-          </li>
          
           </tbody>
     </>
