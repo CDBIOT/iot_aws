@@ -7,10 +7,17 @@ import {useEffect, useState} from 'react';
 function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
+    const [dia,setFilDia] = useState(temps)
 
-const search = (temps)=>{
-    return temps.filter(item=>item.dia.includes(10));
+  const filterDia = dia => {
+    setFilDia(temps.filter(temp=>{
+        return temp.dia === dia
+    })
+    )
 }
+// const dia = Array.from(
+//     new Set(temps.map(temp=>temps.dia))
+// )
 
 async function getData(){
     
@@ -39,7 +46,7 @@ async function getData(){
 
 useEffect(() => {
       getData();
-     // search();
+    
     }, [])
     
 return (
@@ -68,14 +75,11 @@ return (
         <td width="20%"className={styles.td}>{t.mes}</td>
         <td width="20%"className={styles.td}>{t.ano}</td></tr>
         )
-        ).filter(temp=>temp.str.includes(10))) :(
+        ).filter(temp=>temp.includes(10))) :(
             <h3>Não há itens na lista</h3>
         )}
-        {/* {temps.filter(temp=>temp.includes(10)).map(filteredTemps=>(
-          <li>
-            {filteredTemps}
-          </li>
-         ))}   */}
+        {dia}
+       
         </tbody>
        
    
