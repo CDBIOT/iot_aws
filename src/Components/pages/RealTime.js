@@ -5,8 +5,9 @@ import {useEffect, useState} from 'react';
 function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
+  const [query,setQuery] = useState("")
 
-  const temp =tempes.filter(temper=>(temper.dia < 6))
+  const temp =tempes.filter(temper=>(temper.dia < {query}))
   console.log(temp)
 
   const lista = (
@@ -35,7 +36,8 @@ useEffect(() => {
 return (
     <>
     <h1>RealTime</h1>
-    
+     <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
+    </input>
     <div>   
          <table className={styles.table}>
           <tr><th className={styles.th} colSpan={4}>
