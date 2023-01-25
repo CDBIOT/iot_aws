@@ -58,13 +58,9 @@ return (
     </table>
     </div>
         <tbody className={styles.tbody}>
-     {temps[0].filter(temp=>temp.includes(10)).map(filteredTemps=>(
-          <li>
-            {filteredTemps}
-          </li>
-         ))}  
+     
         {temps.length >0 ? (
-        temps.map((t, i) => (
+        temps.filter(temp=>temp.includes(10)).map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.name}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
@@ -75,7 +71,11 @@ return (
         )) :(
             <h3>Não há itens na lista</h3>
         )}
-        
+        {/* {temps.filter(temp=>temp.includes(10)).map(filteredTemps=>(
+          <li>
+            {filteredTemps}
+          </li>
+         ))}   */}
         </tbody>
        
    
