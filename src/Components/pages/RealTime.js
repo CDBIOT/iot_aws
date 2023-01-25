@@ -23,7 +23,7 @@ async function DrawTable(){
          
 useEffect(() => {
   DrawTable();
-  console.log(tempes)
+  console.log(tempes.temps)
 }, [])
 
 return (
