@@ -14,7 +14,7 @@ function RealTime(){
     ))}
     </ul>
   )
-  const temp =tempes.filter(temper=>(temper.dia < 10))
+  const temp =tempes.filter(temper=>(temper.dia < 6))
 
   
   console.log(temp)
@@ -29,7 +29,7 @@ async function DrawTable(){
      }).then(resp=>resp.json())
  	    .then((data)=>{
  	    setTemperaturas(data.temps)
-       console.log(data.tempes)
+      // console.log(data.tempes)
       }).catch(err=> console.log(err))
     }
          
