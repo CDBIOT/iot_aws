@@ -44,7 +44,7 @@ useEffect(() => {
 return (
     <>
     <h1>RealTime</h1>
-    {lista}
+    <li>{lista}</li>
      <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
     </input>
     
