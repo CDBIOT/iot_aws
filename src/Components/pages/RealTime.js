@@ -7,7 +7,7 @@ function RealTime(){
   const [tempes, setTemperaturas] = useState([])
   const [query,setQuery] = useState("")
 
-  const dias =tempes.map((t, i) =>(t.dia))
+  const dias =tempes.map((t, i) =>{return tempes.indexOf(t.dia)===i})
   const temp =tempes.filter(temper=>(temper.dia < query))
  
   console.log(query)
