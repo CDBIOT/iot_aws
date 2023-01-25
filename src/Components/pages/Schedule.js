@@ -77,9 +77,10 @@ const horas= [0,1,2,3,4,5,6,7,8,9,10,11,12]
     
     <label for="finalDate" className="form-label">Data final</label>
     <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" />
-  
-<td><label>Data início</label><label value = {initDate}  size="6" />
-    <label>Data Final</label><label value = {finalDate}  size="6" />
+    <td>
+    <label>Data início</label><label value = {initDate}  size="6" /><label for="finalDate" className="form-label">{initDate}</label></td>
+    <td>
+    <label>Data Final</label><label  value = {finalDate}  size="6" /> <label for="finalDate" className="form-label">{finalDate} </label>
      </td> 
 
 <table>
@@ -96,7 +97,7 @@ const horas= [0,1,2,3,4,5,6,7,8,9,10,11,12]
             return<option key={hora}> {hora}</option>
         })}
         </select>
-<input type="text" 	name = "horad"id= "hd" value = {Hora}  size="6" />
+    <input type="text" 	name = "horad"id= "hd" value = {Hora}  size="6" />
 	<input type="text"  name = "mind" id= "md" value = "10"  size="6" /> 
 	<input type="text" 	name = "secd" id= "sd" value = "10"  size="6" />
      </td> 
