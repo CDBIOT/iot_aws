@@ -68,7 +68,7 @@ return (
         <td width="20%"className={styles.td}>{t.mes}</td>
         <td width="20%"className={styles.td}>{t.ano}</td></tr>
         )
-        ).filter(temp=>temp.includes(10))) :(
+        ).filter(temp=>temp.str.includes(10))) :(
             <h3>Não há itens na lista</h3>
         )}
         {/* {temps.filter(temp=>temp.includes(10)).map(filteredTemps=>(
