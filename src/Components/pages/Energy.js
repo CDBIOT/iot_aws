@@ -12,10 +12,11 @@ const [data, setData] = useState([])
 useEffect(() => {
 const Dados = async () => {
 	    await Axios.get('https://server-orpin-zeta.vercel.app/temps')
-	 	.then((res)=> {setData(res.data);
-		});
-		console.log(res.data)
+	 	.then((response)=> {setData(response.data);
+		console.log(response.data)
 		.catch(err=> console.log(err))
+		});
+		
 		//const dataArray2=[];
 		// dataArray2.push(['Dia','Temp']);
 		// for (var i in data)
