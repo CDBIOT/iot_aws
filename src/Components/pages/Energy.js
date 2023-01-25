@@ -11,8 +11,9 @@ const [data, setData] = useState([])
 
 useEffect(() => {
 const Dados = async () => {
-	   const res = await Axios.get('https://server-orpin-zeta.vercel.app/temps')
-	   setData(res.data.temps);
+	    await Axios.get('https://server-orpin-zeta.vercel.app/temps')
+	 	.then((res)=> {setData(res.data);
+		});
 		console.log(data)
 		.catch(err=> console.log(err))
 		//const dataArray2=[];
