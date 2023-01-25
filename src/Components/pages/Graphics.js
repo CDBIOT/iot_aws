@@ -77,7 +77,7 @@ return (
         <tbody className={styles.tbody}>
      
         {temps.length >0 ? (
-        temps[1].filter(temp=>temp.dia.includes(6)).map((t, i) => (
+        temps.map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.name}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
@@ -88,7 +88,7 @@ return (
         )) :(
             <h3>Não há itens na lista</h3>
         )}
-       
+       {filter(temp=>temp.includes(6))}
         </tbody>
        
    
