@@ -14,7 +14,8 @@ function Graphics(){
     return temps.filter(item=> item.dia.includes(query))
     }
     
-console.log(temps.filter(temp=>temp.includes(6)))
+console.log(temps[i].filter(temp=>temp.includes(6)))
+
  const dias = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
 
 async function getData(){
@@ -76,7 +77,7 @@ return (
         <tbody className={styles.tbody}>
      
         {temps.length >0 ? (
-        temps.map((t, i) => (
+        temps.temps[i].filter(temp=>temp.includes(6)).map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.name}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
