@@ -53,7 +53,7 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
     <form action="/mqtt" method = "get">
     <table>
 	    <tr><th colspan = {6}><h1>TEMPERATURA DO QUARTO </h1></th></tr>
-        {data.map((t,i)=>(
+        {temps.map((t,i)=>(
         <tr key = {i}>
             <td width="20%"className={styles.td}>{t.temperatura}</td>
             <td width="20%"className={styles.td}>{t.local} </td>
