@@ -1,7 +1,7 @@
 import styles from "../../styles/Graphics.module.css"
 import React from "react";
 import {useEffect, useState} from 'react';
-
+import {mqttReact} from "mqttReact"
 function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
@@ -50,6 +50,7 @@ return (
     <>
     <h1>RealTime</h1>
     <li>{lista}</li>
+    <mqttReact/>
 
     <input type="date"></input>
     <label for="Date" className="form-label">Data final</label>
