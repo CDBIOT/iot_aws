@@ -2,17 +2,17 @@ import { useState } from "react"
 import styles from "../../styles/Schedule.module.css"
 
 function Schedule(){
+
+const [temps, setData] = useState([])
     
 async function mqtt_show() {
 	const options = {method: 'GET',	mode: 'cors',cache: 'default'}
     const response =fetch(('https://server-orpin-zeta.vercel.app/mqtt'),options)
-	.then(function (response){
-	return response.text()})
+	.then(response => response.json())
 	.then(data=>{
+    setData(data)
 	console.log(data)
-	const myObj = JSON.parse(data)
-	
-})
+}).catch(err=> console.log(err))
 }
 
 function startTime() {
@@ -53,16 +53,16 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
     <form action="/mqtt" method = "get">
     <table>
 	    <tr><th colspan = {6}><h1>TEMPERATURA DO QUARTO </h1></th></tr>
-	    <tr><td><span id = "temp"> </span></td><td><span>  ºC</span></td></tr>
-
-        <tr><th colspan = {6}> <h1>TEMPERATURA DA SALA</h1></th></tr>
-        <tr>
-            <td><span id = "local" /> </td>
-            <td><span id = "temp"/> </td>
-	        <td><span id = "dia"/> </td>
-            <td><span id = "mes"/> </td>
-            <td><span id = "ano"/> </td>
+        {data.map((t,i)=>(
+        <tr key = {i}>
+            <td width="20%"className={styles.td}>{t.temperatura}</td>
+            <td width="20%"className={styles.td}>{t.local} </td>
+	        <td width="20%"className={styles.td}>{t.dia} </td>
+            <td width="20%"className={styles.td}>{t.mes} </td>
+            <td width="20%"className={styles.td}>{t.ano} </td>
         </tr>
+        )
+        )}
     </table>
     </form>
 </div>
@@ -90,10 +90,10 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
 
      <td>
     <select onChange={e =>setHora(e.target.value)}>
-            <option value="" disabled default selected>
+            <option value="" size="6" disabled default selected>
             Select Hora  </option>   
         {horas.map(hora=>{
-            return<option key={hora}> {hora}</option>
+            return<option key={hora}> </option>
         })}
         </select>
 
@@ -102,7 +102,7 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
     <select onChange={e =>setMinuto(e.target.value)}> <option value="" disabled default selected>
             Select min </option>  
         {minutos.map(min=>{
-            return<option key={min}> {min}</option>
+            return<option key={min}> </option>
         })}
         </select>
 	<input type="text"  name = "mind" id= "md" value = {Minuto}  size="6" /> 
