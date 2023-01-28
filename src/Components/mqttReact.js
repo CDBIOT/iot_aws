@@ -11,7 +11,7 @@ function Mqtt(){
   const clientId = 'mqtt_'+ Math.random().toString(16).slice(3)
   //const connectUrl = 'mqtt:'+ {host}:{port}
   const options = {
-    
+
        clientId,
        clean: true,
        connectTimeout: 4000,
@@ -34,19 +34,21 @@ client.on('connect', () => {
   console.log('Connected')
   setConnectionStatus(true)
 client.subscribe('Sala', () => {
-   // console.log(`Subscribe to topic '${topic}'`)
+    console.log("Subscribe to topic:", +topic)
 
 client.on('message', (topic, payload) => {
   setMessages(payload.toString())
        //temp = payload
        //local= topic
-     // console.log('Received Message:', topic, payload.toString())
+     console.log('Received Message:', + payload.toString())
       //res.status(200).json({m})
     })
   })
 })
 
 },[]);
+console.log("Connections: " +connectionStatus)
+console.log("Messages: " +messages)
 
 // setInterval(() => {
 // client.on('message', (topic, payload) => {
