@@ -54,7 +54,7 @@ return (
 
     <input type="date"></input>
     <label for="Date" className="form-label">Data final</label>
-    <input id="Date" value="{{Date}}" className="form-control" type="date" name="Date" />
+    <input id="Date" value="{Date}" className="form-control" type="date" name="Date" />
 
      <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
     </input>
