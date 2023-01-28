@@ -1,7 +1,7 @@
 import styles from "../../styles/Graphics.module.css"
 import React from "react";
 import {useEffect, useState} from 'react';
-import {mqttReact} from "mqttReact"
+import {mqttReact} from "../mqttReact"
 function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
