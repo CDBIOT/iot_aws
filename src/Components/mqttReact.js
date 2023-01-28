@@ -9,9 +9,9 @@ function Mqtt(){
   const host = 'broker.mqtt-dashboard.com'
   const port = '1883'
   const clientId = 'mqtt_'+ Math.random().toString(16).slice(3)
-  //const connectUrl = 'mqtt:'+ {host}:{port}
+  const connectUrl = 'mqtt:'+ {host}+':'+{port}
   const options = {
-
+    
        clientId,
        clean: true,
        connectTimeout: 4000,
@@ -36,7 +36,7 @@ function Mqtt(){
   }
 useEffect(() =>{
   
-const client = (mqtt.connect(host,options))
+const client = (mqtt.connect(connectUrl,options))
   
 client.on('connect', () => {
   setConnectionStatus(true)
