@@ -12,7 +12,7 @@ function RealTime(){
   //  tempes.forEach((day) => {
   //   dias.add(day)
   //  })
-  const temp =tempes.filter(temper=>(temper.dia < query))
+  const temp = tempes.filter(temper=>(temper.dia < query))
 
   console.log("dias: ", [...dias.values()])
   console.log(query)
@@ -50,6 +50,8 @@ return (
     <>
     <h1>RealTime</h1>
     <li>{lista}</li>
+
+    <mqttReact/>
     <mqttReact/>
 
     <input type="date"></input>
