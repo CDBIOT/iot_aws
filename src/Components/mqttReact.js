@@ -6,7 +6,7 @@ function Mqtt(){
   const topic = 'Sala';
   const payload = 'temp';
 
-  const host = 'broker.mqtt-dashboard.com:1883'
+  const host = 'broker.mqtt-dashboard.com'
   const port = '1883'
   const clientId = 'mqtt_'+ Math.random().toString(16).slice(3)
   //const connectUrl = 'mqtt:'+ {host}:{port}
