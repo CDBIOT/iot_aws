@@ -11,6 +11,7 @@ function Mqtt(){
   const clientId = 'mqtt_'+ Math.random().toString(16).slice(3)
   //const connectUrl = 'mqtt:'+ {host}:{port}
   const options = {
+    
        clientId,
        clean: true,
        connectTimeout: 4000,
