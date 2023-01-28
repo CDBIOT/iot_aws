@@ -52,7 +52,6 @@ return (
     <li>{lista}</li>
 
     <mqttReact/>
-    <mqttReact/>
 
     <input type="date"></input>
    
