@@ -23,12 +23,12 @@ function Mqtt(){
   //const[client, setClient] = useState(null)
   const[connectionStatus, setConnectionStatus] =useState(false)
   const[messages, setMessages]=useState([])
-  const[temps,setTemp]= useState([])
+  const[temp,setTemp]= useState([])
 
   async function mqtt_show() {
     const options = {method: 'GET',	mode: 'cors',cache: 'default'}
     fetch('https://server-orpin-zeta.vercel.app/mqtt',options)
-  .then(resp=>resp.json())
+  .then(response=>response.json())
   .then((data)=>{
   setTemp(data.temp)
   console.log(data.temp)
@@ -50,7 +50,7 @@ client.on('message', (topic, payload) => {
        //temp = payload
        //local= topic
      console.log('Received Message:', + payload.toString())
-      res.status(200).json({m})
+     // res.status(200).json({m})
     })
   })
 })
