@@ -1,7 +1,7 @@
 import mqtt from "mqtt/dist/mqtt"
 import styles from "../styles/Graphics.module.css"
 import React, { useState , useEffect } from "react"
-import {connect} from "mqtt"
+//import {connect} from "mqtt"
 
 function Mqtt(){
   const topic = 'Sala';
@@ -36,7 +36,7 @@ function Mqtt(){
   }
 useEffect(() =>{
   
-const client = (connect(connectUrl,options))
+const client = (mqtt.connectUrl(connectUrl,options))
   
 client.on('connect', () => {
   setConnectionStatus(true)
