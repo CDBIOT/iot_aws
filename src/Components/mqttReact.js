@@ -38,7 +38,6 @@ useEffect(() =>{
   
 const client = (mqtt.connect(host,options))
   
-
 client.on('connect', () => {
   setConnectionStatus(true)
   console.log('Connected')
@@ -51,7 +50,7 @@ client.on('message', (topic, payload) => {
        //temp = payload
        //local= topic
      console.log('Received Message:', + payload.toString())
-      //res.status(200).json({m})
+      res.status(200).json({m})
     })
   })
 })
@@ -94,6 +93,7 @@ console.log("Messages: " +messages)
  // })
  return(
   <div>
+    <label >Status: {connectionStatus}</label>
 				<table className = {styles.table}>
 					<tr><th className = {styles.thead} colSpan={2}>TEMPERATURA DA SALA </th></tr>
 					<tr>
