@@ -1,7 +1,7 @@
 import mqtt from "mqtt/dist/mqtt"
 import styles from "../styles/Graphics.module.css"
 import React, { useState , useEffect } from "react"
-//import {connect} from "mqtt"
+import {Connector} from "mqtt-react-hooks"
 
 function Mqtt(){
   const topic = 'Sala';
@@ -94,6 +94,7 @@ console.log("Messages: " +messages)
  // })
  return(
   <div>
+    <Connector brokerUrl='broker.mqtt-dashboard.com:1883'/>
     <label >Status: {connectionStatus}</label>
 				<table className = {styles.table}>
 					<tr><th className = {styles.thead} colSpan={2}>TEMPERATURA DA SALA </th></tr>
