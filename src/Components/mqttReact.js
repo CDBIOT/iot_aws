@@ -24,8 +24,7 @@ function Mqtt(){
   const[connectionStatus, setConnectionStatus] =useState(false)
   const[messages, setMessages]=useState([])
   const[temp,setTemp]= useState([])
-
-  async function mqtt_show() {
+async function mqtt_show() {
     const options = {method: 'GET',	mode: 'cors',cache: 'default'}
     fetch('https://server-orpin-zeta.vercel.app/mqtt',options)
   .then(response=>response.json())
