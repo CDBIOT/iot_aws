@@ -36,7 +36,7 @@ function Mqtt(){
   }
 useEffect(() =>{
   
-const client = (mqtt.connect(connectUrl,options))
+//const client = (mqtt.connect(connectUrl,options))
 //   try{
 // client.on('connect', () => {
 //  // setConnectionStatus(true)
