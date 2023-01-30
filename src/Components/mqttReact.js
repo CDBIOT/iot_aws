@@ -38,10 +38,10 @@ useEffect(() =>{
   
 const client = (mqtt.connect(connectUrl,options))
   try{
-client.on('connect', () => {
-  setConnectionStatus(true)
-  console.log('Connected')
-  setConnectionStatus(true)
+//client.on('connect', () => {
+ // setConnectionStatus(true)
+ // console.log('Connected')
+ // setConnectionStatus(true)
 
 client.subscribe('Sala', () => {
     console.log("Subscribe to topic:", +topic)
