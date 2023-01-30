@@ -1,5 +1,5 @@
-import mqtt from "precompiled-mqtt";
-//import mqtt from "mqtt/dist/mqtt"
+//import mqtt from "precompiled-mqtt";
+import mqtt from "mqtt"
 import styles from "../styles/Graphics.module.css"
 import React, { useState , useEffect } from "react"
 import {Connector} from "mqtt-react-hooks"
