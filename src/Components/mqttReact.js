@@ -37,25 +37,24 @@ function Mqtt(){
 useEffect(() =>{
   
 const client = (mqtt.connect(connectUrl,options))
-  try{
-//client.on('connect', () => {
- // setConnectionStatus(true)
- // console.log('Connected')
- // setConnectionStatus(true)
+//   try{
+// client.on('connect', () => {
+//  // setConnectionStatus(true)
+//  // console.log('Connected')
+//  // setConnectionStatus(true)
+// })}catch (error){console.log('mqtt.connect error',error)}
 
 client.subscribe('Sala', () => {
-    console.log("Subscribe to topic:", +topic)
+  console.log("Subscribe to topic:", +topic)
 
 client.on('message', (topic, payload) => {
-  setMessages(payload.toString())
-       //temp = payload
-       //local= topic
-     console.log('Received Message:', + payload.toString())
-     // res.status(200).json({m})
-    })
-  }) 
-})}catch (error){console.log('mqtt.connect error',error)}
-
+setMessages(payload.toString())
+     //temp = payload
+     //local= topic
+   console.log('Received Message:', + payload.toString())
+   // res.status(200).json({m})
+  })
+}) 
 mqtt_show()
 
 },[]);
