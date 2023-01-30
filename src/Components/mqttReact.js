@@ -36,13 +36,13 @@ function Mqtt(){
   }
 useEffect(() =>{
   
-//const client = (mqtt.connect(connectUrl,options))
-//   try{
-// client.on('connect', () => {
-//  // setConnectionStatus(true)
-//  // console.log('Connected')
-//  // setConnectionStatus(true)
-// })}catch (error){console.log('mqtt.connect error',error)}
+const client = (mqtt.connect(connectUrl,options))
+   try{
+ client.on('connect', () => {
+   setConnectionStatus(true)
+   console.log('Connected')
+   setConnectionStatus(true)
+ })}catch (error){console.log('mqtt.connect error',error)}
 
 client.subscribe('Sala', () => {
   console.log("Subscribe to topic:", +topic)
