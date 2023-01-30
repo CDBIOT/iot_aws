@@ -7,9 +7,7 @@ import _ from 'lodash';
 
 function Grafico(){
 
-    const [temps, setTemperaturas] = useState()
-
-
+const [temps, setTemperaturas] = useState()
 const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [data, setData] = useState('')
 
@@ -20,7 +18,6 @@ useEffect(() => {
     .then((response) =>{
     setTemperaturas(response.data.temps);
     {   
-   
    // console.log()
     }
 });
