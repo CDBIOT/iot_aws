@@ -29,9 +29,9 @@ return(
 
 <section className={styles.chart}>
       
-      <form className="search" action="/grafico" method="post">
+      <form className="search" action="/" method="post">
               <div className="row">            
-                  <div className="col-md-4">
+                  <div className="">
                       <label for="startDate" className={styles.label}>Data Inicial</label>
                       <input id="startDate" value="{{startDate}}" className="form-control" type="date" name="startDate" />
                   </div>
