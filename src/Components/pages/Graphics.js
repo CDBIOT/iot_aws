@@ -1,8 +1,8 @@
 import styles from "../../styles/Graphics.module.css"
 import React from "react";
 import axios from "axios";
-import Grafico from "../Grafico";
 import {useEffect, useState} from 'react';
+import _ from 'lodash'; 
 
 function Graphics(){
     

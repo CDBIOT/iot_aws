@@ -3,7 +3,7 @@ import { Chart } from "react-google-charts"
 import Axios from "axios";
 import React from "react";
 import {useEffect, useState} from 'react';
-import _ from 'lodash'; 
+
 
 function Grafico(){
 
