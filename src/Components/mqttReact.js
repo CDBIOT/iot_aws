@@ -5,6 +5,7 @@ import {Connector} from "mqtt-react-hooks"
 
 function Mqtt(){
   const topic = 'Sala';
+  const path = '/mqtt';
   const payload = 'temp';
   const host = 'broker.mqtt-dashboard.com'
   const port = '1883'
@@ -24,6 +25,8 @@ function Mqtt(){
   const[connectionStatus, setConnectionStatus] =useState(false)
   const[messages, setMessages]=useState([])
   const[temp,setTemp]= useState([])
+
+
 async function mqtt_show() {
     const options = {method: 'GET',	mode: 'cors',cache: 'default'}
     fetch('https://server-orpin-zeta.vercel.app/mqtt',options)
@@ -33,32 +36,33 @@ async function mqtt_show() {
   console.log(data.temp)
   }).catch(err=> console.log(err))
   }
+
 useEffect(() =>{
   
-const client = (mqtt.connect(connectUrl,options))
-   try{
- client.on('connect', () => {
-   setConnectionStatus(true)
-   console.log('Connected')
-   setConnectionStatus(true)
- })}catch (error){console.log('mqtt.connect error',error)}
+// const client = (mqtt.connect(connectUrl,options))
+//    try{
+//  client.on('connect', () => {
+//    setConnectionStatus(true)
+//    console.log('Connected')
+//    setConnectionStatus(true)
+//  })}catch (error){console.log('mqtt.connect error',error)}
 
-client.subscribe('Sala', () => {
-  console.log("Subscribe to topic:", +topic)
+// client.subscribe('Sala', () => {
+//   console.log("Subscribe to topic:", +topic)
 
-client.on('message', (topic, payload) => {
-setMessages(payload.toString())
-     //temp = payload
-     //local= topic
-   console.log('Received Message:', + payload.toString())
-   // res.status(200).json({m})
-  })
-}) 
+// client.on('message', (topic, payload) => {
+// setMessages(payload.toString())
+//      //temp = payload
+//      //local= topic
+//    console.log('Received Message:', + payload.toString())
+//    // res.status(200).json({m})
+//   })
+// }) 
 mqtt_show()
 
 },[]);
-console.log("Connections: " +connectionStatus)
-console.log("Messages: " +messages)
+//console.log("Connections: " +connectionStatus)
+//console.log("Messages: " +messages)
 
 // setInterval(() => {
 // client.on('message', (topic, payload) => {
@@ -92,9 +96,9 @@ console.log("Messages: " +messages)
  // })
  return(
   <div>
-    <Connector brokerUrl='broker.mqtt-dashboard.com:1883'/>
-    <label >Status: {connectionStatus}</label>
-				<table className = {styles.table}>
+    {/* <Connector brokerUrl='broker.mqtt-dashboard.com:1883'/>
+    <label >Status: {connectionStatus}</label>*/}
+				<table className = {styles.table}> 
 					<tr><th className = {styles.thead} colSpan={2}>TEMPERATURA DA SALA </th></tr>
 					<tr>
 						<td>Local: </td><td colSpan={4}><h2>{topic}</h2></td>
