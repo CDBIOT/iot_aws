@@ -2,7 +2,7 @@
 import mqtt from "mqtt"
 import styles from "../styles/Graphics.module.css"
 import React, { useState , useEffect } from "react"
-import {Connector} from "mqtt-react-hooks"
+//import {Connector} from "mqtt-react-hooks"
 
 function Mqtt(){
   const topic = 'Sala';
@@ -62,8 +62,8 @@ useEffect(() =>{
 mqtt_show()
 
 },[]);
-console.log("Connections: " +connectionStatus)
-console.log("Messages: " +messages)
+//console.log("Connections: " +connectionStatus)
+//console.log("Messages: " +messages)
 
 // setInterval(() => {
 // client.on('message', (topic, payload) => {
@@ -97,9 +97,9 @@ console.log("Messages: " +messages)
  // })
  return(
   <div>
-    <Connector brokerUrl='broker.mqtt-dashboard.com:1883'/>
-    <label >Status: {connectionStatus}</label>
-				<table className = {styles.table}> 
+    {/* <Connector brokerUrl='broker.mqtt-dashboard.com:1883'/>
+    <label >Status: {connectionStatus}</label>*/}
+				<table className = {styles.table}>  
 					<tr><th className = {styles.thead} colSpan={2}>TEMPERATURA DA SALA </th></tr>
 					<tr>
 						<td>Local: </td><td colSpan={4}><h2>{topic}</h2></td>
