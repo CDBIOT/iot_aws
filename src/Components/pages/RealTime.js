@@ -49,8 +49,7 @@ useEffect(() => {
 return (
     <>
     <h1>RealTime</h1>
-    <li>{lista}</li>
-
+  
     <mqttReact/>
 
     <input type="date"></input>
@@ -63,7 +62,7 @@ return (
             Select day  </option>
    
         {dias.map(dia=>{
-            return<option key={dia}> {dia}</option>
+            return<option key={lista}>{lista} </option>
         })}
         </select>
     <div>   
