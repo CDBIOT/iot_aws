@@ -2,7 +2,7 @@
 import mqtt from "mqtt"
 import styles from "../styles/Graphics.module.css"
 import React, { useState , useEffect } from "react"
-//import {Connector} from "mqtt-react-hooks"
+import {Connector} from "mqtt-react-hooks"
 
 function Mqtt(){
   const topic = 'Sala';
@@ -40,25 +40,25 @@ async function mqtt_show() {
 
 useEffect(() =>{
   
-// const client = (mqtt.connect(connectUrl,options))
-//    try{
-//  client.on('connect', () => {
-//    setConnectionStatus(true)
-//    console.log('Connected')
-//    setConnectionStatus(true)
-//  })}catch (error){console.log('mqtt.connect error',error)}
+const client = (mqtt.connect(connectUrl,options))
+   try{
+ client.on('connect', () => {
+   setConnectionStatus(true)
+   console.log('Connected')
+   setConnectionStatus(true)
+ })}catch (error){console.log('mqtt.connect error',error)}
 
-// client.subscribe('Sala', () => {
-//   console.log("Subscribe to topic:", +topic)
+client.subscribe('Sala', () => {
+  console.log("Subscribe to topic:", +topic)
 
-// client.on('message', (topic, payload) => {
-// setMessages(payload.toString())
-//      //temp = payload
-//      //local= topic
-//    console.log('Received Message:', + payload.toString())
-//    // res.status(200).json({m})
-//   })
-// }) 
+client.on('message', (topic, payload) => {
+setMessages(payload.toString())
+     //temp = payload
+     //local= topic
+   console.log('Received Message:', + payload.toString())
+   // res.status(200).json({m})
+  })
+}) 
 mqtt_show()
 
 },[]);
@@ -97,8 +97,8 @@ mqtt_show()
  // })
  return(
   <div>
-    {/* <Connector brokerUrl='broker.mqtt-dashboard.com:1883'/>
-    <label >Status: {connectionStatus}</label>*/}
+   <Connector brokerUrl='broker.mqtt-dashboard.com:1883'/>
+    <label >Status: {connectionStatus}</label>
 				<table className = {styles.table}>  
 					<tr><th className = {styles.thead} colSpan={2}>TEMPERATURA DA SALA </th></tr>
 					<tr>

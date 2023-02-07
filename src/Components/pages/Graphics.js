@@ -51,6 +51,27 @@ return (
     <h1>Graphics</h1>
     <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
     </input>
+    
+<section className={styles.chart}>
+      
+      <form className="search" action="/" method="post">
+              <div className="row">            
+                  <div className="">
+                      <label for="startDate" className={styles.label}>Data Inicial</label>
+                      <input id="startDate" value="{{startDate}}" className="form-control" type="date" name="startDate" />
+                  </div>
+                  <div className="col-md-4">
+                      <label for="finalDate" className={styles.label}>Data final</label>
+                      <input id="finalDate" value="{{finalDate}}" className="form-control" type="date" name="finalDate" />
+                      </div>
+                  <div className="col-md-4">
+                      <button className="bnt-exit" type="submit">Pesquisar</button>
+                      
+                  </div>
+              </div>
+          </form>
+          
+      </section>
   
     <select onChange={e =>setQuery(e.target.value)}>
             <option value="" disabled default selected>

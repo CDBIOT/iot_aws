@@ -23,6 +23,10 @@ useEffect(() => {
 });
 }, []);
 
+const handleChange = (e) => {
+    e.preventDefault()
+    setData(e.targe.value)
+}
 
 return(
 <>
