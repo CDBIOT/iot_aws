@@ -14,7 +14,7 @@ function Graphics(){
    // return temps.filter(item=> item.dia.includes(query))
     }
 
- const dias =temps.map((t, i) =>{return tempes.indexOf(t.dia)===i})
+ const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
  
 async function getData(){
     
