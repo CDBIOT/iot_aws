@@ -10,7 +10,6 @@ import Graphics from './Components/pages/Graphics';
 import RealTime from './Components/pages/RealTime'
 import Energy from './Components/pages/Energy';
 import mqttReact from './Components/mqttReact';
-window.Buffer = window.Buffer || require("buffer").Buffer;
 
 function App() {
 
