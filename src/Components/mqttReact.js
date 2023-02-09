@@ -3,6 +3,7 @@ import mqtt from "mqtt"
 import styles from "../styles/Graphics.module.css"
 import React, { useState , useEffect } from "react"
 import {Connector} from "mqtt-react-hooks"
+import { Buffer } from "buffer"
 
 function Mqtt(){
   const topic = 'Sala';
