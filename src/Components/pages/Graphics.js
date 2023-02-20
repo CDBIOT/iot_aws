@@ -12,7 +12,7 @@ function Graphics(){
     const [date,setDate] =useState("")
 
   const set = (dia,e) => {
-    e.preventDefault()
+   // e.preventDefault()
    // return temps.filter(item=> item.dia.includes(query))
     }
 
@@ -55,11 +55,11 @@ return (
     </input>
     <div className="">
          <label for="startDate" className={styles.label}>Data Inicial</label>
-        <input id="startDate" value="{{startDate}}" className="form-control" onchange={e=setDate(e.targe.value)} type="date" name="startDate" />
+        <input id="startDate" value="{{startDate}}" className="form-control"onChange={(e) => setDate(e.target.value)}  type="date" name="startDate" />
     </div>
     <div className="col-md-4">
         <label for="finalDate" className={styles.label}>Data final</label>
-        <input id="finalDate" value="{{finalDate}}" className="form-control" onchange={e=setDate(e.targe.value)} type="date" name="finalDate" />
+        <input id="finalDate" value="{{finalDate}}" className="form-control" onChange={(e) => setDate(e.target.value)} type="date" name="finalDate" />
     </div>
    
         
