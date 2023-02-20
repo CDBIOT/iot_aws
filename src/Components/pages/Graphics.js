@@ -3,13 +3,16 @@ import React from "react";
 import axios from "axios";
 import {useEffect, useState} from 'react';
 import _ from 'lodash'; 
+import moment from "moment/moment";
 
 function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
     const [dia,setFilDia] = useState(temps)
     const [query,setQuery] = useState("")
-    const [date,setDate] =useState("")
+    const [startDate,setstartDate] =useState("")
+    const [finalDate,setfinalDate] =useState("")
+
 
   const set = (dia,e) => {
    // e.preventDefault()
@@ -17,6 +20,14 @@ function Graphics(){
     }
 
  const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
+
+startDate = moment(req.body.startDate).format(
+   "YYYY-MM-DDT00:mm:ss.SSSZ"
+ );
+
+ finalDate = moment(req.body.finalDate).format(
+   "YYYY-MM-DDT23:59:ss.SSSZ"
+ );
  
 async function getData(){
     
@@ -55,11 +66,11 @@ return (
     </input>
     <div className="">
          <label for="startDate" className={styles.label}>Data Inicial</label>
-        <input id="startDate" value="{startDate}" className="form-control"onChange={(e) => setDate(e.target.value)}  type="date" name="startDate" />
+        <input id="startDate" value="{startDate}" className="form-control"onChange={(e) => setstartDate(e.target.value)}  type="date" name="startDate" />
     </div>
     <div className="col-md-4">
         <label for="finalDate" className={styles.label}>Data final</label>
-        <input id="finalDate" value="{finalDate}" className="form-control" onChange={(e) => setDate(e.target.value)} type="date" name="finalDate" />
+        <input id="finalDate" value="{finalDate}" className="form-control" onChange={(e) => setfinalDate(e.target.value)} type="date" name="finalDate" />
     </div>
    
         
