@@ -45,9 +45,6 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
     return (
     <>
     <h1>Schedule</h1>
-    <label> Set Time Light </label>
-
-	<label> Temperatura Atual </label>
     
 <div className = {styles.temp_show}>
     <form action="/mqtt" method = "get">
@@ -70,18 +67,27 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
 <section>
    
 <div>
+
 <form action="Relogio" method="post">
-    
-<label for="initDate" className="form-label">Data Inicial</label>
-    <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
-    
-    <label for="finalDate" className="form-label">Data final</label>
-    <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> <tr></tr>
+<table>
+<th colspan = {4}> <h1> Set Time Light </h1></th>
+<tr><td>
+        <label for="initDate" className="form-label">Data Inicial</label>
+        <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
+    </td> 
     <td>
-    <label>Data início</label><label value = {initDate}  size="6" /><label for="finalDate" className="form-label">{initDate}</label></td>
+        <label for="finalDate" className="form-label">Data final</label>
+        <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> 
+    </td>
+</tr>
+<tr>
     <td>
-    <label>Data Final</label><label  value = {finalDate}  size="6" /> <label for="finalDate" className="form-label">{finalDate} </label>
-     </td> 
+        <label>Data início</label><label value = {initDate}  size="6" /><label for="finalDate" className="form-label">{initDate}</label></td>
+    <td>
+        <label>Data Final</label><label  value = {finalDate}  size="6" /> <label for="finalDate" className="form-label">{finalDate} </label>
+    </td> 
+</tr>
+</table>
 
 <table>
 <tr><th colspan = {6}><h1>RELOGIO IOT</h1></th></tr>
@@ -90,16 +96,16 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
 
      <td>
     <select onChange={e =>setHora(e.target.value)}>
-            <option value="" size="6" disabled default selected>
+            <option value={Hora} size="6" >
             Select Hora  </option>   
         {horas.map(hora=>{
             return<option key={hora}> </option>
         })}
-        </select>
+    </select>
 
     <input type="text" 	name = "horad"id= "hd" value = {Hora}  size="2" />
 
-    <select onChange={e =>setMinuto(e.target.value)}> <option value="" disabled default selected>
+    <select onChange={e =>setMinuto(e.target.value)}> <option value="" >
             Select min </option>  
         {minutos.map(min=>{
             return<option key={min}> </option>
