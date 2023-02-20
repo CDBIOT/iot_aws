@@ -21,13 +21,13 @@ function Graphics(){
 
 dia =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
-startDate = moment(req.body.startDate).format(
-   "YYYY-MM-DDT00:mm:ss.SSSZ"
- );
+// startDate = moment(req.body.startDate).format(
+//    "YYYY-MM-DDT00:mm:ss.SSSZ"
+//  );
 
- finalDate = moment(req.body.finalDate).format(
-   "YYYY-MM-DDT23:59:ss.SSSZ"
- );
+//  finalDate = moment(req.body.finalDate).format(
+//    "YYYY-MM-DDT23:59:ss.SSSZ"
+//  );
  
 async function getData(){
     
