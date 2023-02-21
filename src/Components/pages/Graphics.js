@@ -62,7 +62,7 @@ return (
 <th colspan = {4}> <h1> Selecione o período </h1></th>
 <tr>
     <td>
-        <h2  value = {endDate}  size="6" /> <h2 for="endDate" className="label">{endDate} </h2><h2 value = {startDate}  size="6" /><h2 for="initDate" className="label">Data início: {startDate}</h2>
+        <h2 value = {startDate}  size="6" /><h2 for="initDate" className="label">Data início: {startDate}</h2>
         <input id="initDate" value={""}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" /></td>
         <td> </td>
     <td>
