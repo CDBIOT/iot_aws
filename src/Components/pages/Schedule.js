@@ -82,9 +82,9 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
 </tr>
 <tr>
     <td>
-        <label>Data início</label><label value = {initDate}  size="6" /><label for="finalDate" className="form-label">{initDate}</label></td>
+        <h2>Data início</h2><h2 value = {initDate}  size="6" /><h2 for="finalDate" className="form-label">{initDate}</h2></td>
     <td>
-        <label>Data Final</label><label  value = {finalDate}  size="6" /> <label for="finalDate" className="form-label">{finalDate} </label>
+        <h2>Data Final</h2><h2  value = {finalDate}  size="6" /> <h2 for="finalDate" className="form-label">{finalDate} </h2>
     </td> 
 </tr>
 </table>
