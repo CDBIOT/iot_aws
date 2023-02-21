@@ -4,15 +4,15 @@ import axios from "axios";
 import {useEffect, useState} from 'react';
 import _ from 'lodash'; 
 import moment from "moment/moment";
+import Grafico from "../Grafico";
 
 function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
     const [dia,setFilDia] = useState(temps)
     const [query,setQuery] = useState("")
-    const [startDate,setstartDate] =useState()
-    const [finalDate,setfinalDate] =useState()
-
+    const [initDate, setInitDate] = useState()
+    const [finalDate, setFinalDate] = useState()
 
   const set = (dia,e) => {
    // e.preventDefault()
@@ -64,17 +64,29 @@ return (
     <h1>Graphics</h1>
     <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
     </input>
-    <div className="">
-         <label for="startDate" className={styles.label}>Data Inicial</label>
-        <input id="startDate" value={startDate} className="form-control"onChange={(e) => setstartDate(e.target.value)}  type="date" name="startDate" />
-    </div>
-    <div className="col-md-4">
-        <label for="finalDate" className={styles.label}>Data final</label>
-        <input id="finalDate" value={finalDate} className="form-control" onChange={(e) => setfinalDate(e.target.value)} type="date" name="finalDate" />
-    </div>
+    
+    <Grafico />
+<table>
+<th colspan = {4}> <h1> Set Time Light </h1></th>
+<tr><td>
+        <label for="initDate" className="form-label">Data Inicial</label>
+        <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
+    </td> 
+    <td>
+        <label for="finalDate" className="form-label">Data final</label>
+        <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> 
+    </td>
+</tr>
+<tr>
+    <td>
+        <h2>Data início</h2><h2 value = {initDate}  size="6" /><h2 for="finalDate" className="form-label">{initDate}</h2></td>
+    <td>
+        <h2>Data Final</h2><h2  value = {finalDate}  size="6" /> <h2 for="finalDate" className="form-label">{finalDate} </h2>
+    </td> 
+</tr>
+</table>
    
         
-  
     <select onChange={e =>setQuery(e.target.value)}>
             <option value="" disabled default selected>
             Select day  </option>
