@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState , useEffect } from "react"
 import styles from "../../styles/Schedule.module.css"
 
 function Schedule(){
@@ -15,6 +15,9 @@ async function mqtt_show() {
 }).catch(err=> console.log(err))
 }
 
+useEffect(() => {
+    mqtt_show();
+    }, [])
 function startTime() {
         var today=new Date();
         var h=today.getHours();
@@ -33,7 +36,6 @@ function checkTime(i){
 	}	
     return i;
 }
-
 
 const [initDate, setInitDate] = useState()
 const [finalDate, setFinalDate] = useState()
@@ -93,8 +95,8 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
 
     <input type="text" 	name = "horad"id= "hd" value = {Hora}  size="2" />
 
-    <select onChange={e =>setMinuto(e.target.value)}> <option value="" >
-            Select min </option>  
+    <select onChange={e =>setMinuto(e.target.value)}> 
+    <option value={Minuto}> Select min </option>  
         {minutos.map(min=>{
             return<option key={min}> </option>
         })}
@@ -113,7 +115,6 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
     <tr>
     <td rowspan ={2}><h1>Estado</h1></td><td><span id="rele">N/D</span></td>
     </tr>
-
     <tr><td>
 	    <input type="button" id="btnOn"   value="Ligar"    onClick="setRelay(1)"/>
 	    <input type="button" id="btnOff"  value="Desligar" onClick="setRelay(0)"/>
