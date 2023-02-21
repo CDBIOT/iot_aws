@@ -63,37 +63,25 @@ const minutos=[0,1,2,3,4,5,6,7,8,9,10]
     </table>
     </form>
 </div>
-    
 <section>
    
 <div>
-
 <form action="Relogio" method="post">
 <table>
 <th colspan = {4}> <h1> Set Time Light </h1></th>
-<tr><td>
-        <label for="initDate" className="form-label">Data Inicial</label>
-        <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
+<tr><td><input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
+        <label >Data Inicial: {initDate}</label>
+        
     </td> 
-    <td>
-        <label for="finalDate" className="form-label">Data final</label>
-        <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> 
+    <td><input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> 
+        <label>Data final: {finalDate}</label>
     </td>
-</tr>
-<tr>
-    <td>
-        <h2>Data início</h2><h2 value = {initDate}  size="6" /><h2 for="finalDate" className="form-label">{initDate}</h2></td>
-    <td>
-        <h2>Data Final</h2><h2  value = {finalDate}  size="6" /> <h2 for="finalDate" className="form-label">{finalDate} </h2>
-    </td> 
 </tr>
 </table>
 
 <table>
 <tr><th colspan = {6}><h1>RELOGIO IOT</h1></th></tr>
-
 <tr><td><h1 colspan = {6}>Disparo </h1></td>
-
      <td>
     <select onChange={e =>setHora(e.target.value)}>
             <option value={Hora} size="6" >

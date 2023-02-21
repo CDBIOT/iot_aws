@@ -55,9 +55,6 @@ useEffect(() => {
 return (
     <>
     <h1>Graphics</h1>
-    <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
-    </input>
-
 <table>
 <th colspan = {4}> <h1> Selecione o período </h1></th>
 <tr>
@@ -71,10 +68,11 @@ return (
         <td></td> 
 </tr>
 </table>
-   
+
+    <input type ="text" onChange={(e)=>setQuery(e.target.value)}> </input>
         
     <select onChange={e =>setQuery(e.target.value)}>
-        <option value="" disabled default selected> Select day  </option>
+        <option value= {dia} disabled default selected> Select day  </option>
         {dias.map(dia=>{
             return <option key={dia}> {dia}</option>
         })}
