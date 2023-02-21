@@ -8,7 +8,7 @@ import moment from "moment/moment";
 function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
-    const [dias,setFilDia] = useState(temps)
+    const [dia,setFilDia] = useState(temps)
     const [query,setQuery] = useState("")
     const [startDate,setstartDate] =useState()
     const [finalDate,setfinalDate] =useState()
@@ -19,7 +19,7 @@ function Graphics(){
    // return temps.filter(item=> item.dia.includes(query))
     }
 
-dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
+const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
 // startDate = moment(req.body.startDate).format(
 //    "YYYY-MM-DDT00:mm:ss.SSSZ"
