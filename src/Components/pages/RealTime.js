@@ -6,8 +6,6 @@ function RealTime(){
   const [tempes, setTemperaturas] = useState([])
   const [query,setQuery] = useState("")
   
-const [startDate,setstartDate] =useState()
-const [finalDate,setfinalDate] =useState()
 
   const dias =tempes.map((t, i) =>{return tempes.indexOf(t.dia)===i})
   // const dias = new Set( );
@@ -54,29 +52,6 @@ return (
   
     <mqttReact/>
 
-    <section className={styles.chart}>
-      
-      <form className="search" action="/" method="post">
-              <div className="row">            
-                  <div className="">
-                      <label for="startDate" className={styles.label}>Data Inicial</label>
-                      <input id="startDate" value={startDate} className="form-control" type="date" onChange={(e) => setstartDate(e.target.value)}   name="startDate" />
-                  </div>
-                  <div className="col-md-4">
-                      <label for="finalDate" className={styles.label}>Data final</label>
-                      <input id="finalDate" value={finalDate} className="form-control" type="date" onChange={(e) => setfinalDate(e.target.value)} name="finalDate" />
-                      </div>
-                  <div className="col-md-4">
-                      <button className="bnt-exit" type="submit">Pesquisar</button>
-                      
-                  </div>
-              </div>
-          </form>
-          
-      </section>
-     <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
-    </input>
-    
     <select onChange={e =>setQuery(e.target.value)}>
             <option value="" disabled default selected>
             Select day  </option>
@@ -85,6 +60,10 @@ return (
             return<option key={lista}>{lista} </option>
         })}
         </select>
+          
+     <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
+    </input>
+    
     <div>   
          <table className={styles.table}>
           <tr><th className={styles.th} colSpan={4}>
