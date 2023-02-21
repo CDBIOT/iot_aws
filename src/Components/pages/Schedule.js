@@ -8,8 +8,8 @@ const [initDate, setInitDate] = useState()
 const [finalDate, setFinalDate] = useState()
 const [Hora, setHora] = useState()
 const [Minuto, setMinuto] = useState()
-const horas= [0,1,2,3,4,5,6,7,8,9,10,11,12]
-const minutos=[0,1,2,3,4,5,6,7,8,9,10]
+let horas= [0,1,2,3,4,5,6,7,8,9,10,11,12]
+let minutos=[0,1,2,3,4,5,6,7,8,9,10]
 console.log(horas)
 
 
