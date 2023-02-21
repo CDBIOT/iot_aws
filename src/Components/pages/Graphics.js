@@ -21,13 +21,8 @@ function Graphics(){
 
 const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
- const startDate = moment(initDate).format(
-    "DD-MM-YYYY"
-  );
-
-//  finalDate = moment(req.body.finalDate).format(
-//    "YYYY-MM-DDT23:59:ss.SSSZ"
-//  );
+const startDate = moment(initDate).format("DD-MM-YYYY");
+const endDate = moment(finalDate).format("DD-MM-YYYY");
  
 async function getData(){
     
@@ -69,18 +64,18 @@ return (
 <th colspan = {4}> <h1> Selecione o período </h1></th>
 <tr><td>
         <label for="initDate" className="form-label">Data Inicial</label>
-        <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
+        <input id="initDate" value={""}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
     </td> 
     <td>
         <label for="finalDate" className="form-label">Data final</label>
-        <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> 
+        <input id="finalDate" value={""}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> 
     </td>
 </tr>
 <tr>
     <td>
         <h2>Data início</h2><h2 value = {startDate}  size="6" /><h2 for="initDate" className="form-label">{startDate}</h2></td>
     <td>
-        <h2>Data Final</h2><h2  value = {finalDate}  size="6" /> <h2 for="finalDate" className="form-label">{finalDate} </h2>
+        <h2>Data Final</h2><h2  value = {endDate}  size="6" /> <h2 for="endDate" className="form-label">{endDate} </h2>
     </td> 
 </tr>
 </table>
