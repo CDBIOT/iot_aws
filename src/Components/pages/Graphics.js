@@ -21,9 +21,9 @@ function Graphics(){
 
 const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
-// startDate = moment(req.body.startDate).format(
-//    "YYYY-MM-DDT00:mm:ss.SSSZ"
-//  );
+ const startDate = moment(initDate).format(
+    "DD-MM-YYYY"
+  );
 
 //  finalDate = moment(req.body.finalDate).format(
 //    "YYYY-MM-DDT23:59:ss.SSSZ"
@@ -78,7 +78,7 @@ return (
 </tr>
 <tr>
     <td>
-        <h2>Data início</h2><h2 value = {initDate}  size="6" /><h2 for="finalDate" className="form-label">{initDate}</h2></td>
+        <h2>Data início</h2><h2 value = {startDate}  size="6" /><h2 for="initDate" className="form-label">{startDate}</h2></td>
     <td>
         <h2>Data Final</h2><h2  value = {finalDate}  size="6" /> <h2 for="finalDate" className="form-label">{finalDate} </h2>
     </td> 
