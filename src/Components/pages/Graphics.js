@@ -15,8 +15,8 @@ function Graphics(){
     const [finalDate, setFinalDate] = useState()
 
   const set = (dia,e) => {
-   // e.preventDefault()
-   // return temps.filter(item=> item.dia.includes(query))
+    e.preventDefault()
+    return temps.filter(item=> item.dia.includes(query))
     }
 
 const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
@@ -36,8 +36,7 @@ async function getData(){
       header: { 'Access-Control-Allow-Origin':'*',mode: 'cors',
         'Content-Type': 'application/json' },
      }).then(resp=>resp.json())
- 	.then((data)=>{
- 	setTemperaturas(data.temps)
+ 	.then((data)=>{ setTemperaturas(data.temps)
      console.log(data.temps)
      }).catch(err=> console.log(err))
   //const values = _.groupBy(temps, () => { return values.temps });
@@ -50,8 +49,7 @@ async function getData(){
 //         }
 
 useEffect(() => {
-      getData();
-    
+    getData();
     }, [])
     
 return (
@@ -76,13 +74,11 @@ return (
    
         
     <select onChange={e =>setQuery(e.target.value)}>
-            <option value="" disabled default selected>
-            Select day  </option>
-   
+        <option value="" disabled default selected> Select day  </option>
         {dias.map(dia=>{
-            return<option key={dia}> {dia}</option>
+            return <option key={dia}> {dia}</option>
         })}
-        </select>
+    </select>
     <div>  
         <table className={styles.table}>
         <tr><th className={styles.th} colSpan={4}>
