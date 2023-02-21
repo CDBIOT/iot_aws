@@ -62,20 +62,15 @@ return (
 
 <table>
 <th colspan = {4}> <h1> Selecione o período </h1></th>
-<tr><td>
-        <label for="initDate" className="form-label">Data Inicial</label>
-        <input id="initDate" value={""}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
-    </td> 
-    <td>
-        <label for="finalDate" className="form-label">Data final</label>
-        <input id="finalDate" value={""}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> 
-    </td>
-</tr>
 <tr>
     <td>
-        <h2>Data início</h2><h2 value = {startDate}  size="6" /><h2 for="initDate" className="form-label">{startDate}</h2></td>
+        <h2>Data início</h2>
+        <input id="initDate" value={""}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
+        <h2 value = {startDate}  size="6" /><h2 for="initDate" className="form-label">{startDate}</h2></td>
     <td>
-        <h2>Data Final</h2><h2  value = {endDate}  size="6" /> <h2 for="endDate" className="form-label">{endDate} </h2>
+        <h2>Data Final</h2>
+        <input id="finalDate" value={""}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /> 
+        <h2  value = {endDate}  size="6" /> <h2 for="endDate" className="form-label">{endDate} </h2>
     </td> 
 </tr>
 </table>
