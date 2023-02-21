@@ -62,13 +62,13 @@ return (
 <th colspan = {4}> <h1> Selecione o período </h1></th>
 <tr>
     <td>
-        <h2>Data início</h2>
+        <h2  value = {endDate}  size="6" /> <h2 for="endDate" className="label">{endDate} </h2><h2 value = {startDate}  size="6" /><h2 for="initDate" className="label">Data início: {startDate}</h2>
         <input id="initDate" value={""}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" /></td>
-        <td> <h2 value = {startDate}  size="6" /><h2 for="initDate" className="form-label">{startDate}</h2></td>
+        <td> </td>
     <td>
-        <h2>Data Final</h2>
+        <h2 value = {endDate}  size="6" /> <h2 for="endDate" className="label">Data Final: {endDate} </h2>
         <input id="finalDate" value={""}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /></td>
-        <td><h2  value = {endDate}  size="6" /> <h2 for="endDate" className="form-label">{endDate} </h2></td> 
+        <td></td> 
 </tr>
 </table>
    
