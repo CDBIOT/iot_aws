@@ -10,6 +10,7 @@ const [Hora, setHora] = useState()
 const [Minuto, setMinuto] = useState()
 const horas= [0,1,2,3,4,5,6,7,8,9,10,11,12]
 const minutos=[0,1,2,3,4,5,6,7,8,9,10]
+console.log(horas)
 
 
 async function mqtt_show() {
@@ -26,17 +27,17 @@ useEffect(() => {
     mqtt_show();
     }, [])
 
-function startTime() {
-        var today=new Date();
-        var h=today.getHours();
-        var m=today.getMinutes();
-        var s=today.getSeconds();
+// function startTime() {
+//         var today=new Date();
+//         var h=today.getHours();
+//         var m=today.getMinutes();
+//         var s=today.getSeconds();
         
-        m=checkTime(m);
-        s=checkTime(s);
-        document.getElementById('txt').innerText= h+":"+m+":"+s;
-       const t=setTimeout('startTime()',500);
-    }
+//         m=checkTime(m);
+//         s=checkTime(s);
+//         document.getElementById('txt').innerText= h+":"+m+":"+s;
+//        const t=setTimeout('startTime()',500);
+//     }
     
 function checkTime(i){
 	if (i<10) {
@@ -45,13 +46,12 @@ function checkTime(i){
     return i;
 }
 
-
 return (
     <>
     <h1>Schedule</h1>
     
     <div className = {styles.temp_show}>
-        <form action="/mqtt" method = "get">
+        <form>
         <table>
 	        <tr><th colspan = {6}><h1>TEMPERATURA DO QUARTO </h1></th></tr>
             {temps.map((t,i)=>(

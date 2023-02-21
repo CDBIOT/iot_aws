@@ -14,10 +14,10 @@ function Graphics(){
     const [initDate, setInitDate] = useState()
     const [finalDate, setFinalDate] = useState()
 
-  const set = (dia,e) => {
-    e.preventDefault()
-    return temps.filter(item=> item.dia.includes(query))
-    }
+//   const set = (dia,e) => {
+//     e.preventDefault()
+//     return temps.filter(item=> item.dia.includes(query))
+//     }
 
 const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
