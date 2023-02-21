@@ -64,10 +64,9 @@ return (
     <h1>Graphics</h1>
     <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
     </input>
-    
-    <Grafico />
+
 <table>
-<th colspan = {4}> <h1> Set Time Light </h1></th>
+<th colspan = {4}> <h1> Selecione o período </h1></th>
 <tr><td>
         <label for="initDate" className="form-label">Data Inicial</label>
         <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" />
