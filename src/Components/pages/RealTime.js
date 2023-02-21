@@ -5,6 +5,9 @@ function RealTime(){
 
   const [tempes, setTemperaturas] = useState([])
   const [query,setQuery] = useState("")
+  
+const [startDate,setstartDate] =useState()
+const [finalDate,setfinalDate] =useState()
 
   const dias =tempes.map((t, i) =>{return tempes.indexOf(t.dia)===i})
   // const dias = new Set( );
@@ -57,11 +60,11 @@ return (
               <div className="row">            
                   <div className="">
                       <label for="startDate" className={styles.label}>Data Inicial</label>
-                      <input id="startDate" value="{startDate}" className="form-control" type="date" name="startDate" />
+                      <input id="startDate" value={startDate} className="form-control" type="date" onChange={(e) => setstartDate(e.target.value)}   name="startDate" />
                   </div>
                   <div className="col-md-4">
                       <label for="finalDate" className={styles.label}>Data final</label>
-                      <input id="finalDate" value="{finalDate}" className="form-control" type="date" name="finalDate" />
+                      <input id="finalDate" value={finalDate} className="form-control" type="date" onChange={(e) => setfinalDate(e.target.value)} name="finalDate" />
                       </div>
                   <div className="col-md-4">
                       <button className="bnt-exit" type="submit">Pesquisar</button>

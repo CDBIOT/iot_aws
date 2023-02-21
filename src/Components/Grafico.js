@@ -10,6 +10,8 @@ function Grafico(){
 const [temps, setTemperaturas] = useState()
 const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [data, setData] = useState('')
+const [startDate,setstartDate] =useState()
+const [finalDate,setfinalDate] =useState()
 
 useEffect(() => {
     Axios.get({
@@ -37,11 +39,11 @@ return(
               <div className="row">            
                   <div className="">
                       <label for="startDate" className={styles.label}>Data Inicial</label>
-                      <input id="startDate" value="{{startDate}}" className="form-control" type="date" name="startDate" />
+                      <input id="startDate" value={startDate} className="form-control" onChange={(e) => setstartDate(e.target.value)} type="date" name="startDate" />
                   </div>
                   <div className="col-md-4">
                       <label for="finalDate" className={styles.label}>Data final</label>
-                      <input id="finalDate" value="{{finalDate}}" className="form-control" type="date" name="finalDate" />
+                      <input id="finalDate" value={finalDate} className="form-control" onChange={(e) => setfinalDate(e.target.value)} type="date" name="finalDate" />
                       </div>
                   <div className="col-md-4">
                       <button className="bnt-exit" type="submit">Pesquisar</button>
