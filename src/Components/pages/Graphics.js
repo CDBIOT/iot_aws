@@ -70,7 +70,7 @@ return (
 </tr>
 </table>
 
-    <input type ="text" onChange={(e)=>setQuery(e.target.value)}> </input>
+    {/* <input type ="text" onChange={(e)=>setQuery(e.target.value)}> </input> */}
         
     <select onChange={set}>
         <option value= {dia} > Select day  </option>
