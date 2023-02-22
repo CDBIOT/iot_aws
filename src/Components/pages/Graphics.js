@@ -73,9 +73,9 @@ return (
     {/* <input type ="text" onChange={(e)=>setQuery(e.target.value)}> </input> */}
         
     <select onChange={set}>
-        <option value= {dia} > Select day  </option>
-        {dias.map(dia=>{
-            return <option value={dia} key={dia}> {dia}</option>
+        <option value= "" > Select day  </option>
+        {temps.map(dia=>{
+            return <option value={dia} key={dia}> {dia.dia}</option>
         })}
     </select>
     <div>  
