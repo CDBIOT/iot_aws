@@ -16,12 +16,10 @@ function Graphics(){
 
     const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
-
 function set(){
     // e.preventDefault()
      return temps.filter(item=> item.dia.includes(dias))
      }
-
 
 const startDate = moment(initDate).format("DD-MM-YYYY");
 const endDate = moment(finalDate).format("DD-MM-YYYY");
