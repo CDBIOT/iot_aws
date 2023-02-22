@@ -14,11 +14,15 @@ function Graphics(){
     const [initDate, setInitDate] = useState()
     const [finalDate, setFinalDate] = useState()
 
-    const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
+    const dias = temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
+    const filtrodias = temps.filter((item)=> {
+        return item.dia.includes(dias)
+    })
 
 function set(){
     // e.preventDefault()
-     return temps.filter(item=> item.dia.includes(dias))
+    filtrodias
+     return console.log(filtrodias)
      }
 
 const startDate = moment(initDate).format("DD-MM-YYYY");
