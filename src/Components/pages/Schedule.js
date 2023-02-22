@@ -12,7 +12,6 @@ let horas= [0,1,2,3,4,5,6,7,8,9,10,11,12]
 let minutos=[0,1,2,3,4,5,6,7,8,9,10]
 console.log(horas)
 
-
 async function mqtt_show() {
 	const options = {method: 'GET',	mode: 'cors',cache: 'default'}
     const response =fetch(('https://server-orpin-zeta.vercel.app/mqtt'),options)

@@ -18,7 +18,6 @@ function RealTime(){
   console.log(query)
   console.log(temp)
  
-
   const lista = (
     // <ul>{temp = tempes.filter((valorAtual)=> {
     //   return valorAtual.dia.includes(10)

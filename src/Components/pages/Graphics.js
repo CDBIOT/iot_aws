@@ -14,10 +14,11 @@ function Graphics(){
     const [initDate, setInitDate] = useState()
     const [finalDate, setFinalDate] = useState()
 
-//   const set = (dia,e) => {
-//     e.preventDefault()
-//     return temps.filter(item=> item.dia.includes(query))
-//     }
+function set(){
+     e.preventDefault()
+     return temps.filter(item=> item.dia.includes(query))
+     console.log(temps)
+     }
 
 const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
@@ -71,8 +72,8 @@ return (
 
     <input type ="text" onChange={(e)=>setQuery(e.target.value)}> </input>
         
-    <select onChange={e =>setQuery(e.target.value)}>
-        <option value= {dia} disabled default selected> Select day  </option>
+    <select onChange={set}>
+        <option value= {dia} > Select day  </option>
         {dias.map(dia=>{
             return <option key={dia}> {dia}</option>
         })}
