@@ -17,7 +17,7 @@ async function mqtt_show() {
     const response =fetch(('https://server-orpin-zeta.vercel.app/temps'),options)
 	.then(response => response.json())
 	.then(data=>{
-    setData(data.vm)
+    setData(data.temps)
 	console.log(data)
 }).catch(err=> console.log(err))
 }
