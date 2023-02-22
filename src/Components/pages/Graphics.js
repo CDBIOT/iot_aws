@@ -16,7 +16,7 @@ function Graphics(){
 
     const dias = temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
-    const filtrodias = dia.dia.filter((item)=> {
+    const filtrodias = dia.filter((item)=> {
         return item[temps.length]>=10
     })
 
