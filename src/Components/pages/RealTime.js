@@ -25,7 +25,7 @@ function RealTime(){
     // })}</ul>
     <ul>{tempes.map((t,i) => (<li key={t}> {t.dia}</li> ))}</ul>
   ]
-     console.log("lista: ", lista.t.dia)
+     console.log("lista: ", lista)
   
 
 async function DrawTable(){
