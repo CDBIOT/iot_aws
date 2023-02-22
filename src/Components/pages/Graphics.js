@@ -14,13 +14,14 @@ function Graphics(){
     const [initDate, setInitDate] = useState()
     const [finalDate, setFinalDate] = useState()
 
+    const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
+
+
 function set(){
     // e.preventDefault()
-     return temps.filter(item=> item.dia.includes(query))
-     console.log(temps)
+     return temps.filter(item=> item.dia.includes(dias))
      }
 
-const dias =temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
 const startDate = moment(initDate).format("DD-MM-YYYY");
 const endDate = moment(finalDate).format("DD-MM-YYYY");
