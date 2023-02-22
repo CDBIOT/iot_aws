@@ -75,7 +75,7 @@ return (
     <select onChange={set}>
         <option value= {dia} > Select day  </option>
         {dias.map(dia=>{
-            return <option key={dia}> {dia}</option>
+            return <option value={dia} key={dia}> {dia}</option>
         })}
     </select>
     <div>  
