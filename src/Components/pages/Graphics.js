@@ -15,7 +15,7 @@ function Graphics(){
     const [finalDate, setFinalDate] = useState()
 
 function set(){
-     e.preventDefault()
+    // e.preventDefault()
      return temps.filter(item=> item.dia.includes(query))
      console.log(temps)
      }
