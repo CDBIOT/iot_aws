@@ -17,7 +17,7 @@ async function mqtt_show() {
     const response =fetch(('https://server-orpin-zeta.vercel.app/mqtt'),options)
 	.then(response => response.json())
 	.then(data=>{
-    setData(data)
+    setData(data.temps)
 	console.log(data)
 }).catch(err=> console.log(err))
 }
@@ -50,7 +50,7 @@ return (
     <h1>Schedule</h1>
     
     <div className = {styles.temp_show}>
-        <form>
+    
         <table>
 	        <tr><th colspan = {6}><h1>TEMPERATURA DO QUARTO </h1></th></tr>
             {temps.map((t,i)=>(
@@ -64,7 +64,7 @@ return (
             )
          )}
         </table>
-        </form>
+    
     </div>
     
     <section>
