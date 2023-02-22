@@ -19,13 +19,13 @@ function RealTime(){
   console.log(dias)
 
  
-  const lista = (
+  const lista = [
     // <ul>{temp = tempes.filter((valorAtual)=> {
     //   return valorAtual.dia.includes(10)
     // })}</ul>
     <ul>{tempes.map((t,i) => (<li key={t}> {t.dia}</li> ))}</ul>
-     )
-     console.log("lista: ", lista)
+  ]
+     console.log("lista: ", lista.t.dia)
   
 
 async function DrawTable(){
