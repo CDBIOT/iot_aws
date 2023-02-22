@@ -23,7 +23,9 @@ function Graphics(){
 function set(){
     // e.preventDefault()
    // filtrodias
-     return console.log(filtrodias)
+     return console.log("filtrodias: ", filtrodias,"startdate: ", startDate, "endDate: ", endDate);
+   
+     
      }
 
 const startDate = moment(initDate).format("DD-MM-YYYY");
