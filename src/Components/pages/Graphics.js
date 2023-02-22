@@ -15,8 +15,9 @@ function Graphics(){
     const [finalDate, setFinalDate] = useState()
 
     const dias = temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
+
     const filtrodias = temps.filter((item)=> {
-        return item.dia.includes(dias)
+        return item.dia.includes(27)
     })
 
 function set(){
