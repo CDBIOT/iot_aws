@@ -22,7 +22,7 @@ function Graphics(){
 
 function set(){
     // e.preventDefault()
-    filtrodias
+   // filtrodias
      return console.log(filtrodias)
      }
 
