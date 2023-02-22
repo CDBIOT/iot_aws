@@ -16,20 +16,22 @@ function Graphics(){
 
     const dias = temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
+    const startDate = moment(initDate).format("DD-MM-YYYY");
+    const endDate = moment(finalDate).format("DD-MM-YYYY");
+
     const filtrodias = dia.filter((item)=> {
-        return item[temps.length]>=10
+        return item[temps.length]>=startDate
     })
 
 function set(){
     // e.preventDefault()
    // filtrodias
      return console.log("filtrodias: ", filtrodias,
+     "dias:", dias,
      "startdate: ", startDate, 
      "endDate: ", endDate);
      }
 
-const startDate = moment(initDate).format("DD-MM-YYYY");
-const endDate = moment(finalDate).format("DD-MM-YYYY");
  
 async function getData(){
     
