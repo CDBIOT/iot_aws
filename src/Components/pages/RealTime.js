@@ -16,8 +16,8 @@ function RealTime(){
  // const temp = tempes.filter(temper=>(temper.dia < query))
 
   console.log("dias: ", [...dias.values()])
-  console.log(query)
-  console.log(temp)
+  console.log(dias)
+
  
   const lista = (
     // <ul>{temp = tempes.filter((valorAtual)=> {
@@ -25,6 +25,7 @@ function RealTime(){
     // })}</ul>
     <ul>{tempes.map((t,i) => (<li key={t}> {t.dia}</li> ))}</ul>
      )
+     console.log("lista: ", lista)
   
 
 async function DrawTable(){
@@ -32,12 +33,12 @@ async function DrawTable(){
 
      fetch(`https://server-orpin-zeta.vercel.app/temps`,{
       method: 'GET',
-      header: {         'Access-Control-Allow-Origin':'*',mode: 'cors',
+      header: {'Access-Control-Allow-Origin':'*',mode: 'cors',
         'Content-Type': 'application/json' },
      }).then(resp=>resp.json())
  	    .then((data)=>{
  	    setTemperaturas(data.temps)
-      // console.log(data.tempes)
+       console.log(data.tempes)
       }).catch(err=> console.log(err))
     }
          
@@ -53,8 +54,8 @@ return (
 
     <select onChange={e =>setQuery(e.target.value)}>
     <option value="" disabled default selected> Select day  </option>
-    {dias.map(dia=>{
-        return<option key={dia}>{lista} </option>
+    {tempes.map(dia=>{
+        return<option key={dia}>{dia.dia} </option>
       })}
     </select>
           
