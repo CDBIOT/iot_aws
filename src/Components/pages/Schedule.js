@@ -50,7 +50,6 @@ return (
     <h1>Schedule</h1>
     
     <div className = {styles.temp_show}>
-    
         <table>
 	        <tr><th colspan = {6}><h1>TEMPERATURA DO QUARTO </h1></th></tr>
             {temps.map((t,i)=>(
@@ -85,11 +84,10 @@ return (
 <tr><th colspan = {6}><h1>RELOGIO IOT</h1></th></tr>
 <tr><td><h1 colspan = {6}>Disparo </h1></td>
      <td>
-    <select onChange={e =>setHora(e.target.value)}>
-            <option value={Hora} size="6" >
-            Select Hora  </option>   
+    <select onChange={(e) => setHora(e.target.value)}>
+        <option value="" size="6" >Select Hora  </option>   
         {horas.map(hora=>{
-            return<option key={hora}> </option>
+            return<option value = {hora} key={hora}> </option>
         })}
     </select>
 
@@ -98,7 +96,7 @@ return (
     <select onChange={e =>setMinuto(e.target.value)}> 
     <option value={Minuto}> Select min </option>  
         {minutos.map(min=>{
-            return<option key={min}> </option>
+            return<option value= {min} key={min}> </option>
         })}
         </select>
 	<input type="text"  name = "mind" id= "md" value = {Minuto}  size="6" /> 
