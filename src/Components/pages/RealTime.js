@@ -1,8 +1,8 @@
 import styles from "../../styles/Graphics.module.css"
 import React from "react";
 import {useEffect, useState} from 'react';
-function RealTime(){
 
+function RealTime(){
   const [tempes, setTemperaturas] = useState([])
   const [query,setQuery] = useState("")
   
@@ -12,7 +12,8 @@ function RealTime(){
   //  tempes.forEach((day) => {
   //   dias.add(day)
   //  })
-  const temp = tempes.filter(temper=>(temper.dia < query))
+  //filtro de dias
+ // const temp = tempes.filter(temper=>(temper.dia < query))
 
   console.log("dias: ", [...dias.values()])
   console.log(query)
@@ -22,9 +23,8 @@ function RealTime(){
     // <ul>{temp = tempes.filter((valorAtual)=> {
     //   return valorAtual.dia.includes(10)
     // })}</ul>
-    <ul>{temp.map((t,i) => (<li key={t}> {t.dia}</li> ))}</ul>
+    <ul>{tempes.map((t,i) => (<li key={t}> {t.dia}</li> ))}</ul>
      )
-  
   
 
 async function DrawTable(){
@@ -52,16 +52,13 @@ return (
     <mqttReact/>
 
     <select onChange={e =>setQuery(e.target.value)}>
-            <option value="" disabled default selected>
-            Select day  </option>
-   
-        {dias.map(dia=>{
-            return<option key={lista}>{lista} </option>
-        })}
-        </select>
+    <option value="" disabled default selected> Select day  </option>
+    {dias.map(dia=>{
+        return<option key={dia}>{lista} </option>
+      })}
+    </select>
           
-     <input type ="text" onChange={(e)=>setQuery(e.target.value)}>
-    </input>
+     <input type ="text" onChange={(e)=>setQuery(e.target.value)}></input>
     
     <div>   
          <table className={styles.table}>
