@@ -25,10 +25,11 @@ function Graphics(){
         (item)=> {
         return item>=parseInt(startDate)
     })
-    
-    const dias = dia.map((t, i) =>{return t.filter(t>=21)})
+    console.log("dia: ", dia)
+    const dias = dia.filter((t) =>{return t > 18})
+
     const values = dia.filter((t,i,array)=>{return t>=18})
-   console.log("filtrodias: ", filtrodias)
+   console.log("dias: ", dias)
 
 function set(){
 
