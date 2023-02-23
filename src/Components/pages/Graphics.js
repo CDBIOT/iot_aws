@@ -20,7 +20,7 @@ function Graphics(){
     const startDay = startDate.date();
     
     const endDate = moment(finalDate).format("DD-MM-YYYY");
-    const endDay = endDay.date();
+    const endDay = endDate.date();
 
     const filtrodias = dia.filter((item)=> {
         return item[temps.length]>=20
