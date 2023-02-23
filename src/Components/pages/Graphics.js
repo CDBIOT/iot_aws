@@ -26,18 +26,15 @@ function Graphics(){
         return item>=parseInt(startDate)
     })
     
-    const dias = dia.map((t, i) =>{return filter({temperatura: 21}).value()})
-    const values =dia.map((t,i)=>{(dia).filter({temperatura: 21}).value()})
-   
+    const dias = dia.map((t, i) =>{return dia.filter(t>=21)})
+    const values = dia.map((t,i)=>{return dias.filter(t.value)})
+   console.log("filtrodias: ", filtrodias)
 
 function set(){
 
-    const dias = dia.map((t, i) =>{return filter({temperatura: 21}).value()})
-    const values =dia.map((t,i)=>{(dia).filter({temperatura: 21}).value()})
     // e.preventDefault()
    // filtrodias
      return console.log(
-    "filtrodias: ", filtrodias,
     "values:", values,
      "dias:", dias,
      "startdate: ", startDate, 
