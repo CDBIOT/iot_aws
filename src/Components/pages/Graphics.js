@@ -25,11 +25,12 @@ function Graphics(){
         (item)=> {
         return item>=parseInt(startDate)
     })
-    console.log("dia: ", query)
+    console.log("query: ", query)
     const dias = query.filter((t) =>{return t > 18})
 
-    const values = query.filter((t,i,array)=>{return t>=18})
-   console.log("dias: ", dias)
+    const maior = dia.filter(values)
+    function values(t,i,array){return t>=18}
+   console.log("dias: ", maior)
 
 function set(e){
  {(e)=>setQuery(e.target.value)}
