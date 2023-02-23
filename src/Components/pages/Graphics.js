@@ -14,7 +14,7 @@ function Graphics(){
     const [initDate, setInitDate] = useState()
     const [finalDate, setFinalDate] = useState()
 
-    const dias = temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
+    const dias = dia.map((t, i) =>{return dia.indexOf(t.dia)===i})
 
     const startDate = moment(initDate).format("DD");
    // const startDay = moment(startDate).date();
