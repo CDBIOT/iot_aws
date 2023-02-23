@@ -17,7 +17,10 @@ function Graphics(){
     const dias = temps.map((t, i) =>{return temps.indexOf(t.dia)===i})
 
     const startDate = moment(initDate).format("DD-MM-YYYY");
+    const startDay = startDate.date();
+    
     const endDate = moment(finalDate).format("DD-MM-YYYY");
+    const endDay = endDay.date();
 
     const filtrodias = dia.filter((item)=> {
         return item[temps.length]>=20
@@ -29,7 +32,9 @@ function set(){
      return console.log("filtrodias: ", filtrodias,
      "dias:", dias,
      "startdate: ", startDate, 
-     "endDate: ", endDate);
+     "startday: ", startDay,
+     "endDate: ", endDate,
+     "endday: ", endDay,);
      }
 
  

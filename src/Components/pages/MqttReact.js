@@ -31,7 +31,7 @@ function MqttReact(){
 
 async function mqtt_show() {
     const options = {method: 'GET',	mode: 'cors',cache: 'default'}
-    fetch('https://test-no-vercel.vercel.app/mqtt',options)
+   await fetch('https://test-no-vercel.vercel.app/mqtt',options)
   .then(response=>response.json())
   .then((data)=>{
   setTemp(data.temp)
