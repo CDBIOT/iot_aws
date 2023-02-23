@@ -39,8 +39,8 @@ function set(){
 async function getData(){
     
 // const loadData = (data) =>{
-//     const values = _.groupBy(data, () => {
-//         return values.temps
+//      const values = _.groupBy(data, () => {
+//        return values.temps
 //     })}
 
      fetch(`https://server-orpin-zeta.vercel.app/temps`,{
@@ -51,14 +51,8 @@ async function getData(){
  	.then((data)=>{ setTemperaturas(data.temps)
      console.log(data.temps)
      }).catch(err=> console.log(err))
-  //const values = _.groupBy(temps, () => { return values.temps });
+  const values = _chain(data.temps).filter({temperatura: 21}, () => { return values.values });
     }
-// async function getData(){
-//    await axios.get('https://server-orpin-zeta.vercel.app/temps')
-//         .then(response => setTemperaturas(response.data))
-//         .catch(err=> console.log(err))
-//         console.log(data)
-//         }
 
 useEffect(() => {
     getData();
