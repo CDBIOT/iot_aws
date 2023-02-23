@@ -30,7 +30,7 @@ function Graphics(){
 
     const maior = dia.filter(values)
     function values(t,i,array){return t>=18}
-   console.log("dias: ", maior)
+   console.log("values : ", values.value())
 
 function set(e){
  {(e)=>setQuery(e.target.value)}
