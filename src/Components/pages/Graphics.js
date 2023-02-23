@@ -33,7 +33,7 @@ function Graphics(){
    console.log("values : ", values.value())
 
 function set(e){
- {(e)=>setQuery(e.target.value)}
+ //{(e)=>setQuery(e.target.value)}
     // e.preventDefault()
    // filtrodias
      return console.log(
