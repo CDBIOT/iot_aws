@@ -30,6 +30,9 @@ function Graphics(){
     console.log("values:", values)
 
 function set(){
+    
+    const values = _chain(dia).filter({temperatura: 21}).value();
+    console.log("values:", values)
     // e.preventDefault()
    // filtrodias
      return console.log(
