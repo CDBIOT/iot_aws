@@ -23,10 +23,11 @@ function Graphics(){
    // const endDay = moment(endDate).date();
 
     const filtrodias = dia.filter((item)=> {
-        return item[temps.length]>=20
+        return item[temps.length]>=startDate
     })
     
     const values = _chain(data.temps).filter({temperatura: 21}).value();
+    console.log("values:", values)
 
 function set(){
     // e.preventDefault()
