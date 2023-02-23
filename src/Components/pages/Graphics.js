@@ -25,10 +25,10 @@ function Graphics(){
         (item)=> {
         return item>=parseInt(startDate)
     })
-    console.log("dia: ", dia)
-    const dias = dia.filter((t) =>{return t > 18})
+    console.log("dia: ", query)
+    const dias = query.filter((t) =>{return t > 18})
 
-    const values = dia.filter((t,i,array)=>{return t>=18})
+    const values = query.filter((t,i,array)=>{return t>=18})
    console.log("dias: ", dias)
 
 function set(e){
