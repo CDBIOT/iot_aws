@@ -14,7 +14,7 @@ function RealTime(){
   const temp = tempes.filter(temper=>(temper.dia < query))
 
   console.log("dias: ", [...dias.values()])
-  console.log(days)
+  console.log("days: ", days)
 
  
   const lista = [

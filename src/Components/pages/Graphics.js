@@ -9,7 +9,7 @@ import Grafico from "../Grafico";
 function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
-    const [dia,setFilDia] = useState(temps)
+    const [dia,setFilDia] = useState(dia)
     const [query,setQuery] = useState("")
     const [initDate, setInitDate] = useState()
     const [finalDate, setFinalDate] = useState()
@@ -38,7 +38,7 @@ function set(e){
    // filtrodias
      return console.log(
     "values:", values,
-     "dias:", dias,
+     "filtrodias:", filtrodias,
      "startdate: ", startDate, 
      "endDate: ", endDate );
      }
@@ -81,7 +81,7 @@ return (
         
     <select onChange={set}>
         <option value= "" > Select day  </option>
-        {temps.map(dia=>{
+        {temps.map(dia=>{ setFilDia(dia)
             return <option value={dia} key={dia}> {dia.dia}</option>
             
         })}
