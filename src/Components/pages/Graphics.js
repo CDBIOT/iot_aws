@@ -23,7 +23,7 @@ function Graphics(){
    // const endDay = moment(endDate).date();
 
     const filtrodias = dia.filter((item)=> {
-        return item[dia.length]>=startDate
+        return item[dia.length]>=parseInt(startDate)
     })
     
     const values = _chain(dia).filter({temperatura: 21}).value();
@@ -33,6 +33,7 @@ function set(){
     
     const values = _chain(dia).filter({temperatura: 21}).value();
     console.log("values:", values)
+
     // e.preventDefault()
    // filtrodias
      return console.log(
@@ -46,11 +47,6 @@ function set(){
  
 async function getData(){
     
-// const loadData = (data) =>{
-//      const values = _.groupBy(data, () => {
-//        return values.temps
-//     })}
-
      fetch(`https://server-orpin-zeta.vercel.app/temps`,{
       method: 'GET',
       header: { 'Access-Control-Allow-Origin':'*',mode: 'cors',
