@@ -31,6 +31,7 @@ function set(){
    // filtrodias
      return console.log("filtrodias: ", filtrodias,
      "dias:", dias,
+     "values:", values,
      "startdate: ", startDate, 
      "endDate: ", endDate );
      }
