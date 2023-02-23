@@ -25,6 +25,8 @@ function Graphics(){
     const filtrodias = dia.filter((item)=> {
         return item[temps.length]>=20
     })
+    
+    const values = _chain(data.temps).filter({temperatura: 21}).value();
 
 function set(){
     // e.preventDefault()
@@ -52,7 +54,6 @@ async function getData(){
  	.then((data)=>{ setTemperaturas(data.temps)
      console.log(data.temps)
      }).catch(err=> console.log(err))
-  const values = _chain(data.temps).filter({temperatura: 21}, () => { return values.values });
     }
 
 useEffect(() => {
