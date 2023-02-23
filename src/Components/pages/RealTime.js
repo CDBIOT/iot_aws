@@ -2,6 +2,7 @@ import styles from "../../styles/Graphics.module.css"
 import React from "react";
 import {useEffect, useState} from 'react';
 
+
 function RealTime(){
   const [tempes, setTemperaturas] = useState([])
   const [query,setQuery] = useState("")
@@ -49,8 +50,6 @@ useEffect(() => {
 return (
     <>
     <h1>RealTime</h1>
-  
-    <mqttReact/>
 
     <select onChange={e =>setQuery(e.target.value)}>
     <option value="" disabled default selected> Select day  </option>

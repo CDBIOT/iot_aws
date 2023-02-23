@@ -9,7 +9,7 @@ import Users from './Components/pages/Users';
 import Graphics from './Components/pages/Graphics';
 import RealTime from './Components/pages/RealTime'
 import Energy from './Components/pages/Energy';
-import mqttReact from './Components/mqttReact';
+import MqttReact from './Components/pages/MqttReact';
 
 function App() {
 
@@ -24,7 +24,7 @@ return (
             <Route path="/Schedule" element={<Schedule />}></Route>
             <Route path="/Users"    element={<Users />} ></Route>
             <Route path='/RealTime' element={<RealTime />}></Route>
-            <Route path='/mqttReact' component={mqttReact} element={<mqttReact />}></Route>
+            <Route path='/MqttReact' element={<MqttReact />}></Route>
          </Routes>
     </Router>
   </div>

@@ -5,7 +5,7 @@ import React, { useState , useEffect } from "react"
 import {Connector} from "mqtt-react-hooks"
 
 
-function Mqtt(){
+function MqttReact(){
   const topic = 'Sala';
   const path = '/mqtt';
   const payload = 'temp';
@@ -123,4 +123,4 @@ mqtt_show()
   
  )
 }
-export default Mqtt
+export default MqttReact
