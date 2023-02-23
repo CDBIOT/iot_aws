@@ -31,8 +31,8 @@ function Graphics(){
     const values = dia.filter((t,i,array)=>{return t>=18})
    console.log("dias: ", dias)
 
-function set(){
-
+function set(e){
+ {(e)=>setQuery(e.target.value)}
     // e.preventDefault()
    // filtrodias
      return console.log(
@@ -76,12 +76,13 @@ return (
 </tr>
 </table>
 
-    {/* <input type ="text" onChange={(e)=>setQuery(e.target.value)}> </input> */}
+   
         
     <select onChange={set}>
         <option value= "" > Select day  </option>
         {temps.map(dia=>{
             return <option value={dia} key={dia}> {dia.dia}</option>
+            
         })}
     </select>
     <div>  
