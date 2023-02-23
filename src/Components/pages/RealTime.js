@@ -9,12 +9,9 @@ function RealTime(){
   
 
   const dias =tempes.map((t, i) =>{return tempes.indexOf(t.dia)===i})
-  // const dias = new Set( );
-  //  tempes.forEach((day) => {
-  //   dias.add(day)
-  //  })
+  const days = tempes.forEach((day) => {dias.add(day)})
   //filtro de dias
- // const temp = tempes.filter(temper=>(temper.dia < query))
+  const temp = tempes.filter(temper=>(temper.dia < query))
 
   console.log("dias: ", [...dias.values()])
   console.log(dias)
@@ -24,7 +21,7 @@ function RealTime(){
     // <ul>{temp = tempes.filter((valorAtual)=> {
     //   return valorAtual.dia.includes(10)
     // })}</ul>
-    <ul>{tempes.map((t,i) => (<li key={t}> {t.dia}</li> ))}</ul>
+    <ul>{tempes.map((t,i) => (<li key={t}> {t.filter((d)=>{return d.include(10)})}</li> ))}</ul>
   ]
      console.log("lista: ", lista)
   
