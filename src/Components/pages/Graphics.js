@@ -14,7 +14,6 @@ function Graphics(){
     const [initDate, setInitDate] = useState()
     const [finalDate, setFinalDate] = useState()
 
-    const dias = dia.map((t, i) =>{return dia.indexOf(t.dia)===i})
 
     const startDate = moment(initDate).format("DD");
    // const startDay = moment(startDate).date();
@@ -27,20 +26,20 @@ function Graphics(){
         return item>=parseInt(startDate)
     })
     
-    const values = _chain(dia).filter({temperatura: 21}).value();
-    console.log("values:", values)
+    const dias = dia.map((t, i) =>{return filter({temperatura: 21}).value()})
+    const values =dia.map((t,i)=>{(dia).filter({temperatura: 21}).value()})
+   
 
 function set(){
-    
-    const values = _chain(dia).filter({temperatura: 21}).value();
-    console.log("values:", values)
 
+    const dias = dia.map((t, i) =>{return filter({temperatura: 21}).value()})
+    const values =dia.map((t,i)=>{(dia).filter({temperatura: 21}).value()})
     // e.preventDefault()
    // filtrodias
      return console.log(
     "filtrodias: ", filtrodias,
+    "values:", values,
      "dias:", dias,
-     "values:", values,
      "startdate: ", startDate, 
      "endDate: ", endDate );
      }
