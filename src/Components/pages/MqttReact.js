@@ -20,7 +20,7 @@ function MqttReact(){
        connectTimeout: 4000,
        username: 'emqx',
        password: 'public',
-       reconnectPeriod: 1000,
+       reconnectPeriod: 3000,
     }
 
   //const[client, setClient] = useState(null)
@@ -62,10 +62,9 @@ setMessages(payload.toString())
   })
 }) 
 mqtt_show()
-
 },[]);
-//console.log("Connections: " +connectionStatus)
-//console.log("Messages: " +messages)
+console.log("Connections: " +connectionStatus)
+console.log("Messages: " +messages)
 
 // setInterval(() => {
 // client.on('message', (topic, payload) => {
