@@ -22,8 +22,9 @@ function Graphics(){
     const endDate = moment(finalDate).format("DD");
    // const endDay = moment(endDate).date();
 
-    const filtrodias = dia.filter((item)=> {
-        return item[dia.length]>=parseInt(startDate)
+    const filtrodias = dia.filter(
+        (item)=> {
+        return item>=parseInt(startDate)
     })
     
     const values = _chain(dia).filter({temperatura: 21}).value();
