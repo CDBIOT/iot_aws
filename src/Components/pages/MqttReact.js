@@ -32,7 +32,7 @@ function MqttReact(){
 async function mqtt_show() {
     const options = {method: 'GET',	 header: { 'Access-Control-Allow-Origin':'*',mode: 'cors',
     'Content-Type': 'application/json' },cache: 'default'}
-   await fetch(`https://server-orpin-zeta.vercel.app/temps/mqtt`,options)
+   await fetch('https://server-orpin-zeta.vercel.app/temps/mqtt',options)
   .then(response=>response.json())
   .then((data)=>{
   setTemp(data.temp)
