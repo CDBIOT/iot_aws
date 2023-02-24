@@ -65,7 +65,7 @@ return (
         <td> </td>
     <td>
         <h2  onChange={e =>setFiltroDia(e.target.value)} for="endDate" className="label">Data Final:  {endDate} </h2>
-        <input id="finalDate" value={endDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /></td>
+        <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="endDate" /></td>
         <td></td> 
 </tr>
 </table>
