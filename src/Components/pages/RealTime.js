@@ -70,7 +70,7 @@ return (
       </div>
           <tbody className={styles.tbody}>
           {tempes.length >0 ? (
-          tempes.map((t, i) => (
+          temp.map((t, i) => (
           <tr key = {i}>
           <td width="20%"className={styles.td}>{t.temperatura}</td>
           <td width="20%"className={styles.td}>{t.local}</td>
