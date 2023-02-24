@@ -38,7 +38,7 @@ useEffect(() => {
 
 async function filtrodeData(){
 
-    setFiltrado(temps.filter(temper => temper.dia >= startDay <= endDay))
+    setFiltrado(temps.filter(temper => temper.dia >= dias ))
     
     //  filtrodias = temps.filter(
     //     (item)=> {
@@ -65,11 +65,11 @@ return (
 <tr>
     <td>
         <h2 for="initDate" className="label">Data início:  {startDate}</h2>
-        <input id="initDate" value={""}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" /></td>
+        <input id="initDate" value={"starDate"}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" /></td>
         <td> </td>
     <td>
-        <h2 for="endDate" className="label">Data Final:  {endDate} </h2>
-        <input id="finalDate" value={""}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /></td>
+        <h2  onChange={filtrodeData} for="endDate" className="label">Data Final:  {endDate} </h2>
+        <input id="finalDate" value={"finalDate"}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /></td>
         <td></td> 
 </tr>
 </table>
