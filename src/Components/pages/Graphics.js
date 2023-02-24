@@ -17,7 +17,7 @@ function Graphics(){
     const startDate = moment(initDate).format("DD");
     const startDay = parseInt(startDate)
     const endDate = moment(finalDate).format("DD");
-   // const endDay = moment(endDate).date();
+    const endDay = parseInt(endDate)
 
 async function getData(){
     
@@ -38,7 +38,7 @@ useEffect(() => {
 
 async function filtrodeData(){
 
-    setFiltrado(temps.filter(temper => temper.dia.includes(startDay)))
+    setFiltrado(temps.filter(temper => temper.dia >= startDay <= endDay))
     
     //  filtrodias = temps.filter(
     //     (item)=> {
