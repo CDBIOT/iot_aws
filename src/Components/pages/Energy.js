@@ -4,7 +4,7 @@ import Axios from "axios"
 import { Chart } from "react-google-charts";
 
 
-function Energy(dia,mes,ano){
+function Energy(){
 
 //const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [temps, setData] = useState([])
