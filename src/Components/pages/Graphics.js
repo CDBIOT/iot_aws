@@ -27,9 +27,11 @@ function Graphics(){
     })
     console.log("query: ", query)
     const dias = query.filter((t) =>{return t > 18})
+  
+    filtrodias = dia.filter((item)=>{item(i)
+        return item>=parseInt(startDate)})
 
-    const maior = dia.filter(values)
-    function values(t,i,array){return t>=18}
+    
    console.log("values : ", values.value())
 
 function set(e){
@@ -77,13 +79,10 @@ return (
 </tr>
 </table>
 
-   
-        
     <select onChange={set}>
         <option value= "" > Select day  </option>
         {temps.map(dia=>{ setFilDia(dia)
-            return <option value={dia} key={dia}> {dia.dia}</option>
-            
+
         })}
     </select>
     <div>  
@@ -98,7 +97,6 @@ return (
     </table>
     </div>
         <tbody className={styles.tbody}>
-     
         {temps.length >0 ? (
         temps.map((t, i) => (
         <tr key = {i}>
