@@ -11,13 +11,15 @@ function Graphics(){
     const [temps, setTemperaturas] = useState([])
     const [initDate, setInitDate] = useState()
     const [finalDate, setFinalDate] = useState()
-    const [dias,setFiltroDia] = useState([])
-    const [filtrado,setFiltrado] = useState([])
 
     const startDate = moment(initDate).format("DD");
     const startDay = parseInt(startDate)
     const endDate = moment(finalDate).format("DD");
     const endDay = parseInt(endDate)
+    
+    const temp = temps.filter(temper =>  temper.dia  >= startDay )
+    const temp2 = temp.filter(temper =>  temper.dia  <= endDay )
+
 
 async function getData(){
     
@@ -36,22 +38,6 @@ useEffect(() => {
     }, [])
     
 
-const temp = temps.filter(temper =>  temper.dia  >= startDay )
-const temp2 = temp.filter(temper =>  temper.dia  <= endDay )
-
-async function filtrodeData(){
-    
-}
-console.log(
-    "dia: ", dias,
-    "filtrado:", filtrado,
-    "startdate: ", startDate, 
-    "endDate: ", endDate )
-
-useEffect
-(() => {
-    filtrodeData();
-    }, [dias])
 
 return (
     <>
@@ -64,7 +50,7 @@ return (
         <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" /></td>
         <td> </td>
     <td>
-        <h2  onChange={e =>setFiltroDia(e.target.value)} for="finalDate" className="label">Data Final:  {endDate} </h2>
+        <h2  for="finalDate" className="label">Data Final:  {endDate} </h2>
         <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /></td>
         <td></td> 
 </tr>
