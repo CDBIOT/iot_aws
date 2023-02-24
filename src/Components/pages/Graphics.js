@@ -36,7 +36,7 @@ useEffect(() => {
     }, [])
     
 
-const temp = temps.filter(temper => temper.dia < dias )
+const temp = temps.filter(temper => temper.dia <= startDay )
 
 async function filtrodeData(){
     
@@ -48,7 +48,7 @@ async function filtrodeData(){
 }
 console.log(
     "starDay",startDay,
-    "dias: ", dias,
+    "dia: ", dias,
     "filtrado:", filtrado,
     "startdate: ", startDate, 
     "endDate: ", endDate )
