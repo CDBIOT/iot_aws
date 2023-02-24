@@ -64,15 +64,15 @@ return (
 					</tr>
 					<tr><th className = {styles.thead} colSpan={4}>Cadastrar Temperatura</th></tr>
 					<tr><td> Local: </td>
-					<td><input type="text" value="local" name="local" size="5" onChange={(e)=> setLocal(e.target.value)}/> </td>
+					<td><input type="text"  name="local" size="5" onChange={(e)=> setLocal(e.target.value)}/> </td>
 					<td>Temperatura: </td>
-					<td><input type="text" value='0 ' name="temperatura" size="5" onChange={(e)=> setTemp(e.target.value)}/> </td>
+					<td><input type="text"  name="temperatura" size="5" onChange={(e)=> setTemp(e.target.value)}/> </td>
 					<td>Dia: </td>
-					<td><input type="text" value='0 ' name="dia" size="5" onChange={(e)=> setDia(e.target.value)}/></td>
+					<td><input type="text"  name="dia" size="5" onChange={(e)=> setDia(e.target.value)}/></td>
 					<td>Mes: </td>
-					<td><input type="text" value='0' name="mes" size="5" onChange={(e)=> setMes(e.target.value)}/></td>
+					<td><input type="text"  name="mes" size="5" onChange={(e)=> setMes(e.target.value)}/></td>
 					<td>Ano: </td>
-					<td><input type="text" value='0 ' name="ano" size="5" onChange={(e)=> setAno(e.target.value)}/></td>
+					<td><input type="text"  name="ano" size="5" onChange={(e)=> setAno(e.target.value)}/></td>
 					<td><button type="submit"> Cadastrar Temperatura</button></td></tr>
 				</table>
 
