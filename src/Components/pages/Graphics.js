@@ -70,12 +70,6 @@ return (
 </tr>
 </table>
 
-    <select onChange={e =>setFiltroDia(e.target.value)}>
-        <option value= "" > Select day  </option>
-        {temps.map(dia=>{
-        return<option key={dia}>{dia.dia} </option>
-      })}
-    </select>
     <div>  
         <table className={styles.table}>
         <tr><th className={styles.th} colSpan={4}>

@@ -79,7 +79,12 @@ return (
 				<table className = {styles.table}>
 				<tr><th colspan = {4}>Temperatura dia</th></tr>
 				<tr>
-					
+				<select onChange={e =>setFiltroDia(e.target.value)}>
+       		 <option value= "" > Select day  </option>
+       				 {temps.map(dia=>{
+       				 return<option key={dia}>{dia.dia} </option>
+     			 })}
+   				 </select>
 				<td><input type="text" id = 'dia' value= "0" name = "dia" size="5" /></td>
 				<td>Mes: </td>
 				<td><input type="text" id = 'mes' value= "0" name = "mes" size="5" /></td>
