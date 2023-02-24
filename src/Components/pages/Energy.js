@@ -9,22 +9,41 @@ function Energy(dia,mes,ano){
 //const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [temps, setData] = useState([])
 
-useEffect(() => {
+const [local, setLocal] = useState()// eslint-disable-next-line
+const [temperatura, setTemp] = useState()// eslint-disable-next-line
+const [dia, setDia] = useState()// eslint-disable-next-line
+const [mes, setMes] = useState()// eslint-disable-next-line
+const [ano, setAno] = useState()// eslint-disable-next-line
+
+
+
 const Dados = async () => {
-	    await Axios.get('https://server-orpin-zeta.vercel.app/temps')
-	 	.then((response)=> {setData(response.data.temps);
-		console.log(response.data)
-		});
-		
-		//const dataArray2=[];
-		// dataArray2.push(['Dia','Temp']);
-		// for (var i in data)
-		// {
-		// 	dataArray2.push([data[i].dia, (data[i].temperatura)]);
-		// }
+	await Axios.get('https://server-orpin-zeta.vercel.app/temps')
+	 .then((response)=> {setData(response.data.temps);
+	console.log(response.data)
+	});
+	
+	//const dataArray2=[];
+	// dataArray2.push(['Dia','Temp']);
+	// for (var i in data)
+	// {
+	// 	dataArray2.push([data[i].dia, (data[i].temperatura)]);
+	// }
 }
-Dados()
+useEffect(() => {
+	Dados();
 }, []);
+
+function cadastrar(e){
+	e.preventDefault()
+   console.log("Temperatura enviada para cadastro")
+   };
+
+
+useEffect(() => {
+	cadastrar();
+}, []);
+
 	
 // final do query 
 
@@ -33,7 +52,7 @@ return (
 		<h1>Energy</h1>
 			<div>
 				
-		<form action="/temps" method = "post">
+		<form onSubmit={cadastrar}>
 
 				<table className = {styles.table}>
 					<tr><th className = {styles.thead} colSpan={3}>TEMPERATURA DA SALA </th></tr>
@@ -45,15 +64,15 @@ return (
 					</tr>
 					<tr><th className = {styles.thead} colSpan={4}>Cadastrar Temperatura</th></tr>
 					<tr><td> Local: </td>
-					<td><input type="text" value="local" name="local" size="5"/> </td>
+					<td><input type="text" value="local" name="local" size="5" onChange={(e)=> setLocal(e.target.value)}/> </td>
 					<td>Temperatura: </td>
-					<td><input type="text" value='0 ' name="temperatura" size="5"/> </td>
+					<td><input type="text" value='0 ' name="temperatura" size="5" onChange={(e)=> setTemp(e.target.value)}/> </td>
 					<td>Dia: </td>
-					<td><input type="text" value='0 ' name="dia" size="5"/></td>
+					<td><input type="text" value='0 ' name="dia" size="5" onChange={(e)=> setDia(e.target.value)}/></td>
 					<td>Mes: </td>
-					<td><input type="text" value='0' name="mes" size="5"/></td>
+					<td><input type="text" value='0' name="mes" size="5" onChange={(e)=> setMes(e.target.value)}/></td>
 					<td>Ano: </td>
-					<td><input type="text" value='0 ' name="ano" size="5"/></td>
+					<td><input type="text" value='0 ' name="ano" size="5" onChange={(e)=> setAno(e.target.value)}/></td>
 					<td><button type="submit"> Cadastrar Temperatura</button></td></tr>
 				</table>
 
