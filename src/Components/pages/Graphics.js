@@ -21,7 +21,7 @@ function Graphics(){
     const endDate = moment(finalDate).format("DD");
    // const endDay = moment(endDate).date();
 
-    const filtrodias = temps.dia.filter(
+    const filtrodias = temps.filter(
         (item)=> {
         return item>=parseInt(startDate)
     })
@@ -75,9 +75,7 @@ return (
 
     <select onChange={set}>
         <option value= "" > Select day  </option>
-        {temps.map(dia=>{ setFilDia(dia)
-
-        })}
+        {temps.map(dia=>{ setFilDia(dia) })}
     </select>
     <div>  
         <table className={styles.table}>
