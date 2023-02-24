@@ -76,6 +76,9 @@ return (
 
     <select onChange={filtrodeData}>
         <option value= "" > Select day  </option>
+        {temps.map(dia=>{
+        return<option key={dia}>{dia.dia} </option>
+      })}
         {e=>setFiltroDia(e.target.value)}
     </select>
     <div>  
