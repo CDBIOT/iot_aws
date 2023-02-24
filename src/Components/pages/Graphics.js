@@ -21,7 +21,7 @@ function Graphics(){
     const endDate = moment(finalDate).format("DD");
    // const endDay = moment(endDate).date();
 
-    const filtrodias = dia.filter(
+    const filtrodias = temps.dia.filter(
         (item)=> {
         return item>=parseInt(startDate)
     })
