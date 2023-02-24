@@ -8,6 +8,7 @@ function Energy(){
 
 //const [options, setOptions] =[ {title: 'Grafico de Temperaturas'}];
 const [temps, setData] = useState([])
+const [filtro,setFiltroDia] = useState()
 
 const [local, setLocal] = useState()// eslint-disable-next-line
 const [temperatura, setTemp] = useState()// eslint-disable-next-line
