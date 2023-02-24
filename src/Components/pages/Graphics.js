@@ -15,7 +15,7 @@ function Graphics(){
     const [filtrado,setFiltrado] = useState([])
 
     const startDate = moment(initDate).format("DD");
-   // const startDay = moment(startDate).date();
+    const startDay = parseInt(startDate)
     const endDate = moment(finalDate).format("DD");
    // const endDay = moment(endDate).date();
 
@@ -38,14 +38,15 @@ useEffect(() => {
 
 async function filtrodeData(){
 
-    setFiltrado(dias.filter(dia => dia.dia.inclues(dias)))
-    console.log("dias: ", dias)
-
+    setFiltrado(dias.filter(dia => dia.dia.includes(startDay)))
+    
     //  filtrodias = temps.filter(
     //     (item)=> {
     //     return item>=parseInt(startDate)
     // })
     console.log(
+        "starDay",startDay,
+        "dias: ", dias,
         "filtrado:", filtrado,
         "startdate: ", startDate, 
         "endDate: ", endDate )
@@ -55,8 +56,6 @@ useEffect
 (() => {
     filtrodeData();
     }, [dias])
-
-
 
 return (
     <>
@@ -92,7 +91,7 @@ return (
     </div>
         <tbody className={styles.tbody}>
         {temps.length >0 ? (
-        temps.map((t, i) => (
+        filtrado.map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.temperatura}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
@@ -101,7 +100,15 @@ return (
         <td width="20%"className={styles.td}>{t.ano}</td></tr>
         )
         )) :(
-            <h3>Não há itens na lista</h3>
+            temps.map((t, i) => (
+                <tr key = {i}>
+                <td width="20%"className={styles.td}>{t.temperatura}</td>
+                <td width="20%"className={styles.td}>{t.local}</td>
+                <td width="20%"className={styles.td}>{t.dia}</td>
+                <td width="20%"className={styles.td}>{t.mes}</td>
+                <td width="20%"className={styles.td}>{t.ano}</td></tr>
+                )
+                )
         )}
        
         </tbody>
