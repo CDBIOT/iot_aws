@@ -9,7 +9,7 @@ function RealTime(){
   
 
   const dias =tempes.map((t, i) =>{return tempes.indexOf(t.dia)===i})
-  const days = tempes.forEach((day) => {dias.filter(day>=1)})
+  //const days = tempes.forEach((day) => {dias.filter(day>=1)})
   //filtro de dias
   const temp = tempes.filter(temper=>(temper.dia < query))
 
