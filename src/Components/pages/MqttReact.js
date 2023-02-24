@@ -28,18 +28,6 @@ function MqttReact(){
   const[messages, setMessages]=useState([])
   const[temp,setTemp]= useState([])
 
-
-async function mqtt_show() {
-    const options = {method: 'GET',	 header: { 'Access-Control-Allow-Origin':'*',mode: 'cors',
-    'Content-Type': 'application/json' },cache: 'default'}
-   await fetch('https://server-orpin-zeta.vercel.app/temps/mqtt',options)
-  .then(response=>response.json())
-  .then((data)=>{
-  setTemp(data.temp)
-  console.log(data.temp)
-  }).catch(err=> console.log(err))
-  }
-
 useEffect(() =>{
   
 const client = (mqtt.connect(connectUrl,options))
@@ -61,7 +49,7 @@ setMessages(payload.toString())
    // res.status(200).json({m})
   })
 }) 
-mqtt_show()
+
 },[]);
 console.log("Connections: " +connectionStatus)
 console.log("Messages: " +messages)
@@ -107,18 +95,6 @@ console.log("Messages: " +messages)
 						<td>Temp: </td><td colSpan={4}><h2>{payload}</h2></td>
 					</tr>
         </table> 
-        {temp.length >0 ? (
-        temp.map((t, i) => (
-        <tr key = {i}>
-        <td width="20%"className={styles.td}>{t.temperatura}</td>
-        <td width="20%"className={styles.td}>{t.local}</td>
-        <td width="20%"className={styles.td}>{t.dia}</td>
-        <td width="20%"className={styles.td}>{t.mes}</td>
-        <td width="20%"className={styles.td}>{t.ano}</td></tr>
-        )
-        )) :(
-            <h3>Não há itens na lista</h3>
-        )}
   </div>
   
  )
