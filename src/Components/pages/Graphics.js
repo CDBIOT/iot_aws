@@ -64,8 +64,8 @@ return (
         <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" /></td>
         <td> </td>
     <td>
-        <h2  onChange={e =>setFiltroDia(e.target.value)} for="endDate" className="label">Data Final:  {endDate} </h2>
-        <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="endDate" /></td>
+        <h2  onChange={e =>setFiltroDia(e.target.value)} for="finalDate" className="label">Data Final:  {endDate} </h2>
+        <input id="finalDate" value={finalDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /></td>
         <td></td> 
 </tr>
 </table>
