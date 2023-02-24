@@ -38,7 +38,7 @@ useEffect(() => {
 
 async function filtrodeData(){
 
-    setFiltrado(dias.filter(dia => dia.dia.includes(startDay)))
+    setFiltrado(dias.filter(dia => dia.includes(startDay)))
     
     //  filtrodias = temps.filter(
     //     (item)=> {
