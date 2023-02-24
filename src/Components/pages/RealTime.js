@@ -21,7 +21,7 @@ function RealTime(){
     // <ul>{temp = tempes.filter((valorAtual)=> {
     //   return valorAtual.dia.includes(10)
     // })}</ul>
-    <ul>{tempes.map((t,i) => (<li key={t}> {t.filter((d)=>{return d.include(10)})}</li> ))}</ul>
+    //<ul>{tempes.map((t,i) => (<li key={t}> {t.filter((d)=>{return d.include(10)})}</li> ))}</ul>
   ]
      console.log("lista: ", lista)
   
