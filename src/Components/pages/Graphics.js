@@ -28,8 +28,6 @@ function Graphics(){
     console.log("query: ", query)
     const dias = query.filter((t) =>{return t > 18})
   
-    filtrodias = dia.filter((item,i)=>{item(i)
-        return item>=parseInt(startDate)})
 
 function set(e){
  //{(e)=>setQuery(e.target.value)}
