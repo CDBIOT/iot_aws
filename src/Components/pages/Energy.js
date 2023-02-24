@@ -32,6 +32,9 @@ return (
 	<>
 		<h1>Energy</h1>
 			<div>
+				
+		<form action="/temps" method = "post">
+
 				<table className = {styles.table}>
 					<tr><th className = {styles.thead} colSpan={3}>TEMPERATURA DA SALA </th></tr>
 					<tr>
@@ -74,9 +77,7 @@ return (
 				</tr>
 				
 				</table>
-
-<form action="/temps" method = "get">
-</form>	
+	</form>	
 
 <form action="/mqtt" method = "get">
 	<button type="submit"></button>
