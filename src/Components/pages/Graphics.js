@@ -9,37 +9,16 @@ import Grafico from "../Grafico";
 function Graphics(){
     
     const [temps, setTemperaturas] = useState([])
-    const [dia,setFilDia] = useState(dia)
-    const [query,setQuery] = useState("")
     const [initDate, setInitDate] = useState()
     const [finalDate, setFinalDate] = useState()
-
+    const [dias,setFiltroDia] = useState([])
+    const [filtrado,setFiltrado] = useState([])
 
     const startDate = moment(initDate).format("DD");
    // const startDay = moment(startDate).date();
-    
     const endDate = moment(finalDate).format("DD");
    // const endDay = moment(endDate).date();
 
-    const filtrodias = temps.filter(
-        (item)=> {
-        return item>=parseInt(startDate)
-    })
-    console.log("query: ", query)
-    const dias = query.filter((t) =>{return t > 18})
-  
-
-function set(e){
- //{(e)=>setQuery(e.target.value)}
-    // e.preventDefault()
-   // filtrodias
-     return console.log(
-     "filtrodias:", filtrodias,
-     "startdate: ", startDate, 
-     "endDate: ", endDate );
-     }
-
- 
 async function getData(){
     
      fetch(`https://server-orpin-zeta.vercel.app/temps`,{
@@ -56,6 +35,29 @@ useEffect(() => {
     getData();
     }, [])
     
+
+async function filtrodeData(){
+
+    setFiltrado(dias.filter(dia => dia.dia.inclues(dias)))
+    console.log("dias: ", dias)
+
+    //  filtrodias = temps.filter(
+    //     (item)=> {
+    //     return item>=parseInt(startDate)
+    // })
+    console.log(
+        "filtrado:", filtrado,
+        "startdate: ", startDate, 
+        "endDate: ", endDate )
+}
+
+useEffect
+(() => {
+    filtrodeData();
+    }, [dias])
+
+
+
 return (
     <>
     <h1>Graphics</h1>
@@ -73,9 +75,9 @@ return (
 </tr>
 </table>
 
-    <select onChange={set}>
+    <select onChange={filtrodeData}>
         <option value= "" > Select day  </option>
-        {temps.map(dia=>{ setFilDia(dia) })}
+        {e=>setFiltroDia(e.target.value)}
     </select>
     <div>  
         <table className={styles.table}>
