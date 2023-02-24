@@ -36,7 +36,7 @@ useEffect(() => {
     }, [])
     
 
-const temp = temps.filter(temper => temper.dia <= startDay )
+const temp = temps.filter(temper => temper.dia >= startDay <= endDay )
 
 async function filtrodeData(){
     
