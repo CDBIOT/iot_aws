@@ -41,11 +41,6 @@ const temp2 = temp.filter(temper =>  temper.dia  <= endDay )
 
 async function filtrodeData(){
     
-    //  filtrodias = temps.filter(
-    //     (item)=> {
-    //     return item>=parseInt(startDate)
-    // })
-  
 }
 console.log(
     "dia: ", dias,

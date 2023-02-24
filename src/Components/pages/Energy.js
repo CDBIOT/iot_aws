@@ -35,7 +35,7 @@ useEffect(() => {
 }, []);
 
 function cadastrar(e){
-	e.preventDefault()
+	//e.preventDefault()
    console.log("Temperatura enviada para cadastro")
    };
 
