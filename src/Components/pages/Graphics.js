@@ -36,21 +36,22 @@ useEffect(() => {
     }, [])
     
 
-async function filtrodeData(){
+const temp = temps.filter(temper => temper.dia < dias )
 
-    setFiltrado(temps.filter(temper => temper.dia >= dias ))
+async function filtrodeData(){
     
     //  filtrodias = temps.filter(
     //     (item)=> {
     //     return item>=parseInt(startDate)
     // })
-    console.log(
-        "starDay",startDay,
-        "dias: ", dias,
-        "filtrado:", filtrado,
-        "startdate: ", startDate, 
-        "endDate: ", endDate )
+  
 }
+console.log(
+    "starDay",startDay,
+    "dias: ", dias,
+    "filtrado:", filtrado,
+    "startdate: ", startDate, 
+    "endDate: ", endDate )
 
 useEffect
 (() => {
@@ -65,21 +66,20 @@ return (
 <tr>
     <td>
         <h2 for="initDate" className="label">Data início:  {startDate}</h2>
-        <input id="initDate" value={"starDate"}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" /></td>
+        <input id="initDate" value={initDate}  type="date" onChange={(e)=>setInitDate(e.target.value)}  name="initDate" /></td>
         <td> </td>
     <td>
-        <h2  onChange={filtrodeData} for="endDate" className="label">Data Final:  {endDate} </h2>
-        <input id="finalDate" value={"finalDate"}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /></td>
+        <h2  onChange={e =>setFiltroDia(e.target.value)} for="endDate" className="label">Data Final:  {endDate} </h2>
+        <input id="finalDate" value={endDate}  type="date" onChange={(e)=>setFinalDate(e.target.value)}  name="finalDate" /></td>
         <td></td> 
 </tr>
 </table>
 
-    <select onChange={filtrodeData}>
+    <select onChange={e =>setFiltroDia(e.target.value)}>
         <option value= "" > Select day  </option>
         {temps.map(dia=>{
         return<option key={dia}>{dia.dia} </option>
       })}
-        {e=>setFiltroDia(e.target.value)}
     </select>
     <div>  
         <table className={styles.table}>
@@ -94,7 +94,7 @@ return (
     </div>
         <tbody className={styles.tbody}>
         {temps.length >0 ? (
-        filtrado.map((t, i) => (
+        temp.map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.temperatura}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
