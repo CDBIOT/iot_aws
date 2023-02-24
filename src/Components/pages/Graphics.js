@@ -36,7 +36,8 @@ useEffect(() => {
     }, [])
     
 
-const temp = temps.filter(temper => startDay >= temper.dia  <= endDay )
+const temp = temps.filter(temper =>  temper.dia  >= startDay )
+const temp2 = temp.filter(temper =>  temper.dia  <= endDay )
 
 async function filtrodeData(){
     
@@ -93,7 +94,7 @@ return (
     </div>
         <tbody className={styles.tbody}>
         {temps.length >0 ? (
-        temp.map((t, i) => (
+        temp2.map((t, i) => (
         <tr key = {i}>
         <td width="20%"className={styles.td}>{t.temperatura}</td>
         <td width="20%"className={styles.td}>{t.local}</td>
