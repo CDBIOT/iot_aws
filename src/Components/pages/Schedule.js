@@ -3,7 +3,7 @@ import styles from "../../styles/Schedule.module.css"
 
 function Schedule(){
 
-const [temps, setData] = useState([])
+const [temps, setData] = useState({})
 const [initDate, setInitDate] = useState()
 const [finalDate, setFinalDate] = useState()
 const [Hora, setHora] = useState()
