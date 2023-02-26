@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-iot-dev-171705-unauthRole",
       "StackName": "amplify-iot-dev-171705",
       "StackId": "arn:aws:cloudformation:sa-east-1:560912688697:stack/amplify-iot-dev-171705/40d66830-8ec8-11ed-915c-026882570e1c",
-      "AmplifyAppId": "d2kln0vzijb2b0"
+      "AmplifyAppId": "d2kln0vzijb2b0",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-iot-dev-171705-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "hosting": {
@@ -17,6 +18,21 @@
           "appId": "d2kln0vzijb2b0",
           "type": "manual"
         }
+      },
+      "function": {
+        "iotlamb": {
+          "deploymentBucketName": "amplify-iot-dev-171705-deployment",
+          "s3Key": "amplify-builds/iotlamb-4739784b5052366d462f-build.zip"
+        }
+      },
+      "auth": {
+        "iot": {}
+      },
+      "storage": {
+        "tempsdino": {}
+      },
+      "api": {
+        "serverAwsIot": {}
       }
     }
   }

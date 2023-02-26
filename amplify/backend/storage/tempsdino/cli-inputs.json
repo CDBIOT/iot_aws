@@ -1,0 +1,14 @@
+{
+  "resourceName": "tempsdino",
+  "tableName": "tempsdinotable",
+  "partitionKey": {
+    "fieldName": "local",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "temperatura",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
