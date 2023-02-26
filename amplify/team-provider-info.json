@@ -22,7 +22,7 @@
       "function": {
         "iotlamb": {
           "deploymentBucketName": "amplify-iot-dev-171705-deployment",
-          "s3Key": "amplify-builds/iotlamb-4739784b5052366d462f-build.zip"
+          "s3Key": "amplify-builds/iotlamb-6145377135696164342b-build.zip"
         }
       },
       "auth": {
