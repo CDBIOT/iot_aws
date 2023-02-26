@@ -2,6 +2,12 @@
 import React from 'react';
 import {BrowserRouter as Router, Route , Routes} from 'react-router-dom';
 import Navbar from './Components/Navbar';
+import { Amplify } from 'aws-amplify';
+import {withAuthenticator} from '@aws-amplify/ui-react'
+import config from './aws-exports'
+
+Amplify.configure(config)
+
 
 import Home from './Components/pages/Home';
 import Schedule from './Components/pages/Schedule';
