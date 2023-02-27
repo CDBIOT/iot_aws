@@ -22,7 +22,7 @@ function Graphics(){
 
 
 async function getData(){
-    
+    //fetch ( 'https://7uz6ugr7q6.execute-api.sa-east-1.amazonaws.com/dev',{ // fetch addres for aws api
      fetch(`https://server-orpin-zeta.vercel.app/temps`,{
       method: 'GET',
       header: { 'Access-Control-Allow-Origin':'*',mode: 'cors',

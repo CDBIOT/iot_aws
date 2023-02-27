@@ -1,9 +1,9 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {BrowserRouter as Router, Route , Routes} from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import { Amplify } from 'aws-amplify';
-import {withAuthenticator} from '@aws-amplify/ui-react'
+import Amplify, {API}  from 'aws-amplify';
+import {withAuthenticator, AmplifySignOut} from '@aws-amplify/ui-react'
 import config from './aws-exports'
 
 Amplify.configure(config)
@@ -18,6 +18,16 @@ import Energy from './Components/pages/Energy';
 import MqttReact from './Components/pages/MqttReact';
 
 function App() {
+
+    
+  useEffect(() => {
+  
+    API.get("serverAwsIot","/dev/temps")
+     .then((response)=> {(response.data.temps);
+    console.log(response.data)
+    });
+
+  }, []);
 
 return (
   <div className = "App" > 
