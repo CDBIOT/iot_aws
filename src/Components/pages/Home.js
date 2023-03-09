@@ -1,5 +1,4 @@
 
-import {withAuthenticator, AmplifySignOut} from '@aws-amplify/ui-react'
 
 function Home(){
 
@@ -15,8 +14,6 @@ function Home(){
     <li>Temperatura   C</li>
     <li>Agendamento de tarefas</li>
     </ul>
-
-    <AmplifySignOut />
     
     </>
     
