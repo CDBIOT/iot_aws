@@ -6,7 +6,7 @@ function Home(){
     return (
     <>
     <h1>Home</h1>
-    <h2>Serviço de leitura de dados em tempo real </h2>
+    <h2>Serviço de leitura de dados em tempo real de sensores MQTT</h2>
     <ul>
     <li>Energia  KW   </li>
     <li>Tensão   Volts</li>
