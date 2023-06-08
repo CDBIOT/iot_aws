@@ -2,10 +2,9 @@
 import React, { useEffect } from 'react';
 import {BrowserRouter as Router, Route , Routes} from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import {API,Auth}  from 'aws-amplify';
+import {Amplify, API,Auth}  from 'aws-amplify';
 import {withAuthenticator} from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
-import config from './aws-exports'
 
 import Home from './Components/pages/Home';
 import Schedule from './Components/pages/Schedule';
@@ -15,7 +14,6 @@ import RealTime from './Components/pages/RealTime'
 import Energy from './Components/pages/Energy';
 import MqttReact from './Components/pages/MqttReact';
 
-//Amplify.configure(config)
 
 function App() {
 
