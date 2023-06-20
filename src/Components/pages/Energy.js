@@ -17,13 +17,17 @@ const [mes, setMes] = useState()// eslint-disable-next-line
 const [ano, setAno] = useState()// eslint-disable-next-line
 
 
+const requestInfo = {
+    headers: {
+      Authorization: token
+    }
 
-const Dados = async () => {
-	await Axios.get('https://server-orpin-zeta.vercel.app/temps')
-	 .then((response)=> {setData(response.data.temps);
-	console.log(response.data)
-	});
-	
+    }
+
+  const data =  API.get("serverAwsIot","/dev/",requestInfo)
+  console.log({data})
+
+
 	//const dataArray2=[];
 	// dataArray2.push(['Dia','Temp']);
 	// for (var i in data)
@@ -152,5 +156,5 @@ return (
 
 </>
 )
-}
+
 export default Energy
